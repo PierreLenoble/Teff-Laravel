@@ -1,0 +1,41 @@
+.header {
+    min-width: 300px;
+}
+
+html {
+    min-width: 300px;
+}
+
+body {   
+    min-height: 3050px;
+    
+}
+
+.archive2015Home .logo {
+    position:absolute; 
+    top:100px; 
+    right:0px;
+}
+.archive2015Home .logo .imgLogo{
+    width:400px;
+    height:260px;
+}
+
+.archive2015Home .logo .edition3 {
+    position:absolute;
+    top:-35px;
+    right:00px;
+    height:50px;
+    width:150px;
+    line-height: 50px;
+    font-size: 24px;
+
+    /* Firefox */
+    -moz-transform:rotate(25deg);
+    /* Safari and Chrome */
+    -webkit-transform:rotate(25deg);
+    /* Opera */
+    -o-transform:rotate(25deg);
+    /* IE9 */
+    -ms-transform:rotate(25deg);
+}

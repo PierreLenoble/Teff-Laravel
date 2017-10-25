@@ -1,0 +1,61 @@
+html {
+    min-width: 480px;
+}
+
+.dates {
+    display:none;
+}
+
+.header {
+    background-position-x: 50%;
+}
+
+.header {
+    min-width: 480px;
+}
+/*
+.paypalForm select {
+     width:230px;
+}
+*/
+
+.archive2015Home .fleche .imgFleche {
+    height : 150px;
+}
+
+.archive2015Home .logo {
+    position:absolute; 
+    top:100px; 
+    right:0px;
+}
+.archive2015Home .logo .imgLogo{
+    width:480px;
+    height:315px;
+}
+
+.archive2015Home .logo .edition3 {
+    position:absolute;
+    top:-35px;
+    right:00px;
+    height:60px;
+    width:182px;
+    line-height: 60px;
+    font-size: 24px;
+
+    /* Firefox */
+    -moz-transform:rotate(30deg);
+    /* Safari and Chrome */
+    -webkit-transform:rotate(30deg);
+    /* Opera */
+    -o-transform:rotate(30deg);
+    /* IE9 */
+    -ms-transform:rotate(30deg);
+}
+
+.archive2015Home .logo .edition3 .eme {
+    display: inline-block;
+    height:75px;
+    top:-1em;
+    font-size:0.5em;
+    position:relative; 
+}

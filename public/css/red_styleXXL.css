@@ -1,0 +1,52 @@
+.block {
+    position:relative;
+    top:-130px;
+    right: auto;
+    left:420px;
+    text-align: center;
+    height: 100px;
+    width: 600px;
+}
+
+.citation {
+    display: inherit;
+    height: 10px;
+    width:600px;
+}
+
+
+.archive2015Home .logo .edition3 {
+    position:absolute;
+    top:45px;
+    right:-200px;
+    height:110px;
+    width:300px;
+    text-align: center;
+    line-height: 110px;
+    font-size: 48px;
+    font-family: Bebas;
+    font-weight: bold;
+    background: -webkit-linear-gradient(left top, red , darkred); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, red , darkred); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, red , darkred); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, red , darkred); /* Standard syntax */
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px bisque solid;
+    /* Firefox */
+    -moz-transform:rotate(45deg);
+    /* Safari and Chrome */
+    -webkit-transform:rotate(45deg);
+    /* Opera */
+    -o-transform:rotate(45deg);
+    /* IE9 */
+    -ms-transform:rotate(45deg);
+}
+
+.archive2015Home .logo .edition3 .eme {
+    display: inline-block;
+    height:75px;
+    top:-1em;
+    font-size:0.5em;
+    position:relative; 
+}

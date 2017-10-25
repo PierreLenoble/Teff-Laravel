@@ -1,0 +1,52 @@
+{% extends "eopBlogBundle:Default:red_layout_" ~ editionYear ~".html.twig" %}
+{% if "/en" in app.request.uri or "en/" in app.request.uri %}
+    {% set langue = "en"%}
+{% else %}
+    {% set langue = "fr"%}
+{% endif %}
+{% set isFooterSoutientVisible = 0 %}
+
+{% set url_news="http://www.teff.be/"~ langue ~"/news" %}
+{% set url_listeFilms2015="http://www.teff.be/"~ langue ~"/2015/liste-des-films" %}
+{% set url_programme2015="http://www.teff.be/"~ langue ~"/2015/programme" %}
+{% set url_billeterie2015="http://www.teff.be/"~ langue ~"/2015/billeterie" %}
+{% set url_evenements2015="http://www.teff.be/"~ langue ~"/2015/evenements" %}
+{% set url_invites2015="http://www.teff.be/"~ langue ~"/2015/invites" %}
+{% set url_jury2015="http://www.teff.be/"~ langue ~"/2015/jury" %}
+{% set url_press2015="http://www.teff.be/"~ langue ~"/2015/press" %}
+{% set url_association2015="http://www.teff.be/"~ langue ~"/2015/association" %}
+{% set url_gallerie2015="http://www.teff.be/"~ langue ~"/2015/gallerie" %}
+{% set url_archives="http://www.teff.be/"~ langue ~"/archives" %}
+{% set url_partenaires2015="http://www.teff.be/"~ langue ~"/2015/partenaire" %}
+{% set url_infosPratiques2015="http://www.teff.be/"~ langue ~"/2015/infos-pratiques" %}
+{% set url_contact2015="http://www.teff.be/"~ langue ~"/2015/contact" %}
+
+{% block titre %}
+    An ErrorOccurred: {{ status_text }}
+{% endblock %}
+{% block body %}
+    <div class="blockMain">
+        <p style="font-size:2em; text-align: center">
+            <b>
+                <img src="{{images}}smiley/bigEyes.png" style="width:54px; display: inline; margin-right: 15px;">
+                {% if langue=="fr" %}Ca marche pluuuus !{% else %} It doesn't woooork !{% endif %}
+                <img src="{{images}}smiley/bigEyes.png" style="width:54px; display:inline; margin-right:15px;">
+            </b>
+        </p>
+            {% if langue=="fr" %}
+                <p style="font-size:1.5em; padding-top:60px;">
+                    Une erreur s'est déclanchée. Essyez de rafraichir la page dans quelques secondes. Si le problème persiste, faites-en nous part !<br><br>
+                    Veuillez nous excuser pour le dérangement occasionné<br><br>
+                </p>
+                <p style="text-align: right; font-size:1.5em">Le webmaster</p>
+            {% else %}
+                <p style="font-size:1.5em; padding-top:60px;">
+                    An error occured. Try to refresh the page in a few seconds. If the problem persist, tell us !<br><br>
+                    Please excuse us for this disturbance<br><br>
+                </p>
+                <p style="text-align: right; font-size:1.5em">The webmaster</p>
+            {% endif %}
+        <div style="clear:left;"></div>
+    </div>
+        
+{% endblock %}

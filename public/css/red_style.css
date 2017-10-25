@@ -1,0 +1,1113 @@
+@font-face {
+    font-family: Bebas;
+    src: url("BEBAS___.ttf");
+    font-weight: bold;
+}
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    background-color: #9b0006;
+}
+
+body {	
+    background-position:0px 0px;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    
+    background-size: cover;
+    
+}
+
+.titreMain {
+    text-decoration: underline; 
+    font-weight: bold;
+    font-size: 1.5em; 
+    margin-bottom: 30px;
+}
+
+.ssTitre{
+    text-decoration: underline; 
+    font-size: 1.2em;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+.img1InfoPratique, .img2InfoPratique {
+    width:350px; 
+    height:230px; 
+    float: left;
+    padding-bottom: 10px;
+    padding-top: 0px;
+}
+
+.img1InfoPratique {
+    padding-right: 10px; 
+    padding-left: 0px;
+}
+
+.img2InfoPratique {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.decaleDroite {
+    margin-left:40px;
+}
+
+.tableLienInfoPratique {
+    width:100%;
+}
+
+.tableLienInfoPratique tr td {
+    width:33%;
+    text-align: right;
+}
+
+.tableLienInfoPratique tr td:first-child {
+    width:33%;
+    text-align: left;
+}
+
+.tableLienInfoPratique tr td span a {
+    min-width:145px; 
+    width:90%
+}
+
+.infoPratiqueAdresse {
+    margin-left:20px;
+    margin-bottom: 20px;
+}
+.header {
+    position:relative;
+    height: 220px;
+    width:100%;
+    /*min-width: 950px;*/
+    background-image: url("images/red/logo.png");
+    background-size: 270px;
+    background-repeat: no-repeat;
+}
+
+.header .edition {
+    position:absolute;
+    top:30px;
+    left:250px;
+    height:75px;
+    width:200px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 24px;
+    font-family: Bebas;
+    font-weight: bold;
+    background: -webkit-linear-gradient(left top, red , darkred); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, red , darkred); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, red , darkred); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, red , darkred); /* Standard syntax */
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px bisque solid;
+    /* Firefox */
+    -moz-transform:rotate(-15deg);
+    /* Safari and Chrome */
+    -webkit-transform:rotate(-15deg);
+    /* Opera */
+    -o-transform:rotate(-15deg);
+    /* IE9 */
+    -ms-transform:rotate(-15deg);
+}
+
+.header .edition div {
+    display: inline-block;
+    height:75px;
+    top:-1em;
+    font-size:0.5em;
+    position:relative; 
+}
+
+.header .dates {
+    position:absolute;
+    top:17px;
+    right:30px;
+    width: 300px;
+    height:170px;
+}
+
+.header .drapeau {
+    z-index:50;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    right: 5px;
+    top: 5px;
+}
+.header .drapeau img {
+    height: 40px;
+    width: 40px;
+}
+
+.header .dates .date, .header .dates .lieux {
+    font-family: Bebas;
+    font-size: 1.4em;
+    float:left;
+    margin:10px;
+}
+.header .dates .date {
+    text-align: right;
+}
+
+.header .dates .verticalLine {
+    width:4px;
+    float:left;
+    height:165px;
+    position:relative;
+    top:8px;
+    background-color: black;
+}
+
+.whiteText {
+    color:white;
+}
+
+.menu {
+    height: 950px;
+    width:250px;
+    float:right;
+}
+
+
+.menu .menuBtn {
+    font-family: Bebas;
+    background-color: rgba(0, 0, 0, 0.75);
+    line-height: 45px;
+    text-decoration: none;
+    color:#FFF;
+    padding: 0px 15px;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin:10px;
+    display: block;
+    border: 1px solid #431c1c;
+    text-align:center;
+}
+
+.menu .menuArchiveBtn {
+    width:150px;
+    font-family: Bebas;
+    background-color: rgba(0, 0, 0, 0.75);
+    line-height: 30px;
+    text-decoration: none;
+    color:#F0F;
+    padding: 0px 15px;
+    margin:10px 00px 10px 60px;
+    font-weight: bold;
+    font-size: 1.2em;
+    display: block;
+    border: 1px solid #431c1c;
+    text-align: left;
+}
+
+.menu .menuBtn img{
+    padding:3px 10px;
+    height:39px; 
+    vertical-align: middle;
+}
+
+.menu .menuBtn img:hover{
+  transform: rotate(-4deg);
+}
+
+.menu .menuBtn:nth-child(1){
+    background-color: #431c1c;
+}
+
+.menu .menuBtn:nth-child(2){
+    background-color: #4c1a1b;
+}
+
+.menu .menuBtn:nth-child(3){
+    background-color: #54191a;
+}
+
+.menu .menuBtn:nth-child(4){
+    background-color: #5b1819;
+}
+
+.menu .menuBtn:nth-child(5){
+    background-color: #641618;
+}
+
+.menu .menuBtn:nth-child(6){
+    background-color: #6d1517;
+}
+
+.menu .menuBtn:nth-child(7){
+    background-color: #751416;
+}
+
+.menu .menuBtn:nth-child(8){
+    background-color: #7d1214;
+}
+
+.menu .menuBtn:nth-child(9){
+    background-color: #851113;
+}
+
+.menu .menuBtn:nth-child(10){
+    background-color: #8d1013;
+}
+
+.menu .menuBtn:nth-child(11){
+    background-color: #960e11;
+}
+
+.menu .menuBtn:nth-child(12){
+    background-color: #9e0d10;
+}
+
+.menu .menuBtn:nth-child(13){
+    background-color: #a60b0f;
+}
+
+.menu .menuBtn:nth-child(14){
+    background-color: #ae0a0e;
+}
+
+.menu .menuBtn:nth-child(15){
+    background-color: #b7090d;
+}
+
+.menu .menuBtn:nth-child(16){
+    background-color: #bf070c;
+}
+
+.menu .menuBtn:nth-child(17){
+    background-color: #c7050b;
+}
+
+.menu .menuBtn:nth-child(18){
+    background-color: #d0040a;
+}
+
+.menu .menuBtn:nth-child(19){
+    background-color: #d80309;
+}
+
+.menu .menuBtn:nth-child(20){
+    background-color: #e00108;
+}
+
+.menu .menuBtn:nth-child(20){
+    background-color: #e70007;
+}
+
+
+.menu .overGlow {}
+.menu .overGlow:hover {
+    text-shadow: 1px 0px 0px rgb(200,200,140), 1px 1px 0px rgb(200,200,140), 0px 1px 0px rgb(200,200,140), 
+        -1px 1px 0px rgb(200,200,140), -1px 0px 0px rgb(200,200,140), -1px -1px 0px rgb(200,200,140), 
+        0px -1px 0px rgb(200,200,140), 1px -1px 0px rgb(200,200,140), 1px 4px 5px rgb(200,200,140);
+}
+
+.shadow {
+    margin: 40px;
+    background-color: rgb(68,68,68); /* Needed for IEs */
+    -moz-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+    -webkit-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+    box-shadow: 5px 5px 3px rgba(50,50,50,0.6);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+    zoom: 1;
+}
+.menu .followUs {
+    background-color: #ee8819;
+    padding: 10px 15px;
+    margin:10px;
+    display: block;
+    text-align: right;
+}
+
+.menu .followUs div{
+    font-family: bebas;
+    font-size:1.8em;
+    color:white;
+    font-weight:bold;
+    text-align: left;
+    margin-bottom:15px;
+}
+.menu .followUs img{
+    margin: 0px 0px;
+}
+    
+.citation {
+    top:-25px;
+    left:20px;
+    position:relative;
+    height:1px;
+}
+
+.citation .block {
+    position:relative;
+}
+
+
+.stroke {
+    color: black;
+    -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.page {
+    padding: 0px;
+    margin: 10px 255px 10px 10px;
+    color:#000;
+    font-size : 1.1em;
+    min-width:470px;
+}
+
+.clear {
+    clear:both;
+}
+
+.footer {
+    color:white;
+    background-color: gray;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    font-family: Bebas;
+    background-color: rgba(0, 0, 0, 0.75);
+    margin-top: 10px;
+    min-width:470px;
+}
+
+.titrePage{
+    background-color: rgba(150,150,150,0.3);
+    color:#DDD;
+    font-size: 1.8em;
+    padding:5px;
+    text-align: center;
+    font-weight: bold;
+    border : white 3px;
+    border-style: double;
+    margin-bottom: 30px;
+}
+
+.conteneurPage {
+    background-color: rgba(150,150,150,0.3); 
+    color:#DDD; 
+    padding: 10px; 
+    border:3px solid white;
+}
+
+.buttonPetitBleu{
+    text-align: right;
+    font-size:0.9em;
+    color: #007;
+    text-decoration: none;
+    padding: 2px 14px;
+    border: 1px solid #007;
+    background-color: #B99;
+    cursor: pointer;
+}
+
+.buttonPetitBleu:hover{
+    background-color: #B33;
+    color:black;
+    border:1px solid black;
+}
+
+.buttonRedStyle {
+    background-color: rgba(0, 0, 0, 0.75);
+    text-decoration: none;
+    color:#FFF;
+    line-height: 1.2em;
+    font-weight: bold;
+    font-size: 0.9em;
+    border:1px solid black;
+    margin:2px 0px;;
+    padding:0px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    font-family: bebas;
+}
+
+.buttonRedStyle:hover{
+    text-shadow: 1px 0px 0px rgb(200,200,140), 1px 1px 0px rgb(200,200,140), 0px 1px 0px rgb(200,200,140), 
+        -1px 1px 0px rgb(200,200,140), -1px 0px 0px rgb(200,200,140), -1px -1px 0px rgb(200,200,140), 
+        0px -1px 0px rgb(200,200,140), 1px -1px 0px rgb(200,200,140), 1px 4px 5px rgb(200,200,140);
+}
+
+/* page filmDetail */
+.todo {
+    font-weight:bold;
+    color:darkRed;
+    border:1px solid black;
+}
+
+.blockTitre {
+    min-width: 450px; 
+}
+
+.blockTitre div {
+    position:relative; 
+    width:70%; 
+    background-color: rgba(154,154,154,0.5); 
+    font-family: bebas; 
+    padding:10px;
+}
+
+.blockTitre div .nomFilm, .blockTitre div .titreArticle{
+    line-height: 1em; 
+    font-size:1.8em;
+}
+
+.blockTitre div .realisateurFilm, .blockTitre div .dateSeance{
+    line-height: 1.1em; 
+    font-size:1.1em;
+}
+
+.espaceBlock {
+    margin-top:10px; 
+}
+
+.bigEspaceBlock {
+    margin-top:100px; 
+}
+
+.blockMain, .blockVideo {
+    background: linear-gradient(to top, rgba(255,154,154,0.5), rgba(154,154,154,0.5)); 
+    padding:10px; 
+    min-width:450px;
+}
+
+.blockMainFilmDetail, .blockMainArticleDetail  {
+    padding-top:40px; 
+}
+.blockMainSeanceDetail  {
+    padding-top:0px; 
+}
+
+.blockVideo {
+    background-color: white;
+    padding:3px;
+}
+
+.divImgFilmDetail {
+    width:200px; 
+    text-align: left; 
+    margin-right:10px; 
+    float:left;
+}
+
+.divImgFilmDetail img {
+    width:200px;
+}
+
+.conteneurFilmDetail {
+    float:left; 
+    display:table; 
+    min-width: 340px;
+}
+
+.conteneurFilmDetail .row {
+    display:table-row;
+}
+
+.conteneurFilmDetail .row .intitule{
+    display:table-cell; 
+    width:150px;
+    font-family: bebas;
+}
+
+.conteneurFilmDetail .row .contenu{
+    display:table-cell; 
+    height: 25px; 
+}
+
+.titreBlock {
+    font-family: bebas; 
+    margin:0px; 
+    height:30px;
+}
+
+.titreSynopsis {
+    padding-top:40px; 
+    font-family: bebas; 
+    margin:0px; 
+    height:30px;
+}
+
+.imgRealisateur {
+    height:100px;
+    width:100px;
+    text-align: left; 
+    margin-right:10px; 
+    float:left;
+}
+
+.divConteneurImageGallerie{
+    height:160px; 
+    width:160px; 
+    float:left;
+    margin:10px 35px 10px 35px;
+}
+
+.divImageGallerie{
+    height:160px; 
+    width:160px; 
+    overflow:hidden; 
+    text-align:center; 
+    background-color: #ccc; 
+    display: table-cell; 
+    vertical-align: middle; 
+    padding:0px; 
+    margin:0px;
+}
+.blockSoutiensLayout {
+    display: inline;
+    float:left;
+}
+
+.divImgSoutiensLayout {
+    display:inline-block;
+}
+
+.divImgSoutiensLayout div {
+    display:inline-block;
+    padding:0px 0px;
+    vertical-align: middle;
+}
+
+.divImgSoutiensLayout div img {
+    height:50px;
+    border:0px solid black;
+}
+
+.titreSoutiensLayout {
+    font-size:1em; 
+    font-family: bebas;
+    padding: 15px 0px 0px 00px;
+    
+}
+
+#footerSoutiens {
+    font-size:0.8em;
+}
+
+#Soutiens {
+    font-size:1em;
+}
+
+
+.divImgSoutiens {
+    display:inline-block;
+}
+
+
+
+.divImgSoutiens div {
+    display:inline-block;
+    padding:10px 10px;
+    vertical-align: middle;
+}
+
+.divImgSoutiens .maxHeight {
+    height:150px;
+    width:auto;
+}
+
+.divImgSoutiens .maxWidth {
+    width:150px;
+    height:auto;
+}
+
+.divImgSoutiens div img {
+    width:150px;
+}
+
+.divImgSoutiens div img:hover {
+    border:5px groove darkred;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.titreSoutiens {
+    font-size:1.3em; 
+    font-family: bebas;
+    padding: 20px 0px 10px 0px;
+}
+
+.basicLink:hover {
+    border:none;
+}
+
+.tableInfoPrix {
+    border:1px solid black; 
+    border-collapse: collapse;
+    width:100%;
+    min-width:470px;
+}
+/* premiere ligne */
+.tableInfoPrix th {
+    background-color: #333;
+    border:1px solid black;
+    padding:5px 10px;
+    font-family: bebas;
+    font-size:0.8em;
+    color:white;
+}
+/* fin premiere ligne */
+
+/* largeur de colone */
+.tableInfoPrix th:nth-child(1) {
+    min-width: 100px;
+    max-width: 200px;
+    width:160px;
+}
+
+.tableInfoPrix th:nth-child(2) {
+    min-width: 130px;
+    font-size:1.3em;
+}
+
+.tableInfoPrix th:nth-child(3) {
+    min-width: 130px;
+    font-size:1.3em;
+}
+/* fin largeur colonne */
+
+.tableInfoPrix tr td {
+    padding:5px;
+    border:1px solid black;
+    opacity: 1;
+}
+
+
+.tableInfoPrix tr:nth-child(2) td {
+    background-color: #a18d8e;
+}
+
+.tableInfoPrix tr:nth-child(3) td {
+    background-color: #a08888;
+}
+
+.tableInfoPrix tr:nth-child(4) td {
+    background-color: #b17f80;
+}
+
+.tableInfoPrix tr:nth-child(5) td {
+    background-color: #bd8181;
+}
+
+.tableInfoPrix tr:nth-child(6) td {
+    background-color: #cb7f83;
+}
+
+.tableInfoPrix tr:nth-child(7) td {
+    background-color: #d97d85;
+}
+
+fieldset {
+    margin:15px;
+    text-align: left;
+    position: relative;
+}
+
+legend { 
+    display: block;
+    padding-left: 2px;
+    padding-right: 2px;
+    border: 1px dotted black;
+}
+/* premiere colonne */
+
+.tableInfoPrix tr:nth-child(2) td:first-child, 
+.tableInfoPrix tr:nth-child(3) td:first-child,
+.tableInfoPrix tr:nth-child(4) td:first-child,
+.tableInfoPrix tr:nth-child(5) td:first-child,
+.tableInfoPrix tr:nth-child(6) td:first-child {
+    opacity: 1;
+    text-align: left;
+}
+
+.tableInfoPrix tr:nth-child(2) td:first-child {
+    background-color: #431C1C;
+}
+
+.tableInfoPrix tr:nth-child(3) td:first-child {
+    background-color: #441111;
+}
+
+.tableInfoPrix tr:nth-child(4) td:first-child {
+    background-color: #630002;
+}
+
+.tableInfoPrix tr:nth-child(5) td:first-child {
+    background-color: #7B0406;
+}
+
+.tableInfoPrix tr:nth-child(6) td:first-child {
+    background-color: #990005;
+}
+
+.tableInfoPrix tr:nth-child(7) td:first-child {
+    background-color: #B80004;
+}
+
+.tableInfoPrix tr td:first-child div:first-child{
+    font-family: bebas;
+    font-size: 1.3em;
+    color:white;
+}
+.tableInfoPrix tr td:first-child div:nth-child(2){
+    font-family: bebas;
+    font-size: 0.8em;
+    color:white;
+}
+/* fin premiere colonne */
+
+.tableInfoPrixResume, .tableInfoPrixResume tr, .tableInfoPrixResume td , .tableInfoPrixResume th {
+    border:1px solid black;
+    vertical-align: middle;
+}
+.tableInfoPrixResume {
+    width:100%;
+    min-width: 470px;
+}
+
+.tableInfoPrixResume tr td.tarif{
+    color: white;
+    text-align: center;
+    font-family: bebas;
+    font-size:0.9em;
+}
+
+.tableInfoPrixResume tr td.intitule{
+    width:210px;
+    height:35px;
+    text-align: left;
+    font-family: bebas;
+    font-size:1.3em;
+    color:white;
+    padding-left:10px;
+}
+
+.tableInfoPrixResume tr th {
+    color: white;
+    text-align: center;
+    font-family: bebas;
+    font-size:0.9em;
+    background-color: #333;
+    width:200px;
+}
+
+.tableInfoPrixResume tr th.intituleResumePrix {
+    width:210px;
+}
+
+.tableInfoPrixResume tr td.prix {
+    text-align: center;
+    color: black;
+    font-size:1.2em;
+}
+
+.tableInfoPrixResume tr:nth-child(3) td:first-child {
+    background-color: #431C1C;
+}
+
+.tableInfoPrixResume tr:nth-child(4) td:first-child {
+    background-color: #441111;
+}
+
+.tableInfoPrixResume tr:nth-child(5) td:first-child {
+    background-color: #630002;
+}
+
+.tableInfoPrixResume tr:nth-child(6) td:first-child {
+    background-color: #7B0406;
+}
+
+.tableInfoPrixResume tr:nth-child(7) td:first-child {
+    background-color: #990005;
+}
+
+.tableInfoPrixResume tr:nth-child(2) td {
+    background-color: #a18d8e;
+}
+
+.tableInfoPrixResume tr:nth-child(3) td {
+    background-color: #a08888;
+}
+
+.tableInfoPrixResume tr:nth-child(4) td {
+    background-color: #b17f80;
+}
+
+.tableInfoPrixResume tr:nth-child(5) td {
+    background-color: #bd8181;
+}
+
+.tableInfoPrixResume tr:nth-child(6) td {
+    background-color: #cb7f83;
+}
+
+.tableInfoPrixResume tr:nth-child(7) td {
+    background-color: #d97d85;
+}
+
+.tableInfoPrixResume tr td.prevente {
+    opacity: 0.8;
+}
+
+.tableInfoPrixResume tr td.surPlace {
+    opacity: 0.9;
+}
+
+.warning {
+    background-color: rgba(238,118,0,0.7);
+    font-size: 1.2em;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding:20px 0px;
+}
+
+
+
+.paypalForm {
+    position: relative;
+    top:-10px;
+    
+}
+.paypalPanier {
+    position: absolute;
+    bottom: 9px;
+    left: 170px;
+}
+
+.paypalForm div{
+    text-align: left;
+    padding-bottom: 20px;
+    padding-left:30px;
+}
+
+.paypalForm select {
+     width: calc(100%);
+     max-width: 500px;
+}
+
+/* prix et jury*/
+
+.juryRow {
+    display:table-row;
+}
+
+.juryRow div {
+    display: table-cell; 
+    vertical-align: top;
+}
+
+.juryRow div img {
+    max-height:300px; 
+    max-width: 200px;
+    padding-left: 20px;
+    padding-bottom: 50px;
+    /* transform: perspective(600px) rotateY(15deg); */
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+.juryRow div p:first-child{
+    text-decoration: underline; 
+    font-size: 1.2em;
+    padding-bottom: 20px;
+}
+
+.prixRow {
+    display:table-row;
+}
+
+.prixRow div {
+    display: table-cell; 
+    vertical-align: top;
+}
+
+.prixRow div p:first-child{
+    font-weight: bold;
+    line-height: 2em;
+    padding-left: 00px;
+}
+
+.prixRow div p{
+    padding-left: 20px;
+}
+
+.prixRedText {
+    color:#500;;
+}
+
+.tableLienJury {
+    width:100%;
+}
+
+.tableLienJury tr td {
+    width:50%;
+    text-align: right;
+}
+
+.tableLienJury tr td:first-child {
+    width:50%;
+    text-align: left;
+}
+
+.tableLienJury tr td span a {
+    min-width:145px; 
+    width:90%
+}
+/* archives */
+
+.imgInterdit {
+    vertical-align : middle; 
+    position:relative;
+    top:-1px;
+    height:26px;
+}
+
+.imgAnnonce {
+    vertical-align : middle; 
+    position:relative;
+    top:-1px;
+    height:26px;
+}
+
+a.CM, a.LM, a.Clip, a.MM {
+    margin:4px 0px;
+    border:1px solid; 
+    border-radius:5px; 
+    text-align:center; 
+    width:100%; 
+    line-height: 30px;
+    display:block; 
+    text-decoration: none;
+    text-shadow: -1px -1px 3px #ff0;
+    font-weight: bold;
+    font-size: 1.3em;
+    border-color: black;
+    color:#004;
+}
+    
+a.LM{
+    background-color: #669ad9; 
+}
+
+a.CM {
+    background-color: #3873b6; 
+}
+
+a.MM {
+    background-color: #1b5aa1; 
+}
+
+a.Clip {
+    background-color: #3f96a9; 
+}
+
+a.MM:hover{
+    background-color: #ccc; 
+}
+a.CM:hover{
+    background-color: #ccc; 
+}
+a.LM:hover{
+    background-color: #ccc; 
+}
+a.Clip:hover{
+    background-color: #ccc; 
+}
+    
+.hrarchives {
+    height: 2px; 
+    color: #511; 
+    background-color: #711; 
+    width: 75%; 
+    border: none;
+    margin-top:15px;
+    margin-bottom:15px;
+    text-align: center;
+    margin-left: 12%;
+}
+
+.archive2015Home {
+    position:relative;  
+    height:700px; 
+    width:100%
+    
+}
+
+.archive2015Home .fleche {
+    position:absolute; 
+    height:230px; 
+    width:230px; 
+    top:370px; 
+    right:50px;
+}
+
+.archive2015Home .fleche .imgFleche {
+    height : 230px;
+}
+
+.archive2015Home .logo {
+    position:absolute; 
+    top:100px; 
+    right:300px;
+}
+
+.archive2015Home .logo img{
+    width:700px;
+    height:460px;
+}
+
+.archive2015Home .logo .edition3 {
+    position:absolute;
+    top:45px;
+    right:-200px;
+    height:110px;
+    width:300px;
+    text-align: center;
+    line-height: 110px;
+    font-size: 48px;
+    font-family: Bebas;
+    font-weight: bold;
+    background: -webkit-linear-gradient(left top, red , darkred); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, red , darkred); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, red , darkred); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, red , darkred); /* Standard syntax */
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px bisque solid;
+    /* Firefox */
+    -moz-transform:rotate(30deg);
+    /* Safari and Chrome */
+    -webkit-transform:rotate(30deg);
+    /* Opera */
+    -o-transform:rotate(30deg);
+    /* IE9 */
+    -ms-transform:rotate(30deg);
+}
+
+.archive2015Home .logo .edition3 .eme {
+    display: inline-block;
+    height:75px;
+    top:-1em;
+    font-size:0.5em;
+    position:relative; 
+}
+
+.archive2015Home .logo .imgLogo {
+    height: 558px;
+}

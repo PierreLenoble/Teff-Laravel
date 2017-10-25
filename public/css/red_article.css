@@ -1,0 +1,80 @@
+.conteneurArticle{
+    display:block; 
+    position:relative
+}
+
+.contentArticle {
+    display:block; 
+    width:55%; 
+    min-width: 420px; 
+    margin:10px 0px;
+}
+
+.titreArticle{
+    z-index:21; 
+    position:relative; 
+    left:10px; 
+    background-color:grey; 
+    max-width:80%; 
+    padding:3px 10px; 
+    display: table; 
+    color:darkred; 
+    box-shadow: 3px 3px 2px rgba(150,150,150,0.8); 
+    top:5px;
+    font-family: bebas; 
+    font-size:1.2em; 
+    border:1px solid #555
+}
+
+.bodyArticle {
+    z-index:20; position:relative; 
+    background-color: rgba(255,255,255,0.5); 
+    height:100px; 
+    padding:10px; 
+    border:1px solid black;
+}
+
+.imageArticle{
+    float:left; 
+    position:relative;  
+    width:100px; 
+    height:100px;
+}
+
+.imageArticleBorder {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+    border:1px solid black;
+    width:100px;
+    height:100px;
+}
+
+.texteArticle {
+    height:79px; position:relative; margin-left:   110px;
+}
+
+.btnArticle {
+    position:absolute; right:0px; bottom: -23px; width:200px;
+}
+
+.bandeauNumPage, .bandeauNumPage a {
+    background-color: rgba(200,150,150,0.5);
+    border : darkred 3px;
+    border-style: double;
+    line-height: 1.4em;
+    text-align: center;
+    color:darkred;
+}
+
+.bandeauNumPage a {
+    background-color: rgba(200,150,150,0);;
+    border : none;
+    color:darkred;
+}
+
+.bandeauNumPage a:hover {
+    background-color: rgba(200,150,150,0);;
+    border : none;
+    color:black;
+}
