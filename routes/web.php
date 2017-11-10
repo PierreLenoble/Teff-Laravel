@@ -33,8 +33,8 @@ Route::get('/test', 'DefaultController@test')->name('test');
 // COMMON
 Route::get('/{langue}/news',                                'CommonController@news')                    ->name('common_news')               ->where('langue',$whereLangue);
 Route::get('/{langue}/archives',                            'CommonController@archives')                ->name('common_archives')           ->where('langue',$whereLangue);
-Route::get('/{langue}/contact',                             'CommonController@contact')                ->name('common_contact')            ->where('langue',$whereLangue);
-Route::get('/{langue}/association',                         'CommonController@association')            ->name('common_association')        ->where('langue',$whereLangue);
+Route::get('/{langue}/contact',                             'CommonController@contact')                 ->name('common_contact')            ->where('langue',$whereLangue);
+Route::get('/{langue}/association',                         'CommonController@association')             ->name('common_association')        ->where('langue',$whereLangue);
 
 // 2016
 Route::get('/{langue}/2016/homePage',                       'Edition2016Controller@homePage')           ->name('2016_homePage')             ->where('langue',$whereLangue);
@@ -59,7 +59,7 @@ Route::get('/{langue}/2015/liste-presse/{idPage}',          'Edition2015Controll
 Route::get('/{langue}/2015/detail-presse/{idArticle}',      'Edition2015Controller@presseDetails')      ->name('2015_presseDetails')        ->where('langue',$whereLangue)  ->where('idArticle','([0-9]+)');
 Route::get('/{langue}/2015/infos-pratiques',                'Edition2015Controller@infosPratiques')     ->name('2015_infosPratiques')       ->where('langue',$whereLangue);
 Route::get('/{langue}/2015/jury',                           'Edition2015Controller@jury')               ->name('2015_jury')                 ->where('langue',$whereLangue);
-Route::get('/{langue}/2015/gallerie',                       'Edition2015Controller@gallerie')           ->name('2015_gallerie')             ->where('langue',$whereLangue);
+// Route::get('/{langue}/2015/gallerie',                       'Edition2015Controller@gallerie')           ->name('2015_gallerie')             ->where('langue',$whereLangue);
 Route::get('/{langue}/2015/partenaires',                    'Edition2015Controller@partenaires')        ->name('2015_partenaires')          ->where('langue',$whereLangue);
 
 // 2014
@@ -76,7 +76,7 @@ Route::get('/{langue}/2013/infos-pratiques',                'Edition2013Controll
 Route::get('/{langue}/2013/liste-presse',                   'Edition2013Controller@presse')             ->name('2013_presse')               ->where('langue',$whereLangue);
 Route::get('/{langue}/2013/liste-presse/{idPage}',          'Edition2013Controller@presseByPage')       ->name('2013_presseByPage')         ->where('langue',$whereLangue)  ->where('idPage','([0-9]+)');
 Route::get('/{langue}/2013/detail-presse/{idArticle}',      'Edition2013Controller@presseDetails')      ->name('2013_presseDetails')        ->where('langue',$whereLangue)  ->where('idArticle','([0-9]+)');
-Route::get('/{langue}/2013/gallerie',                       'Edition2013Controller@gallerie')           ->name('2013_gallerie')             ->where('langue',$whereLangue);
+// Route::get('/{langue}/2013/gallerie',                       'Edition2013Controller@gallerie')           ->name('2013_gallerie')             ->where('langue',$whereLangue);
 Route::get('/{langue}/2013/partenaires',                    'Edition2013Controller@partenaires')        ->name('2013_partenaires')          ->where('langue',$whereLangue);
 Route::get('/{langue}/2013/lieux',                          'Edition2013Controller@lieux')              ->name('2013_lieux')                ->where('langue',$whereLangue);
 Route::get('/{langue}/2013/seances-delocalisees',           'Edition2013Controller@seanceDelocalisee')  ->name('2013_seanceDelocalisee')    ->where('langue',$whereLangue);
@@ -96,6 +96,6 @@ Route::get('/{langue}/2011/detail-film/{idFilm}',           'Edition2011Controll
 Route::get('/{langue}/2011/liste-presse',                   'Edition2011Controller@presse')             ->name('2011_presse')               ->where('langue',$whereLangue);
 Route::get('/{langue}/2011/liste-presse/{idPage}',          'Edition2011Controller@presseByPage')       ->name('2011_presseByPage')         ->where('langue',$whereLangue)  ->where('idPage','([0-9]+)');
 Route::get('/{langue}/2011/detail-presse/{idArticle}',      'Edition2011Controller@presseDetails')      ->name('2011_presseDetails')        ->where('langue',$whereLangue)  ->where('idArticle','([0-9]+)');
-Route::get('/{langue}/2011/gallerie',                       'Edition2011Controller@gallerie')           ->name('2011_gallerie')             ->where('langue',$whereLangue);
+// Route::get('/{langue}/2011/gallerie',                       'Edition2011Controller@gallerie')           ->name('2011_gallerie')             ->where('langue',$whereLangue);
 Route::get('/{langue}/2011/partenaires',                    'Edition2011Controller@partenaires')        ->name('2011_partenaires')          ->where('langue',$whereLangue);
 
