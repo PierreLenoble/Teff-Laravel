@@ -1,0 +1,41 @@
+{# empty Twig template #}
+{% extends "eopBlogBundle:Default:red_layout.html.twig" %}
+
+
+{% block partageFacebook %}
+    {% set imgEvent = adr ~ asset('bundles/eopblog/images/') ~ event.image.url %}
+
+    <meta property="og:url"           content="{{adr}}{{FB_url}}" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="{{event.titreFr}}" />
+    <meta property="og:description"   content="{{event.contenuFr|striptags|raw}}" />
+    <meta property="og:image"         content="{{imgEvent}}" />
+{% endblock %}
+
+{% block body %}
+<div class="blockTitre">
+    <div>
+        <span class="nomFilm">{{event.titreFr|replace({" ":spaceReplace})|raw}}</span><br>
+    </div>
+</div>
+<div class="blockMain blockMainFilmDetail">
+    <div class="divImgFilmDetail">
+        <div style="position:relative;  width:195px; height:195px; background: url(&quot;{{images}}{{event.image.url|raw }}&quot;) no-repeat; background-size: 195px; background-position: 0px;">
+            <div style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box; box-sizing: border-box; border:1px solid black;width:195px; height:195px;">&nbsp;</div>
+        </div>
+            <div class="fb-share-button" data-href="{{adr}}{{FB_url}}" data-type="button_count"></div>
+        <br><br>
+    </div>
+    <div class="conteneurFilmDetail">
+        <div class="row">
+            {{event.contenuFr|raw}}
+        </div>
+        
+    </div>
+    <div style="clear:left"></div>
+    <a href="{{url_archive_2015_evenements}}" class="buttonRedStyle" style="width:300px;">&lt;&lt;&nbsp;&nbsp;&nbsp;{{"Retour aux evenement 2015"|replace({" ":spaceReplace})|raw}}</a>
+</div>
+{% endblock %}
+
+{% block titre %}Détails de l'evenemt "{{event.titreFr}}"{% endblock %}
+

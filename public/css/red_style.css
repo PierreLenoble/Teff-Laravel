@@ -128,7 +128,7 @@ body {
 
 .header .dates {
     position:absolute;
-    top:17px;
+    top:25px;
     right:30px;
     width: 300px;
     height:170px;
@@ -137,10 +137,23 @@ body {
 .header .drapeau {
     z-index:50;
     position: absolute;
+    text-align: right;
+    text-transform: uppercase;
+    color:white;
+    font-size: 1.5em;
     height: 40px;
-    width: 40px;
+    width: 200px;
     right: 5px;
     top: 5px;
+}
+.header .drapeau a {
+    font-weight: bolder;
+    color:grey;
+}
+.header .drapeau a:hover {
+    text-decoration: underline overline;
+    color:grey;
+    font-weight: bold;
 }
 .header .drapeau img {
     height: 40px;
@@ -193,14 +206,14 @@ body {
 }
 
 .menu .menuArchiveBtn {
-    width:150px;
+    width:180px;
     font-family: Bebas;
     background-color: rgba(0, 0, 0, 0.75);
     line-height: 30px;
     text-decoration: none;
-    color:#F0F;
+    color:#FAA;
     padding: 0px 15px;
-    margin:10px 00px 10px 60px;
+    margin:10px 00px 10px 30px;
     font-weight: bold;
     font-size: 1.2em;
     display: block;
@@ -305,9 +318,10 @@ body {
 
 .menu .overGlow {}
 .menu .overGlow:hover {
+    color:black;
     text-shadow: 1px 0px 0px rgb(200,200,140), 1px 1px 0px rgb(200,200,140), 0px 1px 0px rgb(200,200,140), 
         -1px 1px 0px rgb(200,200,140), -1px 0px 0px rgb(200,200,140), -1px -1px 0px rgb(200,200,140), 
-        0px -1px 0px rgb(200,200,140), 1px -1px 0px rgb(200,200,140), 1px 4px 5px rgb(200,200,140);
+        0px -1px 0px rgb(200,200,140), 1px -1px 0px rgb(200,200,140), 2px 4px 5px rgb(200,200,140);
 }
 
 .shadow {

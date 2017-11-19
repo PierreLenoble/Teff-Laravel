@@ -1,0 +1,268 @@
+{% extends "eopBlogBundle:Default:red_layout.html.twig" %}
+
+{% block body %}
+{% set titres = [
+    "CHIEN GUIDE : ", 
+    "INFORMATIONS ADAPTEES : ",  
+    "AUDIODESCRIPTION : ",
+    "SOUS TITRAGE : ",  
+    "INTERPRETES EN LANGUE DES SIGNES  : ",  
+    "TRADUCTION : ",  
+    "DIFFICULTES AUDITIVES : ",  
+    "MOBILITE REDUITE : ", 
+    "PARKING HANDICAPE : ",
+    "PARKING : ", 
+    "TRANSPORT EN COMMUN : ", 
+    "SERVICE REPIT : ", 
+    "ATTENTION  : " ]%}
+{% set contents = [
+    "Les chiens guides sont les bienvenus.", 
+    "Un programme détaillé au format texte est téléchargeable sur la page « programme » du site.", 
+    "Tous les films sont audiodécrits. Des casques audio sont à votre disposition pour pouvoir en bénéficier. <br/>Les films étant tous dans leur langue d’origine, les enfants ou les personnes ayant des difficultés de compréhension peuvent aussi bénéficier de cette traduction et description audio. (s’adresser au comptoir « <i>accessibilité</i> »)",
+    "Tous les films présentés lors du festival sont sous-titrés.",
+    "Toutes les rencontres publiques et présentations sont traduites en langue des signes.", 
+    "Lors des rencontres avec les auteurs de langue étrangère, une traduction est prévue.",
+    "Les personnes rencontrant des difficultés auditives peuvent bénéficier des casques audio de l’audiodescription.", 
+    "Le lieu est accessible aux personnes en fauteuil. <br/><br/>10 places pour personnes en fauteuil sont prévues dans la salle. Il est donc important de réserver pour s’assurer de leur disponibilité.<br/><br/>2 Toilettes pour PMR sont à votre disposition (sur l’esplanade et dans la Maison de la culture).",
+    "Une vaste aire de parking est réservée à proximité de la salle (place du grognon) pour les personnes bénéficiant d’une carte de stationnement. Débarquement devant la Mison de la Culture.", 
+    "Un parking public payant est à votre disposition place des Armes (à 100 m de la maison de la culture) ",
+    "diverses lignes de bus relient régulièrement la gare à la rue Golenvaux : <br/><span style='padding-left:25px;'><b>2</b> (St Marc – Jambes)</span><br/><span style='padding-left:25px;'><b>3</b> (Citadelle – La Plante) </span><br/><span style='padding-left:25px;'><b>4</b> (Namur Profondeville – Godinne)</span><br/><span style='padding-left:25px;'><b>8</b> (Belgrade – Erpent) </span><br/><span style='padding-left:25px;'><b>80</b> (Gare de Jambes) </span><br/><span style='padding-left:25px;'><b>9</b> (Flawinne – Jambes)</span>",
+    "De nombreux services « Répit » sont associés à l’événement pour permettre aux parents d’enfant en situation de handicap de pouvoir se rendre au festival. Réservation indispensable. Vous adresser au service répit de votre région.",
+    "certaines séances ne sont pas accessible aux enfants de moins de 16 ans." ] %}
+{% set imgs = [
+    "Picto01.png",
+    "Picto02.png",
+    "Picto03.png",
+    "Picto04.png",
+    "Picto05.png",
+    "Picto05.png",
+    "Picto11.png",
+    "Picto07.png",
+    "Picto08.png",
+    "Picto09.png",
+    "Picto10.png",
+    "Picto06.png",
+    "Picto12b.png"
+    ] %}
+<div class="blockMain espaceBlock" name="lieu">
+    <table class="tableLienInfoPratique">
+        <tr>
+            <td>
+                <span>
+                    <a href="#lieu" class="buttonRedStyle">
+                        {{"Les lieux du festival"|replace({" ":spaceReplace})|raw}}
+                    </a>
+                </span>
+            </td>
+            <td>
+                <span>
+                    <a href="#accessibilite" class="buttonRedStyle">
+                        {{"Accessibilite"|replace({" ":spaceReplace})|raw}}
+                    </a>
+                </span>
+            </td>
+            <td>
+                <span>
+                    <a href="#loger" class="buttonRedStyle">
+                        {{"Loger sur place"|replace({" ":spaceReplace})|raw}}
+                    </a>
+                </span>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="blockMain espaceBlock">
+    
+    <p class="titreMain">Les lieux du festival : </p>
+
+    <p class="ssTitre">Mardi 10 novembre 2015 (Séances délocalisées) :</p>
+    <p>12 séances : avant-premières publiques et séances pédagogiques scolaires (info : voir <a class="buttonRedStyle" style="padding-left: 10px; padding-right:10px; display: inline" href="{{url_archive_2015_programme}}">programme</a>)</p><br/>
+    <ul>
+        <li class="decaleDroite">
+            Bruxelles : <br/>
+            <p class="infoPratiqueAdresse">
+                Centre Culturel de Woluwe Saint Pierre <br/>
+                Avenue Charles Thielemans 93<br/>
+                1150 Woluwe-Saint-Pierre
+            </p>
+        </li>
+        <li class="decaleDroite">
+            Liège : 
+            <p class="infoPratiqueAdresse">
+                Cinéma Sauvenière<br>
+                Place Xavier-Neujean 12<br>
+                4000 Liège
+            </p>
+        </li>
+        <li class="decaleDroite">
+            Mons : 
+            <p class="infoPratiqueAdresse">
+                Cinéma Plaza<br>
+                Rue de Nimy 12<br>
+                7000 Mons
+            </p>
+        </li>
+        <li class="decaleDroite">
+            Charleroi : 
+            <p class="infoPratiqueAdresse">
+                Cinéma Le Parc<br>
+                Rue de Montigny 58<br>
+                6000 Charleroi
+            </p>
+        </li>
+        <li class="decaleDroite">
+            Libramont : 
+            <p class="infoPratiqueAdresse">
+                Cinépointcom <br>
+                Avenue de Houffalize 56<br>
+                6800 Libramont-Chevigny
+            </p>
+        </li>
+    </ul>
+    
+    <p class="ssTitre">Mercredi 11 > dimanche 15 novembre 2015 :</p>
+    <img src="{{images}}infosPratiques/PlanNamur.jpg" class="img1InfoPratique"/>
+    <img src="{{images}}infosPratiques/PhotoNamur.jpg" class="img2InfoPratique"/>
+    <div style="clear:left;"></div>
+    Maison de la Culture de la Province de Namur<br/>
+    Avenue Golenvaux 14<br/>
+    5000 Namur
+
+
+    <p class="ssTitre">Plan d’accès à partir de Bruxelles :</p>
+    <ul>
+        <li class="decaleDroite">Prendre la E411 en direction de Namur.</li>
+        <li class="decaleDroite">Ensuite prendre la Sortie 14 (Bouge, Expo, CHR, Namur centre). </li>
+        <li class="decaleDroite">Ensuite, suivre la direction Namur centre. </li>
+    </ul>
+
+    <p class="ssTitre">Plan d’accès à partir de Liège :</p>
+    <ul>
+        <li class="decaleDroite">Prendre la E25/A602 en direction de St-Laurent, E42-Namur.</li>
+        <li class="decaleDroite">Suivre la direction A602, E42.</li>
+        <li class="decaleDroite">Continuer sur E42/A15 en direction de la E411 Luxembourg, Namur</li>
+        <li class="decaleDroite">Ensuite prendre la sortie 14 (Bouge, Expo, CHR, Namur centre). </li>
+    </ul>
+
+    <p class="ssTitre">Plan d’accès à partir de Charleroi :</p>
+    <ul>
+        <li class="decaleDroite">Prendre la A54 et E42 en direction de Charleroi-Gosselies.</li>
+        <li class="decaleDroite">Ensuite prendre la E420/A54 en direction de Bruxelles, Liège, Mons, Charleroi aéroport.</li>
+        <li class="decaleDroite">Continuer sur l’ E42/A15, puis prendre la sortie 12 (Namur, Gembloux, La Bruyère, Namur). </li>
+    </ul>
+</div>
+
+<div class="blockMain bigEspaceBlock" name="accessibilite">
+    <table class="tableLienInfoPratique">
+        <tr>
+            <td>
+                <span>
+                    <a href="#lieu" class="buttonRedStyle">
+                        {{"Les lieux du festival"|replace({" ":spaceReplace})|raw}}
+                    </a>
+                </span>
+            </td>
+            <td>
+                <span>
+                    <a href="#accessibilite" class="buttonRedStyle">
+                        {{"Accessibilite"|replace({" ":spaceReplace})|raw}}
+                    </a>
+                </span>
+            </td>
+            <td>
+                <span>
+                    <a href="#loger" class="buttonRedStyle">
+                        {{"Loger sur place"|replace({" ":spaceReplace})|raw}}
+                    </a>
+                </span>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="blockMain espaceBlock">
+<p class="ssTitre">Accessibilité : </p>
+<p>L’Extraordinary Film festival a mis tout en œuvre afin d’être accessible à tous et que chacun puisse vivre un accueil agréable et une expérience inoubliable.<br/><br/></p>
+<p>C’est pourquoi nous vous invitons VIVEMENT à réserver vos places sur le site du festival et de nous informez de vos demandes spécifiques afin de pouvoir y répondre au mieux.<br/><br/></p>
+<p>Renseignements complémentaires : 02/673.27.89 (<i>jusqu’au 10 novembre</i>) <br/><br/></p>
+</div>
+<div class="conteneurInfos">
+    {% for i in 0..12 %}
+    <div class="infoConteneur">
+        <p class="infoTitre">{{titres[i]|raw}}</p>
+        <div class="blockInfoPrat">
+            <img src="{{images}}infosPratiques/{{imgs[i]}}" alt="{{titres[i]|raw}}" class="infoImage"/>
+            <p class="infoCorps">{{contents[i]|raw}}</p>
+            <div style="clear:left;"></div>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+
+<div class="blockMain bigEspaceBlock" name="loger">
+    <table class="tableLienInfoPratique">
+        <tr>
+            <td>
+                <span>
+                    <a href="#lieu" class="buttonRedStyle">
+                        {{"Les lieux du festival"|replace({" ":spaceReplace})|raw}}
+                    </a>
+                </span>
+            </td>
+            <td>
+                <span>
+                    <a href="#accessibilite" class="buttonRedStyle">
+                        {{"Accessibilite"|replace({" ":spaceReplace})|raw}}
+                    </a>
+                </span>
+            </td>
+            <td>
+                <span>
+                    <a href="#loger" class="buttonRedStyle">
+                        {{"Loger sur place"|replace({" ":spaceReplace})|raw}}
+                    </a>
+                </span>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="blockMain espaceBlock">
+    <p>Le festival a négocié pour vous des conditions avantageuses à l’Hôtel IBIS de Namur, afin de vous permettre de vivre pleinement notre événement.</p>
+    <ul>
+        <li class="decaleDroite">chambre single : 76,25 €</li>
+        <li class="decaleDroite">chambre double : 77,50 €</li>
+        <li class="decaleDroite">petit déjeuner : 15,00 € par personne</li>
+    </ul>
+    <br>
+    <p>Pour bénéficier de ce tarif, envoyez un mail à H3151-FO@accor.com en précisant le type de chambre et les petits déjeuner, et en indiquant dans le mail « tarif Festival TEFF – asbl EOP!"</p>
+    <p class="ssTitre">Coordonnées de l’hôtel :</p>
+    <p class="decaleDroite">
+        IBIS NAMUR CENTRE<br>
+        <br>
+        rue du Premier Lanciers, 10 - 5000 Namur - Belgique<br>
+        Tél.: +32 (0)81 25 75 40 - Fax : +32 (0)81 25 75 50<br>
+        H3151-FO@accor.com<br>
+        ibishotel.com - accorhotels.com
+    </p>
+</div>
+<script>
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}
+{% block css %}<link rel="stylesheet" href="{{css}}red_infosPratiques.css"/>
+{% endblock %}
+{% block titre %}Infos pratiques{% endblock %}

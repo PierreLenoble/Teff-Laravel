@@ -1,0 +1,102 @@
+{# empty Twig template #}
+{% extends "eopBlogBundle:Default:red_layout.html.twig" %}
+
+
+{% block partageFacebook %}
+    {% set imgFilm = adr ~ asset('bundles/eopblog/images/') ~ film.affiche.url %}
+    <meta property="og:url"           content="{{adr}}{{FB_url}}" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="{{film.nom}}" />
+    <meta property="og:description"   content="{{film.resumeFr|striptags|raw}}" />
+    <meta property="og:image"         content="{{imgFilm}}" />
+{% endblock %}
+
+{% block body %}
+{% set imgInterdit = "" %} 
+{% if film.getInterdit=="12" %}
+    {% set imgInterdit='<img src="'~images~'interdit/12.jpg" alt="déconseillé aux moins de 12 ans" style= "width:25px; vertical-align: text-top"/>'%}
+{% elseif film.getInterdit=="16" %}
+    {% set imgInterdit='<img src="'~images~'interdit/16.gif" alt="déconseillé aux moins de 16 ans" style= "width:25px; vertical-align: text-top"/>'%}
+{% elseif film.getInterdit=="18" %}
+    {% set imgInterdit='<img src="'~images~'interdit/18.jpg" alt="déconseillé aux moins de 18 ans" style= "width:25px; vertical-align: text-top"/>'%}
+{% endif %}
+<div class="blockTitre">
+    <div>
+        <span class="nomFilm">{{film.nom|replace({" ":spaceReplace})|raw}}</span><br>
+        <span class="realisateurFilm">- {{film.realisateur.nom|replace({" ":spaceReplace})|raw}} -</span>
+    </div>
+</div>
+<div class="blockMain blockMainFilmDetail">
+    <div class="divImgFilmDetail">
+        <div style="position:relative;  width:195px; height:195px; background: url(&quot;{{images}}{{film.affiche.url|raw }}&quot;) no-repeat; background-size: 195px; background-position: 0px;">
+            <div style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box; box-sizing: border-box; border:1px solid black;width:195px; height:195px;">&nbsp;</div>
+        </div>
+            <div class="fb-share-button" data-href="{{adr}}{{FB_url}}" data-type="button_count"></div>
+        <br><br>
+    </div>
+    <div class="conteneurFilmDetail">
+        <div class="row">
+            <span class="intitule">{{"Production : "|replace({" ":spaceReplace})|raw}}</span>
+            <div class="contenu">{{film.production}}</div>
+        </div>
+        <div class="row">
+            <span class="intitule">{{"Pays : "|replace({" ":spaceReplace})|raw}}</span>
+            <div class="contenu">{{film.paysFr}}</div>
+        </div>
+        <div class="row">
+            <span class="intitule">{{"Annee : "|replace({" ":spaceReplace})|raw}}</span>
+            <div class="contenu">{{film.anneeProduction}}</div>
+        </div>
+        <div class="row">
+            <span class="intitule">{{"Duree : "|replace({" ":spaceReplace})|raw}}</span>
+            <div class="contenu">{{film.duree}}</div>
+        </div>
+        <div class="row">
+            <span class="intitule">{{"Genre : "|replace({" ":spaceReplace})|raw}}</span>
+            <div class="contenu">{{film.genreFr}}</div>
+        </div>
+        {% if film.interdit != "" %}
+            <div class="row">
+                <span class="intitule">{{"Recommandation : "|replace({" ":spaceReplace})|raw}}</span>
+                <div class="contenu">{{imgInterdit|raw}}</div>
+            </div>
+        {%endif%}
+        <div class="row">
+            <span class="intitule">{{"Seance : "|replace({" ":spaceReplace})|raw}}</span>
+            <div class="contenu">
+                {% for item in seances %}
+                    <a href="{{urlSeance2015}}/{{item.seance.id}}" class="buttonRedStyle" style="width:200px;">
+                        {% set tmpDate= "- "~item.seance.date|date('d-M-Y H:i')~" -" %}
+                        {{tmpDate|replace({" ":spaceReplace})|raw}}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div style="clear:left;"></div>
+    <div class="titreSynopsis">{{"Synopsis : "|replace({" ":spaceReplace})|raw}}</div>
+    {{film.resumeFr|raw}}
+</div>
+
+{% if film.lienVideo != "" %}
+<div class="blockVideo espaceBlock">
+    {% if film.nom=="Luneville (Carte blanche au festival des «Pom's d'Or»)"%}
+    <object data="http://www.pomsdor.be/medias/swf/player_video.swf" id="playerFlash" type="application/x-shockwave-flash" width="640" height="360"><param value="transparent" name="wmode"><param value="true" name="allowFullScreen"><param value="false" name="menu"><param value="so_flv_init=http://www.pomsdor.be/medias/videos/luneville.flv&amp;so_autoPlay=true&amp;so_skin=http://www.pomsdor.be/medias/swf/SkinUnderPlaySeekFullscreen.swf" name="flashvars"></object>
+    {% else %}
+    <center><iframe src="{{film.lienVideo}}" allowfullscreen=""  frameborder="0"  padding="0" style="width:100%; height:500px;"></iframe></center>
+    {% endif %}
+</div>
+{% endif %}
+    
+<div class="blockMain espaceBlock">
+    <div class="titreBlock">{{("A propos du realisteur "~film.realisateur.nom)|replace({" ":spaceReplace})|raw}}</div>
+    <img src="{{images}}{{film.realisateur.image.url}}" alt="{{film.realisateur.image.altFr}}" class="imgRealisateur" alt="{{film.affiche.altFr}}">
+    {{film.realisateur.presentationFr|raw}}
+    <div style="clear:left;"></div>
+</div>
+
+    
+{% endblock %}
+
+{% block titre %}Détails du film "{{film.nom}}"{% endblock %}
+

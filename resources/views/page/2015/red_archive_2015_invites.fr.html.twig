@@ -1,0 +1,95 @@
+{% extends "eopBlogBundle:Default:red_layout.html.twig" %}
+
+{% block body %}
+{% set invite=[
+    "<b>Olivier Marchal : </b>Le réalisateur de « Au delà des mots »",
+    "<b>Michelle Friedline : </b>la réalisatrice de « Autism in love »",
+    "<b>Pierre Verdez et Simon Parzybut : </b>le réalisateur et le protagoniste de « Celui qui chante »",
+    "<b>L’équipe du film </b> « Een lift geeft je vleugels »",
+    "<b>Sebastián Alfie et Gabor Bene : </b>le réalisateur le protagoniste (chef opérateur) de « Gabor »",
+    "<b>Pierre-Louis Levacher et Guillaume, Dorothée et Charlotte de Silguy : </b>le réalisateur et les protagonistes de « Guillaume au pays des merveilles »",
+    "<b>Anja Hiddinga & Jascha Blume : </b>les réalisateurs de « I sign, I live »",
+    "<b>Vanessa Clément : </b>La réalisatrice de « Le premier pas »",
+    "<b>Ignacio Tatay : </b>le réalisateur de « Mano a mano »",
+    "<b>Nilesh Maniyar : </b>le producteur de « Margarita with a straw »",
+    "<b>Sophie Robert : </b>la réalisatrice de « Quelque chose en plus »",
+    "<b>Michael Dinesen : </b>le réalisateur de « Skin & bones »",
+    "<b>Matt Kirby : </b>le comédien de « The kiss »",
+    "<b>Geraldine Wurzburg et Tracy Thresher & Larry Bissonnette : </b>la réalisatrice et les protagonistes de « Wretches & Jabberers »"
+    ] %}
+{% set img=[
+    "au_dela_des_mots.jpg",
+    "autism_in_love.jpg",
+    "celui_qui_chante_1.jpg",
+    "een_lift_geeft_je_vleugels.jpg",
+    "gabor_1.jpg",
+    "guillaume_1.jpg",
+    "i_sign_i_live.jpg",
+    "le_premier_pas.jpg",
+    "mano_a_mano.jpg",
+    "margarite_with_a_straw.jpg",
+    "quelque_chose_en_plus.png",
+    "skin_and_bones.jpg",
+    "the_kiss.jpg",
+    "wretches_1.png"] %}
+<div class="blockMain blockMainArticleDetail">
+
+Au moment de la mise en ligne, les invités annoncés sont :
+
+    <div class="conteneurAllFilm grid">
+
+
+
+
+    {% for i in 0..(invite|length-1) %}
+        {% if i == 0 %}
+            {% set cf = 1 %}
+        {% else %}
+            
+                {% set cf = random(1) %}
+        {% endif %}
+        
+        {% if cf == 1 %}
+            <div class="conteneurFilm1 grid-item">
+                <div style="position:relative; top:5px; left:5px; width:205px; height:420px; background-color: rgba(255,255,255,0.5);">
+                    <div style="position:relative; top:5px; left:5px; width:195px;height:410px;">
+                        <div style="position:relative;  width:195px; height:195px; background: url(&quot;{{images}}invites/{{img[i]}}&quot;) no-repeat; background-size: 195px; background-position: 0px;">
+                            <div style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box; box-sizing: border-box; border:1px solid black;width:195px; height:195px;">&nbsp;</div>
+                        </div>
+                        <p style="padding-bottom: 15px; padding-top:15px; color:black; font-size: 0.9em;  ">{{invite[i]|raw}}</p>
+                    </div>
+                </div>
+            </div>
+        
+        {% else %}
+            <div class="conteneurFilm2 grid-item">
+                <div style="position:relative; top:5px; left:5px; height:205px; width:420px; background-color: rgba(255,255,255,0.5);">
+                    <div style="position:relative; top:5px; left:5px; height:195px;width:410px;">
+                        <div style="float:left; position:relative;  height:195px; width:195px; background: url(&quot;{{images}}invites/{{img[i]}}&quot;) no-repeat; background-size: 195px; background-position: 0px">
+                            <div style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box; box-sizing: border-box; border:1px solid black;width:195px; height:195px;">&nbsp;</div>
+                        </div>
+                        <div style="position:relative; float:left; display:table; width:200px; height:197px; margin-left:5px">
+                            <p style="padding-top:15px; padding-bottom: 3px; color:black; font-size: 0.9em;  ">{{invite[i]|raw}}</p>
+                        </div>
+                         <div style="clear:left"></div>   
+                    </div>
+                </div>
+            </div>
+        {%endif%}
+    {% endfor %}
+</div>
+</div>
+
+<script type="text/javascript" >
+        
+    var container = document.querySelector('.grid');
+    var msnry = new Masonry( container, {
+      itemSelector: '.grid-item',
+      columnWidth: 215
+    });
+</script>
+{% endblock %}
+
+{% block titre %}Invites 2015{% endblock %}
+{% block css %}<link rel="stylesheet" href="{{css}}red_listeFilms.css"/>
+{% endblock %}

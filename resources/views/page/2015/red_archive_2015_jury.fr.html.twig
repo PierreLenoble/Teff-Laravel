@@ -1,0 +1,154 @@
+{% extends "eopBlogBundle:Default:red_layout.html.twig" %}
+
+{% block body %}
+
+<div class="blockMain bigEspaceBlock" name="jury">
+    <table class="tableLienJury">
+        <tr>
+            <td>
+                <span>
+                    <a href="#jury" class="buttonRedStyle">
+                        {{"Le jury"|replace({" ":spaceReplace})|raw}}
+                    </a>
+                </span>
+            </td>
+            <td>
+                <span>
+                    <a href="#prix" class="buttonRedStyle">
+                        {{"Les prix"|replace({" ":spaceReplace})|raw}}
+                    </a>
+                </span>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="blockMain espaceBlock">
+    <p class="titreMain">LE JURY</p>
+    <p>Au moment de finaliser ce dossier, nous attendons encore la confirmation d’une personne pour compléter le jury.</p>
+    <br><br>
+    <div class="juryRow">
+        <div>
+            <p>Sam Karmann (Président du jury) :</p>
+            <p>Sam Karmann est comédien au théâtre, à la télévision et au cinéma où il incarne également de nombreux rôles dans des films générationnels comme "Cuisine et dépendances ", "La cité de la peur", "Le Goût des autres " ou encore récemment "Les gazelles » ou dans "Les lendemains qui chantent" de N.Castro. En parallèle de sa carrière d'acteur il est aussi réalisateur. Récompensé à la fois d’une Palme d’or à Cannes en 1992 et d'un Oscar en 1993 pour son premier court métrage, "Omnibus", il réalise en 1999 son premier long métrage "Kennedy et moi ". Suivront "A la petite semaine" et "La vérité ou presque". Sam Karmann est directeur artistique d’un festival similaire : Regards croisés à Nîmes.</p>
+        </div>
+        <div>
+            <img src="{{images}}prix/karmann-sam.jpg">
+        </div>
+    </div>
+<hr>
+    <div class="juryRow">
+        <div>
+            <p>Joseph Schovanec :</p>
+            <p>Joseph Schovanec, 33 ans, est avant tout un être humain affable et délicieux. Autiste asperger, rescapé de la camisole chimique, il est depuis dix ans saltimbanque de l'autisme. Amoureux des langues et cultures, il est l’auteur des best-sellers "Je suis à l’Est" (2012) et "Eloge du voyage à l'usage des autistes et de ceux qui ne le sont pas assez" (2014), et son prochain ouvrage " De l'amour en Autistan » sortira de presse au moment du festival. Il anime enfin une chronique hebdomadaire sur Europe 1. Invité régulièrement sur les plateaux d’Ardisson, du « Grand Journal », de « Thé ou café » et d’ailleurs, sa simplicité, son humour et ses mots d’une grande intelligence font à chaque fois mouche.</p>
+        </div>
+        <div>
+            <img src="{{images}}prix/schovanec-joseph.jpg">
+        </div>
+    </div>
+<hr>
+    <div class="juryRow">
+        <div>
+            <p>Sonia Rolland :</p>
+            <p>Sonia a su aborder son métier d’actrice avec patience et dextérité. Elle démarre en 2002 avec Radu Mihaileanu sur Arte, puis tourne avec plusieurs réalisateurs tels que Raoul Peck, Bertrand Tavernier… En 2013, elle crée SoMad Production et réalise un documentaire « Rwanda, du chaos au miracle » qui pose un regard sur ce pays et sa reconstruction depuis le génocide des tutsis de 1994. Elle crée en 2001 son association Maisha Africa qui vient en aide aux enfants vulnérables au Rwanda et y dirige plusieurs projets.</p>
+        </div>
+        <div>
+            <img src="{{images}}prix/rolland-sonia.jpg">
+        </div>
+    </div>
+<hr>
+    <div class="juryRow">
+        <div>
+            <p>Bruno De Stabenrath :</p>
+            <p>Comédien dans « L’argent de poche » de François Truffaut, « L’hôtel de la plage » de Michel Lang, « Mesrine » de Jean-François Richet, il a également été scénariste pour les séries Tv comme « Marc et Sophie » ou « Un gars, une fille » et chanteur de « Borsalino ». En 1996, victime d’un accident au volant de sa voiture, il devient tétraplégique. Son roman autobiographique « Cavalcade » a été porté à l’écran en 2005 par Steve Suissa. Actuellement, Bruno coproduit et anime le talk show « Rockin chair » sur Numéro 23.</p>
+        </div>
+        <div>
+            <img src="{{images}}prix/de-stabenrath-bruno.jpg">
+        </div>
+    </div>
+<hr>
+    <div class="juryRow">
+        <div>
+            <p>Philippe Harmegnies :</p>
+            <p>Philippe Harmegnies, un passeur de différence...</p>
+            <p>Il est Président-fondateur de Passe Muraille structure associative, basée à Mons, qui développe, depuis 18 ans des actions culturelles, éducatives, formatrices, favorisant une citoyenneté participative et inclusive de la personne handicapée. </p>
+        </div>
+        <div>
+            <img src="{{images}}prix/harmegnies.jpg">
+        </div>
+    </div>
+</div>
+
+<div class="blockMain bigEspaceBlock" name="prix">
+    <table class="tableLienJury">
+        <tr>
+            <td>
+                <span>
+                    <a href="#jury" class="buttonRedStyle">
+                        {{"Le jury"|replace({" ":spaceReplace})|raw}}
+                    </a>
+                </span>
+            </td>
+            <td>
+                <span>
+                    <a href="#prix" class="buttonRedStyle">
+                        {{"Les prix"|replace({" ":spaceReplace})|raw}}
+                    </a>
+                </span>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="blockMain espaceBlock">
+    <p class="titreMain">LES PRIX</p>
+    <p>Pour cette troisième édition, le festival sera doté de 9 prix :</p>
+    <div class="prixRow">
+        <div>
+            <p>4 Prix du public :</p>
+            <p style="padding-bottom: 8px" class="prixRedText">Prix du public court-métrage</p>
+            <p style="padding-bottom: 8px" class="prixRedText">Prix du public long-métrage</p>
+            <p style="padding-bottom: 8px" class="prixRedText">Prix du public Communication</p>
+            <p style="padding-bottom: 8px" class="prixRedText">Prix Richelieu (jeune public)</p><br><br>
+            <span>Très prisés par les réalisateurs et producteurs, les prix du public récompensent habituellement des films forts qui se démarquent par leur humour ou leur singularité. 3 catégories : court-métrage, long-métrage, film de pub ou de communication. Un prix jeune public récompensera également le film qui participera aux séances pédagogiques.</span>
+        </div>
+        <div>
+            <img src="{{images}}prix/prix.jpg">
+        </div>
+    </div>
+    
+    <div class="prixRow">
+        <div>
+            <p>5 Prix :</p>
+            <p class="prixRedText">Prix CANAL C (communication) : </p>
+            <p class="decaleDroite">La télévision locale namuroise s’associe au festival pour donner un prix au meilleur film de communication (catégorie « pub , com et handicap ».)<br><br></p>
+            <p class="prixRedText">Prix DGDE (droits de l’enfant) : </p>
+            <p class="decaleDroite">Ce prix, offert par le délégué aux droits de l’enfant et doté de 800 €, ira au court-métrage mettant en valeur les droits de l’enfant.<br><br></p>
+            <p class="prixRedText">Prix CAP48 (Documentaire) : </p>
+            <p class="decaleDroite">Le prix CAP48, doté de 1.000 €, ira au film documentaire donnant une image positive de la personne porteuse de handicap.<br><br></p>
+            <p class="prixRedText">Grand Prix RTBF (court-métrage) : </p>
+            <p class="decaleDroite">Comme lors des deux précédentes éditions, la RTBF s’associe à l’événement pour offrir le Grand Prix du court-métrage qui équivaut au pré-achat du film et sa diffusion sur les antennes.<br><br></p>
+            <p class="prixRedText">Grand Prix RTBF (long-métrage) : </p>
+            <p class="decaleDroite">Tout comme le Grand Prix du court-métrage, ce prix, doté de 5.000 €, se concrétisera par un pré-achat du film et sa diffusion sur les antennes de la RTBF.<br><br></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}
+
+{% block titre %}Jury 2015{% endblock %}

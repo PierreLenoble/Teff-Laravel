@@ -20,7 +20,20 @@
     <body style="background-image: url('{{$path['image']}}background/Fond1.jpg');">
         <div class="header">
             <div class="drapeau">
-                <a href="/en/2016/uccle"><img src="{{$path['image']}}langues/en.png"></a>
+                <?php /**/ $isFirst = 1 /**/ ?>
+                @foreach ($langues as $langue)
+                    @if ($isFirst == 1)
+                        <?php /**/ $isFirst = 0 /**/ ?>
+                    @else
+                        &nbsp;-&nbsp;
+                    @endif
+                    
+                    @if ($langueActuelle == $langue['langue'])
+                        {{ $langue['langue'] }}
+                    @else
+                        <a href = "{{$langue['url']}}">{{ $langue['langue'] }}</a>
+                    @endif
+                @endforeach
             </div>
                 
             <div class="dates" style="width:650px">
@@ -32,6 +45,12 @@
                     <span class="whiteText" style="font-size:1.7em">UCCLE</span><br>
                     <span style="font-size:1.7em">CENTRE<br>
                         CULTUREL</span>
+                </div>
+                <div style="position:absolute; right:-5px; top:65px;width:200px; height:100px;transform:rotate(40deg);-ms-transform:rotate(30deg); /* Internet Explorer */-moz-transform:rotate(30deg); /* Firefox */-webkit-transform:rotate(30deg); /* Safari et Chrome */-o-transform:rotate(30deg); /* Opera */">
+                    <div style="position:relative; top:0px; height:3px; width:200px;background-color:white; font-size:1px">&bnsp;</div>
+                    <div style="position:relative; top:0px; height:50px; width:200px; font-size:2.5em; color:white; font-weight:bold"><centre>&nbsp;BEST OF</centre></div>
+                    <div style="position:relative; top:-10px; height:3px; width:200px;background-color:white; font-size:1px">&bnsp;</div>
+                    <div style="position:relative; top:-10px; font-size:2em; color:white;">12 SEANCES</div>
                 </div>
             </div>
         </div>

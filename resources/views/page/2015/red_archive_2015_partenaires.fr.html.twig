@@ -1,0 +1,93 @@
+{% extends "eopBlogBundle:Default:red_layout.html.twig" %}
+
+{% block body %}
+<div class="blockMain">
+    <p>Nous remercions tous nos partenaires et vous invitons à visiter leurs sites.</p><br /><br />
+    <p style="text-align: right">l'équipe EOP!</p>
+</div>
+<div class="blockMain espaceBlock" id="Soutiens">
+
+    <div class="titreSoutiens">
+        {{"Le sponsoring :"|replace({" ":spaceReplace})|raw}}
+    </div>
+    <div class="divImgSoutiens">
+        <div><a href="http://www.loterie-nationale.be/fr/nos-jeux/euro-millions" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/euroMillion.png" alt ="EuroMillion"></a></div>
+    </div>
+    
+    <div class="titreSoutiens">
+        {{"Les ministeres, administrations et pouvoirs publics : "|replace({" ":spaceReplace})|raw}}
+    </div>
+    <div class="divImgSoutiens">
+        <div><a href="https://www.awiph.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/AWIPH.png" alt="Awiph"></a></div>
+        <div><a href="http://www.rtbf.be/cap48/" target="_blank"><img class="maxHeight" src="{{images}}/soutiensMedia/cap48.png" alt ="Cap48"></a></div>
+        <div><a href="http://www.wallonie.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/wallonie.png" alt="Wallonie"></a></div>
+        <div><a href="http://phare.irisnet.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/phare.png" alt="Phare"></a></div>
+        <div><a href="http://www.federation-wallonie-bruxelles.be" target="_blank"><img class="maxHeight" src="{{images}}/soutiensMedia/fedBXL_Wall.png" alt="Fédération Wallonie Bruxelles"></a></div>
+        <div><a href="http://www.cocof.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/cocof.png" alt="Cocof"></a></div>
+        <div><a href="https://www.province.namur.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/provNamur.png" alt="Province de Namur"></a></div>
+        <div><a href="http://www.ville.namur.be/" target="_blank"><img class="maxHeight" src="{{images}}/soutiensMedia/villeNamur.png" alt="Ville de Namur"></a></div>
+        <div><a href="https://www.loterie-nationale.be/fr" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/lotterie.png" alt="Lotterie Nationnale"></a></div>
+        <div><a href="http://www.ville.namur.be/page.asp?id=5999&langue=FR" target="_blank"><img class="maxHeight" src="{{images}}/soutiensMedia/cultureNamur.png" alt="Namur Confluent Culture"></a></div>
+        <div><a href="https://www.woluwe1150.be/fr/" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/wolluwe.png" alt="Woluwe St Pierre"></a></div>
+        <!-- secret. etat des pers. handic. -->
+        <div><a href="http://portail.hainaut.be" target="_blank"><img class="maxHeight" src="{{images}}/soutiensMedia/hainaut.png" alt="Hainaut"></a></div>
+        <div><a href="http://www.province.luxembourg.be/fr/accueil.html?IDC=2775#.VgQBRunSNhA" target="_blank"><img class="maxHeight" src="{{images}}/soutiensMedia/luxembourg.png" alt="Luxembourg"></a></div>
+        <div><a href="http://www.belgium.be/fr/la_belgique/pouvoirs_publics/autorites_federales/gouvernement_federal/composition_gouvernement/index_elke_sleurs.jsp" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/sleurs.jpg" alt ="Elke Sleurs, Secrétaire d’Etat aux Personnes handicapées"></a></div>
+    </div>
+
+    <div class="titreSoutiens">
+        {{"Les medias :"|replace({" ":spaceReplace})|raw}}
+    </div>
+    <div class="divImgSoutiens">
+        <div><a href="http://www.rtbf.be/lapremiere/" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/laUNE.png" alt ="La Une"></a></div>
+        <div><a href="http://www.rtbf.be/vivacite/" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/vivacite.png" alt ="Vivacite"></a></div>
+        <div><a href="http://www.canalc.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/canalC.png" alt ="Canal C"></a></div>
+        <div><a href="http://www.betv.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/beTV.png" alt ="BeTV"></a></div>
+        <div><a href="http://www.brightfish.be/fr/home" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/brightfish.png" alt ="BrightFish"></a></div>
+        <div><a href="http://www.lalibre.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/libre.png" alt ="Libre"></a></div>
+        <div><a href="http://www.dhnet.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/DH.png" alt ="La DH"></a></div>
+        <div><a href="http://www.lavenir.net" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/avenir.png" alt ="Vers l'Avenir"></a></div>
+        <div><a href="http://www.moustique.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/moustique.png" alt ="Moustique"></a></div>
+    </div>
+
+      <div class="titreSoutiens">
+        {{"En collaboration avec :"|replace({" ":spaceReplace})|raw}}
+    </div>
+    <div class="divImgSoutiens">
+        <div><a href="http://www.51namur.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/logo51.png" alt ="Fifty-one Club"></a></div>
+        <div><a href="http://www.richelieurope.eu/Namur/" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/clubNamur.png" alt ="club de Namur"></a></div>
+        <div><a href="http://www.alteoasbl.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/alteo.png" alt ="Alteo"></a></div>
+        <div><a href="http://www.andage.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/andage.png" alt ="Andage"></a></div>
+        <div><a href="http://www.amisdesaveugles.be/fr/" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/amisAveugle.png" alt="Les Amis des Aveugle"></a></div>
+        <div><a href="http://www.creahm.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/creahm.png" alt="Creahm"></a></div>
+        <div><a href="http://www.dgde.cfwb.be/" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/droitsEnfants.png" alt ="Droits de l'Enfant"></a></div>
+        <div><a href="http://www.fondationlou.com" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/fondationLou.png" alt ="Fondation Lou"></a></div>
+        <div><a href="http://www.horizon2000.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/horizon2000.png" alt ="Horizon2000"></a></div>
+        <div><a href="http://www.inforautisme.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/infoAutisme.png" alt="Info Autisme"></a></div>
+        <div><a href="http://www.lalumiere.be/fr" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/lumiere.png" alt ="La Lumiere"></a></div>
+        <div><a href="http://www.passe-muraille.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/passeMuraille.png" alt ="Passe-Muraille"></a></div>
+        <div><a href="http://www.cinematek.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/cinematek.png" alt ="cinematek"></a></div>
+        <div><a href="#"><img class="maxWidth" src="{{images}}/soutiensMedia/sbc.png" alt ="SBC"></a></div>
+        <div><a href="http://www.setisw.be/pages/1_1-Presentation.html" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/setisWallon.png" alt ="setisWallon"></a></div>
+    </div>
+    
+    
+
+    <div class="titreSoutiens">
+        {{"Les fournisseurs"|replace({" ":spaceReplace})|raw}}
+    </div>
+    <div class="divImgSoutiens">
+        <div><a href="http://www.propaganda.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/propa.png" alt="Propa"></a></div>
+        <div><a href="http://www.audioscenic.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/audioscenic.png" alt="Audioscenic"></a></div>
+        <div><a href="http://www.cinetec.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/cinetec.png" alt="Cinetec"></a></div>
+        <div><a href="http://www.egerie-research.be/index.php?page=home" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/egerie.png" alt="Egerie"></a></div>
+        <div><a href="http://www.secondfloor.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/secondFloor.png" alt="second floor"></a></div>
+        <div><a href="http://fr.skoda.be" target="_blank" ><img class="maxHeight" src="{{images}}/soutiensMedia/skoda.png" alt="skoda"></a></div>
+        <div><a href="http://www.alternative-event.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/alternative2.png" alt="Alternative"></a></div>
+        <div><a href="http://www.boomerang.be" target="_blank"><img class="maxWidth" src="{{images}}/soutiensMedia/boomerang.png" alt="Boomerang"></a></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block titre %}Les partenaires de l'édition 2015{% endblock %}

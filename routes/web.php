@@ -25,38 +25,37 @@ if (strlen($whereLangue) > 0) {
 }
 
 // FIRST
-Route::get('/',     'CommonController@news')->name('default');
+Route::get('/',     'CommonController@news')->name('racine');
 
 // TEST
 Route::get('/test', 'DefaultController@test')->name('test');
 
 // COMMON
 Route::get('/{langue}/news',                                'CommonController@news')                    ->name('common_news')               ->where('langue',$whereLangue);
+Route::get('/{langue}/news/page/{idPage}',                  'CommonController@pageNews')                ->name('common_pageNews')           ->where('langue',$whereLangue)  ->where('idPage','([0-9]+)');
+Route::get('/{langue}/news/detail/{idNews}',                'CommonController@detailNews')              ->name('common_detailNews')         ->where('langue',$whereLangue)  ->where('idNews','([0-9]+)');
 Route::get('/{langue}/archives',                            'CommonController@archives')                ->name('common_archives')           ->where('langue',$whereLangue);
 Route::get('/{langue}/contact',                             'CommonController@contact')                 ->name('common_contact')            ->where('langue',$whereLangue);
 Route::get('/{langue}/association',                         'CommonController@association')             ->name('common_association')        ->where('langue',$whereLangue);
 
 // 2016
 Route::get('/{langue}/2016/homePage',                       'Edition2016Controller@homePage')           ->name('2016_homePage')             ->where('langue',$whereLangue);
-Route::get('/{langue}/2016/film/{idFilm}',                  'Edition2016Controller@film')               ->name('2016_filmDetails')          ->where('langue',$whereLangue)  ->where('idFilm','([0-9]+)');
+Route::get('/{langue}/2016/film/{idFilm}',                  'Edition2016Controller@detailsFilm')        ->name('2016_detailsFilm')          ->where('langue',$whereLangue)  ->where('idFilm','([0-9]+)');
 
 // 2015
 Route::get('/{langue}/2015/homePage',                       'Edition2015Controller@homePage')           ->name('2015_homePage')             ->where('langue',$whereLangue);
 Route::get('/{langue}/2015/programme',                      'Edition2015Controller@programme')          ->name('2015_programme')            ->where('langue',$whereLangue);
 Route::get('/{langue}/2015/seance',                         'Edition2015Controller@seance')             ->name('2015_seance')               ->where('langue',$whereLangue);
 Route::get('/{langue}/2015/billeterie',                     'Edition2015Controller@billeterie')         ->name('2015_billeterie')           ->where('langue',$whereLangue);
-Route::get('/{langue}/2015/liste-films',                    'Edition2015Controller@listeFilms')         ->name('2015_listeFilms')           ->where('langue',$whereLangue);
-Route::get('/{langue}/2015/liste-films/{idPage}',           'Edition2015Controller@listeFilmsByPage')   ->name('2015_listeFilmsByPage')     ->where('langue',$whereLangue)  ->where('idPage','([0-9]+)');
-Route::get('/{langue}/2015/detail-film/{idFilm}',           'Edition2015Controller@filmDetails')        ->name('2015_filmDetails')          ->where('langue',$whereLangue)  ->where('idFilm','([0-9]+)');
-Route::get('/{langue}/2015/liste-evenements',               'Edition2015Controller@evenements')         ->name('2015_evenements')           ->where('langue',$whereLangue);
-Route::get('/{langue}/2015/liste-evenements/{idPage}',      'Edition2015Controller@evenementsByPage')   ->name('2015_evenementsByPage')     ->where('langue',$whereLangue)  ->where('idPage','([0-9]+)');
-Route::get('/{langue}/2015/detail-evenement/{idEvenement}', 'Edition2015Controller@evenementDetails')   ->name('2015_evenementDetails')     ->where('langue',$whereLangue)  ->where('idEvenement','([0-9]+)');
-Route::get('/{langue}/2015/liste-invites',                  'Edition2015Controller@invites')            ->name('2015_invites')              ->where('langue',$whereLangue);
-Route::get('/{langue}/2015/liste-invites/{idPage}',         'Edition2015Controller@invitesByPage')      ->name('2015_invitesByPage')        ->where('langue',$whereLangue)  ->where('idPage','([0-9]+)');
-Route::get('/{langue}/2015/detail-invite/{idInvite}',       'Edition2015Controller@inviteDetails')      ->name('2015_inviteDetails')        ->where('langue',$whereLangue)  ->where('idInvite','([0-9]+)');
-Route::get('/{langue}/2015/liste-presse',                   'Edition2015Controller@presse')             ->name('2015_presse')               ->where('langue',$whereLangue);
-Route::get('/{langue}/2015/liste-presse/{idPage}',          'Edition2015Controller@presseByPage')       ->name('2015_presseByPage')         ->where('langue',$whereLangue)  ->where('idPage','([0-9]+)');
-Route::get('/{langue}/2015/detail-presse/{idArticle}',      'Edition2015Controller@presseDetails')      ->name('2015_presseDetails')        ->where('langue',$whereLangue)  ->where('idArticle','([0-9]+)');
+Route::get('/{langue}/2015/films',                          'Edition2015Controller@films')              ->name('2015_films')                ->where('langue',$whereLangue);
+Route::get('/{langue}/2015/film/detail/{idFilm}',           'Edition2015Controller@detailfilm')         ->name('2015_detailsFilm')          ->where('langue',$whereLangue)  ->where('idFilm','([0-9]+)');
+Route::get('/{langue}/2015/evenements',                     'Edition2015Controller@evenements')         ->name('2015_evenements')           ->where('langue',$whereLangue);
+Route::get('/{langue}/2015/evenement/detail/{idEvenement}', 'Edition2015Controller@detailsEvenement')   ->name('2015_detailsEvenement')     ->where('langue',$whereLangue)  ->where('idEvenement','([0-9]+)');
+Route::get('/{langue}/2015/invites',                        'Edition2015Controller@invites')            ->name('2015_invites')              ->where('langue',$whereLangue);
+Route::get('/{langue}/2015/invite/detail/{idInvite}',       'Edition2015Controller@detailsInvite')      ->name('2015_detailsInvite')        ->where('langue',$whereLangue)  ->where('idInvite','([0-9]+)');
+Route::get('/{langue}/2015/presse',                         'Edition2015Controller@presse')             ->name('2015_presse')               ->where('langue',$whereLangue);
+Route::get('/{langue}/2015/presse/page/{idPage}',           'Edition2015Controller@pagePresse')         ->name('2015_pagePresse')           ->where('langue',$whereLangue)  ->where('idPage','([0-9]+)');
+Route::get('/{langue}/2015/presse/detail/{idArticle}',      'Edition2015Controller@detailPresse')       ->name('2015_detailPresse')         ->where('langue',$whereLangue)  ->where('idArticle','([0-9]+)');
 Route::get('/{langue}/2015/infos-pratiques',                'Edition2015Controller@infosPratiques')     ->name('2015_infosPratiques')       ->where('langue',$whereLangue);
 Route::get('/{langue}/2015/jury',                           'Edition2015Controller@jury')               ->name('2015_jury')                 ->where('langue',$whereLangue);
 // Route::get('/{langue}/2015/gallerie',                       'Edition2015Controller@gallerie')           ->name('2015_gallerie')             ->where('langue',$whereLangue);
