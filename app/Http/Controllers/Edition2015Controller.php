@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\DAL\ArticleManager;
 
 class Edition2015Controller extends TeffController
 {
@@ -17,6 +18,31 @@ class Edition2015Controller extends TeffController
         return view('page.2015.billeterie')->with($this->varPage);
     }
     
+    // DOING
+    
+    public function evenements($langue) {
+        $this->init2015();
+        
+        // rapatriement des evenements 2015
+        $this->varPage['listeEvenements'] = 
+                ArticleManager::getAllArticles($langue, 'Evenement 2015');
+        
+        // print_r($this->varPage['listeEvenements']->toArray());
+        // détermination des adresses des bouttons 'voir evenement' des 
+        // evenements
+        $tabUrlBoutton = array();
+        $paramTab = array();
+        $paramTab['langue'] = $langue;
+        foreach ($this->varPage['listeEvenements'] as $article) {
+            $paramTab['id'] = $article->idArticle;
+            $tabUrlBoutton[$article->idArticle] = 
+                    route('2015_detailsEvenement', $paramTab);
+        }
+        $this->varPage['tabUrlBoutton'] = $tabUrlBoutton;
+        
+        
+        return view('page.2015.evenements')->with($this->varPage);
+    }
     
     // TODO
     
@@ -36,11 +62,6 @@ class Edition2015Controller extends TeffController
     }
     
     public function detailFfilm($langue, $idFilm) {
-        $this->init2015();
-        return view('page.2015.atodo')->with($this->varPage);
-    }
-    
-    public function evenements($langue) {
         $this->init2015();
         return view('page.2015.atodo')->with($this->varPage);
     }

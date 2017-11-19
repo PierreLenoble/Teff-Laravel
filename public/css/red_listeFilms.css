@@ -1,0 +1,63 @@
+
+.conteneurAllFilm {
+    float: none;
+    width:100%;
+    height:auto;
+    text-align: center;
+    display:inline-table;
+    padding-top: 15px;
+}
+
+.conteneurFilm1, .conteneurFilm2, .conteneurEvent1, .conteneurEvent2 {
+    margin:0px; 
+    text-align:left;    
+    width: 215px;
+    height:430px;
+    font-size:1em;
+    position:relative;
+    color:brown;
+    display:block;
+    overflow: hidden;
+}
+
+.conteneurFilm2, .conteneurEvent2 {
+    width: 430px;
+    height:215px;
+}
+
+.titreFilm {
+    text-align:center; 
+    position:relative; 
+    top:-5px; 
+    height:40px;
+    background-color:white; 
+    font-weight: bold
+}
+
+.imageFilm {
+    height:120px;
+    float:left;
+}
+
+.iconeFilm {
+    text-align:center; 
+    padding-top:10px; 
+    font-size:0.9em;
+}
+
+.categorieFilm {
+    width:120px; 
+    background-color:grey; 
+    text-align: center; 
+    font-size: 0.8em; 
+    color:black;
+    padding: 2px 0px;
+}
+
+.btnVoirFicheFilm {
+    text-align:center;
+    position:relative; 
+    top:7px; 
+    width:130px; 
+    display:block;
+}
