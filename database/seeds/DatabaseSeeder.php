@@ -2875,7 +2875,7 @@ Every year, Olivier Marchal and his team organize the &laquo;&nbsp;Sourd M&eacut
            $id = DB::table('Realisateur')
                ->insertGetId([
                    'nomRealisateur' => 'Jade Le Bloas & Camille Mapoula', 
-                   'urlImageRealisateur' => 'realisateurs/JadeLeBloas&CamilleMapoula_100.jpg']);
+                   'urlImageRealisateur' => 'realisateurs/JadeLeBloas_100.jpg']);
 
            DB::table('RealisateurTraduction')
                ->insert([
@@ -10984,7 +10984,7 @@ if (DB::table('Realisateur')->where('nomRealisateur','",REPLACE(realisateur.nom,
                     ->insertGetId([
                         'idFilm' => $id, 
                         'initialLangue' => 'fr', 
-                        'lienVideo' => 'http://www.pomsdor.be/fr/videos/#player_video', 
+                        'lienVideo' => 'http://www.youtube.com/embed/--WefqVZwFU', 
                         'nomFilm' => 'Luneville (Carte blanche au festival des «Pom\'s d\'Or»)', 
                         'resumeFilm' => '<p>A la façon des films muets du début du 20ème siècle et avec un brin de surréalisme à la belge, ce film nous narre les aventures d’une expédition lunaire pleine de promesse, jusqu’à ce que se pose la problématique d’une cohabitation avec des êtres différents : les luniens.</p><p><u>Le festival des « Pom’s d’Or » :</u> Le Festival International des Pom\'s d\'Or est un des plus anciens festivals sur la thématique du handicap. Il vient de clôturer sa dixième édition. Sa particularité réside dans le fait que les films proposés ont tous été réalisés par des institutions de personnes handicapées et leurs membres. Un partenariat entre le festival « EOP ! » et «les « Pom’s d’Or » était donc tout naturel, chacun ayant ses spécificités.</p>']);   
 
@@ -10992,7 +10992,7 @@ if (DB::table('Realisateur')->where('nomRealisateur','",REPLACE(realisateur.nom,
                     ->insertGetId([
                         'idFilm' => $id, 
                         'initialLangue' => 'en', 
-                        'lienVideo' => 'http://www.pomsdor.be/fr/videos/#player_video', 
+                        'lienVideo' => 'http://www.youtube.com/embed/--WefqVZwFU', 
                         'nomFilm' => 'Luneville (Carte blanche au festival des «Pom\'s d\'Or»)', 
                         'resumeFilm' => '<p>Likewise movies of the early XXth century and with a bit of belgian surrealism , this film presents the adventure of a lunar experience which turns challenging when faced with living with different beings : lunar beings. </p><p>Festival International Pom\'s d\'Or is one of the oldest festivals focused on handicap. It just closed its 10th Edition. Its peculiarity lays on the fact that all selected films are produced by institutions involved with handicaped persons and their members. A partnership between « EOP ! » and « Pom’s d’Or » was then obvious. </p>']);
 
@@ -15243,7 +15243,7 @@ if (DB::table('Realisateur')->where('nomRealisateur','",REPLACE(realisateur.nom,
                 $initialMetrage = DB::table('Metrage')->where('initialMetrage','CM')->get()->first()->initialMetrage;
                 $id = DB::table('Film')
                     ->insertGetId([
-                        'urlImageFilm' => 'films/AGOODLIFETOO:ALONZOCLEMONS_200.jpg', 
+                        'urlImageFilm' => 'films/AGOODLIFETOO_ALONZOCLEMONS_200.jpg', 
                         'idRealisateur' => $idRealisateur, 
                         'anneeProduction' => '2013', 
                         'interdictionAge' => '', 

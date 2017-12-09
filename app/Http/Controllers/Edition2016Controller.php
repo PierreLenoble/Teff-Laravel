@@ -33,17 +33,9 @@ class Edition2016Controller extends TeffController
             }
             $this->varPage['genres'] = $genres;
             
-            $this->varPage['seances'] = $film->filmParSeances;
             $this->varPage['realisateur'] = $film->realisateur;
             $this->varPage['realisateurTraduction'] = $film->realisateur->traductions->where('initialLangue', $this->varPage['langueActuelle'])->first();
             
-            $imgInterdit = '';
-            switch ($film->interdictionAge) {
-                case "12" : $imgInterdit = $this->varPage['path']['image'] . 'interdit/12.jpg';  break;
-                case "16" : $imgInterdit = $this->varPage['path']['image'] . 'interdit/16.jpg';  break;
-                case "18" : $imgInterdit = $this->varPage['path']['image'] . 'interdit/18.jpg';  break;
-            }
-            $this->varPage['imgInterdit']=$imgInterdit;
             return view('page.2016.film_details')->with($this->varPage);
         }
     }

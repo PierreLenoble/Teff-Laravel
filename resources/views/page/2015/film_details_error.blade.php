@@ -13,7 +13,7 @@
 @stop
 
 @section('titre')
-    TEFF - 2015 - Evènement non trouvé
+    {!! str_replace(" ", "&nbsp;&nbsp;&nbsp;","Erreur : Film introuvable") !!}
 @stop
 
 @section('css')
@@ -27,8 +27,8 @@
     <div class="blockMain">
         <img src="{!! $path['image'] !!}err/warn.png" style="float:left; width:420px;">
         <p style="font-size:5em; text-align: center"><b>Erreur</b></p>
-        <p style="font-size:3.5em; padding-top:60px;">Cet évènement n'existe pas</p>
+        <p style="font-size:3.5em; padding-top:60px;">Ce film n'existe pas</p>
         <div style="clear:left;"></div>
     </div>
 @stop
-
+            

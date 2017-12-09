@@ -45,10 +45,10 @@ Route::get('/{langue}/2016/film/{idFilm}',                  'Edition2016Controll
 // 2015
 Route::get('/{langue}/2015/homePage',                       'Edition2015Controller@homePage')           ->name('2015_homePage')             ->where('langue',$whereLangue);
 Route::get('/{langue}/2015/programme',                      'Edition2015Controller@programme')          ->name('2015_programme')            ->where('langue',$whereLangue);
-Route::get('/{langue}/2015/seance',                         'Edition2015Controller@seance')             ->name('2015_seance')               ->where('langue',$whereLangue);
+Route::get('/{langue}/2015/seance/{idSeance}',              'Edition2015Controller@seance')             ->name('2015_seance')               ->where('langue',$whereLangue)  ->where('idSeance','([0-9]+)');
 Route::get('/{langue}/2015/billeterie',                     'Edition2015Controller@billeterie')         ->name('2015_billeterie')           ->where('langue',$whereLangue);
 Route::get('/{langue}/2015/films',                          'Edition2015Controller@films')              ->name('2015_films')                ->where('langue',$whereLangue);
-Route::get('/{langue}/2015/film/detail/{idFilm}',           'Edition2015Controller@detailfilm')         ->name('2015_detailsFilm')          ->where('langue',$whereLangue)  ->where('idFilm','([0-9]+)');
+Route::get('/{langue}/2015/film/{idFilm}',                  'Edition2015Controller@detailsfilm')        ->name('2015_detailsFilm')          ->where('langue',$whereLangue)  ->where('idFilm','([0-9]+)');
 Route::get('/{langue}/2015/evenements',                     'Edition2015Controller@evenements')         ->name('2015_evenements')           ->where('langue',$whereLangue);
 Route::get('/{langue}/2015/evenement/detail/{idEvenement}', 'Edition2015Controller@detailsEvenement')   ->name('2015_detailsEvenement')     ->where('langue',$whereLangue)  ->where('idEvenement','([0-9]+)');
 Route::get('/{langue}/2015/invites',                        'Edition2015Controller@invites')            ->name('2015_invites')              ->where('langue',$whereLangue);

@@ -1,4 +1,4 @@
-@extends('partial.2016.layout')
+@extends('partial.2015.layout')
 
 @php
     $url = '';
@@ -29,19 +29,19 @@
 @endphp
 
 @section('menu')
-    @include('partial.2016.menu')
+    @include('partial.2015.menu')
 @stop
 
 @section('soutiens')
-    @include('partial.2016.soutiens')
+    @include('partial.2015.soutiens')
 @stop
 
 @section('footer')
-    @include('partial.2016.footer')
+    @include('partial.2015.footer')
 @stop
 
 @section('titre')
-    TEFF 2016 - Uccle
+    TEFF 2015 - Details du film "{{$filmTraduction->nomFilm}}"
 @stop
 
 @section('css')
@@ -104,6 +104,30 @@
                 <div class="contenu">{!!$imgInterdit!!}</div>
             </div>
         @endif
+        <div class="row">
+            <span class="intitule">{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', 'Seance : ') !!}</span>
+            <div class="contenu">
+                @foreach ($seances as $seance)
+                    @php
+                        $dateTime = new DateTime($seance->dateTimeSeance);
+                        $year = $dateTime->format('Y');
+                        $date = $dateTime->format('d-M-Y H:i');
+                        $url = route('2015_seance', ['langue' => $langueActuelle, 'idSeance' => $seance->idSeance]);
+                        $lieu = $seance->lieuSeance->traductions->where('initialLangue', $langueActuelle)->first()->nomLieuSeance;
+                        $lieu = htmlentities( $lieu, ENT_NOQUOTES, 'utf-8' );
+                        $lieu = preg_replace( '#&([A-za-z])(?:acute|cedil|caron|circ|grave|orn|ring|slash|th|tilde|uml);#', '\1', $lieu );
+                        $lieu = preg_replace( '#&([A-za-z]{2})(?:lig);#', '\1', $lieu );
+                        $lieu = preg_replace( '#&[^;]+;#', '', $lieu );
+                    @endphp
+                    @if ($year == 2015)
+                        <a href="{{$url}}" class="buttonRedStyle" style="width:300px; text-align:left">
+                            {!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', ' '.$date.'  -  '.$lieu) !!}
+                        </a>
+                    @endif
+                    
+                @endforeach
+            </div>
+        </div>
         
     </div>
     <div style="clear:left;"></div>
@@ -127,7 +151,7 @@
 </div>
 
 <div class="blockMain espaceBlock">
-    <a class="buttonRedStyle" style="text-align:center; " href="@php echo route('2016_homePage', ['langue' => $langueActuelle]); @endphp">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;","retour") !!}</a>
+    <a class="buttonRedStyle" style="text-align:center; " href="@php echo route('2015_films', ['langue' => $langueActuelle]); @endphp">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;","retour") !!}</a>
 </div>
 @stop
 

@@ -92,22 +92,22 @@
                     <b>Vendredi 16 septembre 2016 à 09h00 : Séance 1 - Pédagogique écoles fondamentales</b> (8 – 12 ans) (projection : 37’ + débats. Fin à 10h30)<br/>
                     <br/>
                     <ul style="padding-left: 10px">
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '102']); ?>">MACROPOLIS</a> de Joël Simon (UK)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '98']);  ?>">LA PETITE CASSEROLE D’ANATOLE de Eric Montchaud</a> (FR)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '84']);  ?>">FIXING LUKA</a> de Jessica Ashman (UK)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '82']);  ?>">CUERDAS</a> de Pedro Solis Garcia (SP)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '125']); ?>">DANS LES YEUX D’UN ENFANT</a> de Thomas Rhazi (Fr) </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '102']); @endphp">MACROPOLIS</a> de Joël Simon (UK)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '98']);  @endphp">LA PETITE CASSEROLE D’ANATOLE de Eric Montchaud</a> (FR)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '84']);  @endphp">FIXING LUKA</a> de Jessica Ashman (UK)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '82']);  @endphp">CUERDAS</a> de Pedro Solis Garcia (SP)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '125']); @endphp">DANS LES YEUX D’UN ENFANT</a> de Thomas Rhazi (Fr) </li>
                     </ul>
                     <br/><br/><br/>
                     <b>Vendredi 16 septembre 2016 à 10h45 : Séance 2 - Pédagogique écoles du secondaire inférieur</b> (12 – 16 ans) (projection : 37’ + débats. Fin à 12h15)<br/>
                     <br/>
                     <ul style="padding-left: 10px">
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '125']); ?>">DANS LES YEUX D’UN ENFANT</a> de Thomas Rhazi</a> (Fr)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '82']); ?>">CUERDAS</a> de Pedro Solis Garcia (SP)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '89']); ?>">HERE IN SILENCE</a> de Jake Willis (Aus)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '87']); ?>">GLIMPSE FOR HEAVEN</a> de Diego Robles (USA)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '114']); ?>">THE COMMUTE</a> de Jake Mcafee (USA) </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '121']); ?>">CARLY'S CAFE</a> de Miles Jay (CA) </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '125']); @endphp">DANS LES YEUX D’UN ENFANT</a> de Thomas Rhazi</a> (Fr)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '82']); @endphp">CUERDAS</a> de Pedro Solis Garcia (SP)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '89']); @endphp">HERE IN SILENCE</a> de Jake Willis (Aus)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '87']); @endphp">GLIMPSE FOR HEAVEN</a> de Diego Robles (USA)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '114']); @endphp">THE COMMUTE</a> de Jake Mcafee (USA) </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '121']); @endphp">CARLY'S CAFE</a> de Miles Jay (CA) </li>
                     </ul>
                     <br/>
                      <br/><br/>
@@ -115,23 +115,23 @@
                     <b>Vendredi 16 septembre 2016 à 13h00 : 3 - Pédagogique écoles fondamentales (8 – 12 ans) </b>(projection : 37’ + débats. Fin à 14h30)<br/>
                     <br/>
                     <ul style="padding-left: 10px">
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '102']); ?>">MACROPOLIS</a> de Joël Simon (UK)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '98']); ?>">LA PETITE CASSEROLE D’ANATOLE</a> de Eric Montchaud (FR)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '84']); ?>">FIXING LUKA</a> de Jessica Ashman (UK)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '82']); ?>">CUERDAS</a> de Pedro Solis Garcia (SP)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '125']); ?>">DANS LES YEUX D’UN ENFANT</a> de Thomas Rhazi (Fr) </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '102']); @endphp">MACROPOLIS</a> de Joël Simon (UK)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '98']); @endphp">LA PETITE CASSEROLE D’ANATOLE</a> de Eric Montchaud (FR)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '84']); @endphp">FIXING LUKA</a> de Jessica Ashman (UK)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '82']); @endphp">CUERDAS</a> de Pedro Solis Garcia (SP)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '125']); @endphp">DANS LES YEUX D’UN ENFANT</a> de Thomas Rhazi (Fr) </li>
                     </ul>
                     <br/>
                     <br/><br/>
                     <b>Vendredi 16 septembre 2016 à 15h00 : Séance 4 – Sexualité et handicap (-16 ans) </b>(projection : 65’ + débats. Fin à 17h10)<br/>
                     <br/>
                     <ul style="padding-left: 10px">
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '100']); ?>">LE PREMIER PAS</a> de Vanessa Clément (FR)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '107']); ?>">PRENDS-MOI</a> de Anaïs Barbeau-Lavalette & André Turpin (CA)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '109']); ?>">SCRUBBERS</a> de Christopher Cass (USA)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '122']); ?>">AUTISM IN LOVE</a> de Michelle Friedline (USA) </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '94']); ?>">KRUTCH</a> de Clark Matthews (USA)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '75']); ?>">ATLANTIC AVENUE</a> de Laure de Clermont (FR) </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '100']); @endphp">LE PREMIER PAS</a> de Vanessa Clément (FR)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '107']); @endphp">PRENDS-MOI</a> de Anaïs Barbeau-Lavalette & André Turpin (CA)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '109']); @endphp">SCRUBBERS</a> de Christopher Cass (USA)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '122']); @endphp">AUTISM IN LOVE</a> de Michelle Friedline (USA) </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '94']); @endphp">KRUTCH</a> de Clark Matthews (USA)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '75']); @endphp">ATLANTIC AVENUE</a> de Laure de Clermont (FR) </li>
                     </ul>
                     <br/>
                     
@@ -139,28 +139,28 @@
                     <b>Vendredi 16 septembre 2016 à 17h30 : Séance 5 – Coups de cœurs (courts-métrages) </b>(projection : 70’ + débats. Fin à 18h50)<br/>
                     <br/>
                     <ul style="padding-left: 10px">
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '74']); ?>">A GOOD LIFE, TOO</a> : ALONZO CLEMONS de Joseph Le Baron (USA) </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '130']); ?>">AU DELA DES MOTS</a> de Jérome Thomas / olivier Marchal (FR)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '77']); ?>">BLIND DEVOTION</a> de Edward Young Lee (USA)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '96']); ?>">LA FILLE AUX BOUEES ROSES</a> de Sarah Laure Estragnat (FR)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '115']); ?>">THE KISS</a> de Charlie Swinbourne (UK)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '103']); ?>">MANO A MANO (MAIN DANS LA MAIN)</a> de Ignacio Tatay (SP) </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '105']); ?>">PERFECT</a> de Karim Ayari (CA)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '124']); ?>">JESSE</a> de Adam Goldhammer (CA)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '76']); ?>">BASTION</a> de Ray Jacobs (UK)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '74']); @endphp">A GOOD LIFE, TOO</a> : ALONZO CLEMONS de Joseph Le Baron (USA) </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '130']); @endphp">AU DELA DES MOTS</a> de Jérome Thomas / olivier Marchal (FR)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '77']); @endphp">BLIND DEVOTION</a> de Edward Young Lee (USA)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '96']); @endphp">LA FILLE AUX BOUEES ROSES</a> de Sarah Laure Estragnat (FR)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '115']); @endphp">THE KISS</a> de Charlie Swinbourne (UK)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '103']); @endphp">MANO A MANO (MAIN DANS LA MAIN)</a> de Ignacio Tatay (SP) </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '105']); @endphp">PERFECT</a> de Karim Ayari (CA)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '124']); @endphp">JESSE</a> de Adam Goldhammer (CA)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '76']); @endphp">BASTION</a> de Ray Jacobs (UK)  </li>
                     </ul>
                     <br/>
                     <br/><br/>
                     <b>Vendredi 16 septembre 2016 à 20h00 : Séance 6 – Palmarès 2015 (courts-métrages) </b>(projection : 78’ + débats. Fin à 21h45 + Drink)<br/>
                     <br/>
                     <ul style="padding-left: 10px">
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '125']); ?>">DANS LES YEUX D’UN ENFANT</a> de Thomas Rhazi (Fr)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '122']); ?>">AUTISM IN LOVE</a> de Michelle Friedline (USA) </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '73']); ?>">A COLD LAND</a> de Shahriar Pourseyedian (IR) </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '119']); ?>">WORKMATE</a> de Genevieve Clay Smith (AUS) </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '90']); ?>">I DON'T CARE</a> de Carolina Giammetta (UK)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '125']); @endphp">DANS LES YEUX D’UN ENFANT</a> de Thomas Rhazi (Fr)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '122']); @endphp">AUTISM IN LOVE</a> de Michelle Friedline (USA) </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '73']); @endphp">A COLD LAND</a> de Shahriar Pourseyedian (IR) </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '119']); @endphp">WORKMATE</a> de Genevieve Clay Smith (AUS) </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '90']); @endphp">I DON'T CARE</a> de Carolina Giammetta (UK)  </li>
                         <li>EEN LIFT GEEFT JE VLEUGELS ! de Goyens Roel (B)</li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '82']); ?>">CUERDAS</a> de Pedro Solis Garcia (SP) </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '82']); @endphp">CUERDAS</a> de Pedro Solis Garcia (SP) </li>
                     </ul>
                     <br/>
                      
@@ -171,33 +171,33 @@
                     <b>Samedi 17 septembre 2016 à 10h00 : Séance 7 – Famille (courts-métrages – dessins animés) </b>(projection :45 + débats. Fin à 11h00 + Petit déjeuner offert)<br/>
                     <br/>
                     <ul style="padding-left: 10px">
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '125']); ?>">DANS LES YEUX D’UN ENFANT</a> de Thomas Rhazi (Fr)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '102']); ?>">MACROPOLIS</a> de Joël Simon (UK)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '98']); ?>">LA PETITE CASSEROLE D’ANATOLE</a> de Eric Montchaud (FR) </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '83']); ?>">LE VOYAGE DE MARIA</a> de Miguel Gallardo (SP)  </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '84']); ?>">FIXING LUKA (SAUVER LUKA)</a> de Jessica Ashman (UK) </li>
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '82']); ?>">CUERDAS (LA CORDE)</a> de Pedro Solis Garcia (SP) </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '125']); @endphp">DANS LES YEUX D’UN ENFANT</a> de Thomas Rhazi (Fr)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '102']); @endphp">MACROPOLIS</a> de Joël Simon (UK)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '98']); @endphp">LA PETITE CASSEROLE D’ANATOLE</a> de Eric Montchaud (FR) </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '83']); @endphp">LE VOYAGE DE MARIA</a> de Miguel Gallardo (SP)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '84']); @endphp">FIXING LUKA (SAUVER LUKA)</a> de Jessica Ashman (UK) </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '82']); @endphp">CUERDAS (LA CORDE)</a> de Pedro Solis Garcia (SP) </li>
                     </ul>
                     <br/>
                      <br/><br/>
                     <b>Samedi 17 septembre 2016 à 11h15 : Séance 8 – Pub, Com et handicap </b>(projection : 58’ + débats. Fin à 12h30)<br/>
                     <br/>
                     <ul style="padding-left: 10px">
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '123']); ?>">34 PUBLICITES ET FILMS DE COMMUNICATION</a> à propos du handicap issus de 14 pays </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '123']); @endphp">34 PUBLICITES ET FILMS DE COMMUNICATION</a> à propos du handicap issus de 14 pays </li>
                     </ul>
                     <br/>
                      <br/><br/>
                     <b>Samedi 17 septembre 2016 à 13h30 : Séance 9 – Prix du public 2015 : GABOR </b>(projection : 58’ + débats. Fin à 12h30)<br/>
                     <br/>
                     <ul style="padding-left: 10px">
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '85']); ?>">GABOR</a> de Sebastián Alfie (SP)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '85']); @endphp">GABOR</a> de Sebastián Alfie (SP)  </li>
                     </ul>
                     <br/>
                      <br/><br/>
                     <b>Samedi 17 septembre 2016 à 15h15: Séance 10 – Prix CAP48 2015 : GLANCE UP </b>(projection : 60’ + débats. Fin à 16h35)<br/>
                     <br/>
                     <ul style="padding-left: 10px">
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '86']); ?>">GLANCE UP</a> de Enric Ribes & Oriol Martinez (SP)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '86']); @endphp">GLANCE UP</a> de Enric Ribes & Oriol Martinez (SP)  </li>
                     </ul>
                     <br/>
                      <br/><br/>
@@ -225,7 +225,7 @@
                     <b>Samedi 17 septembre 2016 à 2h00 : Séance 12 – Grand Prix RTBF 2015 </b>MARGARITA WITH A STRAW (projection : 100’ + débats)<br/>
                     <br/>
                     <ul style="padding-left: 10px">
-                        <li><a href="<?php echo route('2016_detailsFilm', ['langue' => 'fr', 'idFilm' => '104']); ?>">MARGARITA WITH A STRAW</a> de Shonali Bose (IN/USA)  </li>
+                        <li><a href="@php echo route('2016_detailsFilm', ['langue' => $langueActuelle, 'idFilm' => '104']); @endphp">MARGARITA WITH A STRAW</a> de Shonali Bose (IN/USA)  </li>
                     </ul>
                     <br/>
                      

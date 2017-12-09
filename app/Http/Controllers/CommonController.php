@@ -7,7 +7,7 @@ use App\DAL\ArticleManager;
 
 class CommonController extends TeffController
 {
-   protected $nbNewsParPage = 5;
+    protected $nbNewsParPage = 5;
     
     public function news($langue='') {
         return $this->pageNews($langue, 1);

@@ -46,7 +46,7 @@
         }else{
             $content=$traduction->contenuArticle;
         }
-    @endphp
+        @endphp
         @if ($cf == 1)
             <div class="conteneurEvent1 grid-item">
                 <div style="position:relative; top:5px; left:5px; width:205px; height:420px; background-color: rgba(255,255,255,0.5);">
