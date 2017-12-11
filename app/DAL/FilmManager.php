@@ -26,4 +26,17 @@ Class FilmManager extends Manager {
             });
         })->get();
     }
+    
+    
+    public static function getFilmParSeance($nomLangue, $idSeance) {
+        return \App\Models\Film::
+        whereHas('traductions' , function ($query) use($nomLangue){
+            $query->whereHas('langue', function ($query2)  use($nomLangue){
+                $query2->where('initialLangue', $nomLangue);
+            })->with('langue')->orderBy('nomFilm');
+        })->with('traductions')
+        ->whereHas('filmParSeances', function($query3) use($idSeance) {
+            $query3->where('idSeance', $idSeance);
+        })->get();
+    }
 }

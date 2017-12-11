@@ -58,8 +58,6 @@ class Edition2015Controller extends TeffController
             return view('page.2015.evenement_details')->with($this->varPage);
         }
     }
-    
-    // DOING
     public function films($langue='') {
 
         $this->init2015();
@@ -131,56 +129,108 @@ class Edition2015Controller extends TeffController
         }
     }
     
-    public function invites($langue) {
+    public function seance($langue, $idSeance) {
         $this->init2015();
-        return view('page.2015.atodo')->with($this->varPage);
+        $listeFilms = \App\DAL\FilmManager::getFilmParSeance($this->varPage['langueActuelle'], $idSeance);
+        $seance = \App\DAL\SeanceManager::getSeance($this->varPage['langueActuelle'], $idSeance);
+        
+        if ($seance == null || $seance->count() == 0) {
+            return view('page.2015.seance_error')->with($this->varPage);
+            
+        } else {
+            $this->varPage['listeFilms'] = $listeFilms;
+            $this->varPage['seance'] = $seance;
+            // détermination des adresses des bouttons 'lire la suite' des articles
+            $tabUrlBoutton = array();
+            $paramTab = array();
+            $paramTab['langue'] = $langue;
+            foreach ($listeFilms as $film) {
+                $paramTab['id'] = $film->idFilm;
+                $tabUrlBoutton[$film->idFilm] = 
+                        route('2015_detailsFilm', $paramTab);
+            }
+            $this->varPage['tabUrlBoutton'] = $tabUrlBoutton;
+
+            return view('page.2015.seances')->with($this->varPage);
+        }
     }
-    
-    // TODO
     
     public function programme($langue) {
         $this->init2015();
-        return view('page.2015.atodo')->with($this->varPage);
-    }
-    
-    public function seance($langue) {
-        $this->init2015();
-        return view('page.2015.atodo')->with($this->varPage);
-    }
-    
-    
-    public function detailInvite($langue, $idFilm) {
-        $this->init2015();
-        return view('page.2015.atodo')->with($this->varPage);
-    }
-    
-    public function presse($langue) {
-        $this->init2015();
-        return view('page.2015.atodo')->with($this->varPage);
-    }
-    
-    public function pagePresse($langue, $idPage) {
-        $this->init2015();
-        return view('page.2015.atodo')->with($this->varPage);
-    }
-    
-    public function detailPresse($langue, $idPage) {
-        $this->init2015();
-        return view('page.2015.atodo')->with($this->varPage);
-    }
-    
-    public function infosPratiques($langue) {
-        $this->init2015();
-        return view('page.2015.atodo')->with($this->varPage);
-    }
-    
-    public function jury($langue) {
-        $this->init2015();
-        return view('page.2015.atodo')->with($this->varPage);
+        $allSeances = \App\DAL\SeanceManager::getSeanceParAnnee($this->varPage['langueActuelle'], 2015);
+        $seances=array();
+        foreach ($allSeances as $seance) {
+            array_push($seances, $seance);
+        }
+        
+        usort($seances, function ($a, $b) {
+            if ($a->dateTimeSeance > $b->dateTimeSeance){
+                return 1;
+            } else {
+                return 0;
+            }
+        });
+            
+        $dateTab = array();
+        $dateTab2 = array();
+        $lieuxTab = array();
+        $tabImgFilm = array();
+        $tabUrl = array();
+        
+        foreach($seances as $seance) {
+            
+            $filmSeance = \App\DAL\FilmSeanceManager::getFilmParSeanceParSeance($this->varPage['langueActuelle'], $seance->idSeance)->first();
+            if($filmSeance != null) {
+                $tabImgFilm[$seance->idSeance] = $filmSeance->film->urlImageFilm;
+                
+                $dateTmp = new \DateTime($seance->dateTimeSeance);
+                $date = $dateTmp->format('d/m/Y');
+                if (!in_array($date, $dateTab)) {
+                    $i=count($dateTab);
+                    $dateTab[$i] = $date;
+                    $dateTab2[$i] = $dateTmp;
+                    $lieuxTab[$i] = array();
+                }
+
+                $filmSeance = \App\DAL\FilmSeanceManager::getFilmParSeanceParSeance($this->varPage['langueActuelle'], $seance->idSeance)->first();
+                if($filmSeance != null) {
+                    $tabImgFilm[$seance->idSeance] = $filmSeance->film->urlImageFilm;
+                }
+
+                $i=array_search($date, $dateTab);
+                $lieu = $seance->lieuSeance->traductions->where('initialLangue', $this->varPage['langueActuelle'])->first()->nomLieuSeance;
+                if (!in_array($lieu, $lieuxTab[$i])) { 
+                    $lieuxTab[$i][count($lieuxTab[$i])] = $lieu;
+                }
+                $tabUrl[$seance->idSeance] = route('2015_seance', ['langue' => $langue, 'idSeance' => $seance->idSeance]);
+            }
+            
+            
+            
+        }
+        
+        $this->varPage["tabImgFilm"] = $tabImgFilm;
+        $this->varPage["dateTab"] = $dateTab2;
+        $this->varPage["lieuxTab"] = $lieuxTab;
+        $this->varPage["seances"] = $seances;
+        $this->varPage["lieuxTab"] = $lieuxTab;
+        $this->varPage["tabUrl"] = $tabUrl;
+        
+        return view('page.2015.programme')->with($this->varPage); $this->render('eopBlogBundle:'.$this->langue.':red_archive_2015_programme.'.$this->langue.'.html.twig', $this->varPage);
     }
     
     public function partenaires($langue) {
         $this->init2015();
-        return view('page.2015.atodo')->with($this->varPage);
+        return view('page.2015.partenaire')->with($this->varPage);
+    }
+    
+    public function accessibilite($langue) {
+        $this->init2015();
+        return view('page.2015.accessibilite')->with($this->varPage);
+    }
+    
+    public function lieux($langue) {
+        $this->init2015();
+        return view('page.2015.lieux')->with($this->varPage);
     }
 }

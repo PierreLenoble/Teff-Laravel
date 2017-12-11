@@ -10000,7 +10000,7 @@ DB::table('SeanceTraduction')
            ->insertGetId([
                'urlImageArticle' => 'articles/ConferenceDeJosephSchovanec_200.jpg', 
                'nomCategorieArticle' => 'Evenement 2015', 
-               'ordreArticle' => '2', 
+               'ordreArticle' => '1', 
                'dateTimeArticle' => '2015-10-08 15:30:24']);
 
         DB::table('ArticleTraduction')
@@ -10038,7 +10038,7 @@ DB::table('SeanceTraduction')
            ->insertGetId([
                'urlImageArticle' => 'articles/LaSoiréeDuFestival(DJRIDOOO)_200.jpg', 
                'nomCategorieArticle' => 'Evenement 2015', 
-               'ordreArticle' => '4', 
+               'ordreArticle' => '3', 
                'dateTimeArticle' => '2015-10-12 11:26:51']);
 
         DB::table('ArticleTraduction')
@@ -10090,7 +10090,7 @@ DB::table('SeanceTraduction')
            ->insertGetId([
                'urlImageArticle' => 'articles/ConcertDUHYPNOSE(11-11-15)_200.jpg', 
                'nomCategorieArticle' => 'Evenement 2015', 
-               'ordreArticle' => '3', 
+               'ordreArticle' => '2', 
                'dateTimeArticle' => '2015-10-12 11:51:53']);
 
         DB::table('ArticleTraduction')
@@ -10136,7 +10136,7 @@ DB::table('SeanceTraduction')
            ->insertGetId([
                'urlImageArticle' => 'articles/ConcertDeLaColonieMusicale_200.jpg', 
                'nomCategorieArticle' => 'Evenement 2015', 
-               'ordreArticle' => '9', 
+               'ordreArticle' => '8', 
                'dateTimeArticle' => '2015-10-16 02:58:13']);
 
         DB::table('ArticleTraduction')
@@ -10166,7 +10166,7 @@ DB::table('SeanceTraduction')
            ->insertGetId([
                'urlImageArticle' => 'articles/CycloDanseLeRoseauVert_200.jpg', 
                'nomCategorieArticle' => 'Evenement 2015', 
-               'ordreArticle' => '8', 
+               'ordreArticle' => '7', 
                'dateTimeArticle' => '2015-10-16 03:01:31']);
 
         DB::table('ArticleTraduction')
@@ -10196,7 +10196,7 @@ DB::table('SeanceTraduction')
            ->insertGetId([
                'urlImageArticle' => 'articles/ConcertDeChristoffEilers_200.jpg', 
                'nomCategorieArticle' => 'Evenement 2015', 
-               'ordreArticle' => '7', 
+               'ordreArticle' => '6', 
                'dateTimeArticle' => '2015-10-16 03:17:47']);
 
         DB::table('ArticleTraduction')
@@ -10224,7 +10224,7 @@ DB::table('SeanceTraduction')
            ->insertGetId([
                'urlImageArticle' => 'articles/ShowDeMagie(LaRamure)_200.jpg', 
                'nomCategorieArticle' => 'Evenement 2015', 
-               'ordreArticle' => '6', 
+               'ordreArticle' => '5', 
                'dateTimeArticle' => '2015-10-16 03:21:40']);
 
         DB::table('ArticleTraduction')
@@ -10254,7 +10254,7 @@ DB::table('SeanceTraduction')
            ->insertGetId([
                'urlImageArticle' => 'articles/ConcertDeJessicaVanHooren_200.jpg', 
                'nomCategorieArticle' => 'Evenement 2015', 
-               'ordreArticle' => '5', 
+               'ordreArticle' => '4', 
                'dateTimeArticle' => '2015-10-16 03:31:45']);
 
         DB::table('ArticleTraduction')
@@ -10278,28 +10278,6 @@ DB::table('SeanceTraduction')
 
 
 
-
-
-        $id = DB::table('Article')
-           ->insertGetId([
-               'urlImageArticle' => 'articles/1497528658_200.jpg', 
-               'nomCategorieArticle' => 'Evenement 2015', 
-               'ordreArticle' => '1', 
-               'dateTimeArticle' => '2017-06-15 12:10:58']);
-
-        DB::table('ArticleTraduction')
-           ->insert([
-               'idArticle' => $id, 
-               'initialLangue' => 'fr', 
-               'titreArticle' => '1497528658', 
-               'contenuArticle' => '<p></p>']);
-
-        DB::table('ArticleTraduction')
-           ->insert([
-               'idArticle' => $id, 
-               'initialLangue' => 'en', 
-               'titreArticle' => '1497528658', 
-               'contenuArticle' => '<p></p>']);
         
         
         

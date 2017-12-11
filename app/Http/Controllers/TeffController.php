@@ -114,27 +114,15 @@ class TeffController extends Controller {
                 ['langue' => $this->varPage['langueActuelle']]);
         array_push($arrayMenu, $menuPoint);
         
-        $menuPoint['name'] = "2015 - Info Pratiques";
+        $menuPoint['name'] = "2015 - Lieux";
         $menuPoint['url'] = route(
-                '2015_infosPratiques',
+                '2015_lieux',
                 ['langue' => $this->varPage['langueActuelle']]);
         array_push($arrayMenu, $menuPoint);
         
-        $menuPoint['name'] = "2015 - Invites";
+        $menuPoint['name'] = "2015 - Accessibilite";
         $menuPoint['url'] = route(
-                '2015_invites',
-                ['langue' => $this->varPage['langueActuelle']]);
-        array_push($arrayMenu, $menuPoint);
-        
-        $menuPoint['name'] = "2015 - Jury & Prix";
-        $menuPoint['url'] = route(
-                '2015_jury',
-                ['langue' => $this->varPage['langueActuelle']]);
-        array_push($arrayMenu, $menuPoint);
-        
-        $menuPoint['name'] = "2015 - Presse";
-        $menuPoint['url'] = route(
-                '2015_presse',
+                '2015_accessibilite',
                 ['langue' => $this->varPage['langueActuelle']]);
         array_push($arrayMenu, $menuPoint);
         
