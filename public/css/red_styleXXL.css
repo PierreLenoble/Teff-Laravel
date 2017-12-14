@@ -1,20 +1,3 @@
-.block {
-    position:relative;
-    top:-130px;
-    right: auto;
-    left:420px;
-    text-align: center;
-    height: 100px;
-    width: 600px;
-}
-
-.citation {
-    display: inherit;
-    height: 10px;
-    width:600px;
-}
-
-
 .archive2015Home .logo .edition3 {
     position:absolute;
     top:45px;

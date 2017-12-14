@@ -5,6 +5,7 @@
 }
 html {
     width: 100%;
+    min-width:1400px;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -33,24 +34,6 @@ body {
     font-size: 1.2em;
     padding-bottom: 20px;
     padding-top: 30px;
-}
-
-.img1InfoPratique, .img2InfoPratique {
-    width:350px; 
-    height:230px; 
-    float: left;
-    padding-bottom: 10px;
-    padding-top: 0px;
-}
-
-.img1InfoPratique {
-    padding-right: 10px; 
-    padding-left: 0px;
-}
-
-.img2InfoPratique {
-    padding-right: 0px;
-    padding-left: 0px;
 }
 
 .decaleDroite {
@@ -134,6 +117,21 @@ body {
     height:170px;
 }
 
+.header .dates2015 {
+    position:absolute;
+    top:50px;
+    right:10px;
+    height:175px;
+}
+.header .dates2016 {
+    position:absolute;
+    top:25px;
+    right:30px;
+    width: 300px;
+    height:170px;
+}
+
+
 .header .drapeau {
     z-index:50;
     position: absolute;
@@ -166,11 +164,51 @@ body {
     float:left;
     margin:10px;
 }
+
 .header .dates .date {
     text-align: right;
 }
 
 .header .dates .verticalLine {
+    width:4px;
+    float:left;
+    height:165px;
+    position:relative;
+    top:8px;
+    background-color: black;
+}
+
+
+.header .dates2015 .date, .header .dates2015 .lieux {
+    font-family: Bebas;
+    font-size: 1.4em;
+    float:left;
+    margin:10px;
+}
+.header .dates2015 .date {
+    text-align: right;
+}
+
+.header .dates2015 .verticalLine {
+    width:4px;
+    float:left;
+    height:165px;
+    position:relative;
+    top:8px;
+    background-color: black;
+}
+
+.header .dates2016 .date, .header .dates2016 .lieux {
+    font-family: Bebas;
+    font-size: 1.4em;
+    float:left;
+    margin:10px;
+}
+.header .dates2016 .date {
+    text-align: right;
+}
+
+.header .dates2016 .verticalLine {
     width:4px;
     float:left;
     height:165px;
@@ -354,15 +392,20 @@ body {
     margin: 0px 0px;
 }
     
-.citation {
-    top:-25px;
-    left:20px;
+.block {
     position:relative;
-    height:1px;
+    top:-130px;
+    right: auto;
+    left:420px;
+    text-align: center;
+    height: 100px;
+    width: 600px;
 }
 
-.citation .block {
-    position:relative;
+.citation {
+    display: inherit;
+    height: 10px;
+    width:600px;
 }
 
 
@@ -378,7 +421,6 @@ body {
     margin: 10px 255px 10px 10px;
     color:#000;
     font-size : 1.1em;
-    min-width:470px;
 }
 
 .clear {

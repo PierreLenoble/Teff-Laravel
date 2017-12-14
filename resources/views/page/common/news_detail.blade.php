@@ -35,7 +35,7 @@
         </div>
         <div style="clear:left"></div>
         <div style="text-align: right; position:relative; height:50px; ">
-            <a class="buttonRedStyle" style="width:350px; position:absolute; right:0px; bottom:0px;" href="{!! $urlBack !!}">retour&nbsp;&nbsp;&nbsp;aux&nbsp;&nbsp;&nbsp;nouvelles&nbsp;&nbsp;&nbsp;du&nbsp;&nbsp;&nbsp;site&nbsp;&nbsp;&nbsp;(page&nbsp;&nbsp;&nbsp;-{{$nbPage}}-)</a>
+            <a class="buttonRedStyle" style="width:350px; position:absolute; right:0px; bottom:0px;" href="{!! $urlBack !!}">retour&nbsp;&nbsp;&nbsp;aux&nbsp;&nbsp;&nbsp;nouvelles&nbsp;&nbsp;&nbsp;du&nbsp;&nbsp;&nbsp;site</a>
         </div>
     </div>
 @stop

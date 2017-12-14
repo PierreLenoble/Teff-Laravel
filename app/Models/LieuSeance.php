@@ -16,6 +16,6 @@ class LieuSeance extends Model
     
     public function seances()
     {
-        return $this->hasMany('App\Models\Seance', 'idSeance', 'idSeance');
+        return $this->hasMany('App\Models\Seance', 'adminNomLieuSeance', 'adminNomLieuSeance');
     }
 }

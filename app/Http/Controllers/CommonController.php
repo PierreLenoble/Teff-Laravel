@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\DAL\ArticleManager;
+use App\DAL\PageManager;
 
 class CommonController extends TeffController
 {
@@ -16,6 +17,11 @@ class CommonController extends TeffController
     public function pageNews($langue, $page) {
         $this->init2016();
         
+        $this->varPage['pageTrad'] = PageManager::getPage('News');
+        $this->varPage['commonTrad'] = PageManager::getPage('Common');
+        
+        //print_r($this->varPage['page']);
+        //echo $this->varPage['page']->first()->clePages->first()->nomClePage;
         $langue = $this->varPage['langueActuelle'];
         
         // determination du nombre de page
@@ -64,6 +70,9 @@ class CommonController extends TeffController
     public function detailNews($langue, $idArticle) {
         $this->init2016();
         
+        $this->varPage['pageTrad'] = PageManager::getPage('News');
+        $this->varPage['commonTrad'] = PageManager::getPage('Common');
+        
         $langue = $this->varPage['langueActuelle'];
         
         $article = ArticleManager::getArticle($langue, 'News', $idArticle);
@@ -91,17 +100,26 @@ class CommonController extends TeffController
     public function archives($langue) {
         $this->init2016();
         
+        $this->varPage['pageTrad'] = PageManager::getPage('Archive');
+        $this->varPage['commonTrad'] = PageManager::getPage('Common');
+        
         return view('page.common.archives')->with($this->varPage);
     }
     
     public function association($langue) {
         $this->init2016($langue);
         
+        $this->varPage['pageTrad'] = PageManager::getPage('Association');
+        $this->varPage['commonTrad'] = PageManager::getPage('Common');
+        
         return view('page.common.association')->with($this->varPage);
     }
     
     public function contact($langue) {
         $this->init2016($langue);
+        
+        $this->varPage['pageTrad'] = PageManager::getPage('Contact');
+        $this->varPage['commonTrad'] = PageManager::getPage('Common');
         
         return view('page.common.contact')->with($this->varPage);
     }

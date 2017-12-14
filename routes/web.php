@@ -27,9 +27,6 @@ if (strlen($whereLangue) > 0) {
 // FIRST
 Route::get('/',     'CommonController@news')->name('racine');
 
-// TEST
-Route::get('/test', 'DefaultController@test')->name('test');
-
 // COMMON
 Route::get('/{langue}/news',                                'CommonController@news')                    ->name('common_news')               ->where('langue',$whereLangue);
 Route::get('/{langue}/news/page/{idPage}',                  'CommonController@pageNews')                ->name('common_pageNews')           ->where('langue',$whereLangue)  ->where('idPage','([0-9]+)');

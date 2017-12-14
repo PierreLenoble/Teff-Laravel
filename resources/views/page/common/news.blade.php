@@ -24,24 +24,8 @@
 @stop
 
 @section('body')
-    @isset($topArticle)
-    <div class="blockTitre">
-        <div>
-            <span class="titreArticle"></span><br/>
-        </div>
-    </div>
-
-    <div class="blockMain blockMainArticleDetail">
-        <div style="margin-bottom: 50px; ">
-            {!! $topArticle.contenuFr !!}
-        </div>
-
-        <div style="clear:left;"></div>
-    </div>
-    @endisset
-    
     <div class="blockMain espaceBlock">
-        <center><span style="font-size:2em;">Les nouvelles du site</span></center>
+        <center><span style="font-size:2em;">{!!$pageTrad->clePages->where('nomClePage', 'titre')->first()->traductions->where('initialLangue',$langueActuelle)->first()->textPage!!}</span></center>
     </div>
     
     @foreach ($listeArticles as $article)
@@ -71,10 +55,8 @@
                     <div class="imageArticleBorder">&nbsp;</div>
                 </div>
                 <div class="texteArticle">
-
-
                     {!!strip_tags($content)!!}
-                    <a href="{!! $tabUrlBoutton[$article->idArticle] !!}" class="buttonRedStyle btnArticle" >{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;","Lire la suite") !!}</a>
+                    <a href="{!! $tabUrlBoutton[$article->idArticle] !!}" class="buttonRedStyle btnArticle" >{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages->where('nomClePage', 'btnLire')->first()->traductions->where('initialLangue',$langueActuelle)->first()->textPage) !!}</a>
                 </div>
             </div>
         </div>

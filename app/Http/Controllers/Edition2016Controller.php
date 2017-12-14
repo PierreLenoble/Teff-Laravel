@@ -3,17 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\DAL\PageManager;
 
 class Edition2016Controller extends TeffController
 {
     
     public function homePage($langue) {
         $this->init2016();
+        
+        $this->varPage['pageTrad'] = PageManager::getPage('');
+        $this->varPage['commonTrad'] = PageManager::getPage('Common');
+        
         return view('page.2016.uccle')->with($this->varPage);
     }
     
     public function detailsFilm($langue, $idFilm) {
         $this->init2016();
+        
+        $this->varPage['pageTrad'] = PageManager::getPage('2015_Films');
+        $this->varPage['commonTrad'] = PageManager::getPage('Common');
+        
         $film = \App\DAL\FilmManager::getFilm($this->varPage['langueActuelle'], $idFilm);
         
         if ($film == null) {

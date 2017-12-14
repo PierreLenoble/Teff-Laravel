@@ -25,10 +25,7 @@
 
 @section('body')
     <div class="blockMain">
-        <a href="<?php echo route('2011_homePage', ['langue' => $langueActuelle]); ?>">Archive 2011</a>
-        <a href="<?php echo route('2012_homePage', ['langue' => $langueActuelle]); ?>" >Archive 2012</a>
-        <a href="<?php echo route('2013_homePage', ['langue' => $langueActuelle]); ?>">Archive 2013</a>
-        <a href="<?php echo route('2014_homePage', ['langue' => $langueActuelle]); ?>">Archive 2014</a>
+        
         <a href="<?php echo route('2015_homePage', ['langue' => $langueActuelle]); ?>">Archive 2015</a>
     </div>
 @stop
