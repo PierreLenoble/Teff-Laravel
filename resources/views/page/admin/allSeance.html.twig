@@ -1,0 +1,122 @@
+{% extends "eopAdminBundle:Default:corps.html.twig" %}
+
+
+{% block javascript %}
+
+    {{ parent() }}
+    <script type="text/javascript">
+        erreur="{{error}}";
+    </script>
+    <script type="text/javascript" src="{{js}}gestionErreur.js"></script>
+    
+{% endblock %}
+    
+    
+    
+    
+{% block body %}
+
+    <div class="titrePage">Les séances de l'édition {{anneeEdition }}</div>
+    <br />
+    <a class="buttonPetitBleu" href="{{urlNewSeance}}">Ajouter une nouvelle séance</a>
+    <br /><br />
+    {% set i=0%}
+    {% set saveDate=null%}
+    {% set fisrt=false %}
+            
+    {% for seance in seances%}
+            
+        {%if seance.date==null%}
+            {%set tmpDate=seance.seanceParent.date|date('d-m-Y')%}
+            {%set dateAffiche=seance.seanceParent.date|date('H\\hi')%}
+        {%else%}
+            {%set tmpDate=seance.date|date('d-m-Y')%}
+            {%set dateAffiche=seance.date|date('H\\hi')%}
+        {%endif%}
+        
+        {%if saveDate != tmpDate%}
+    <div style="height:30px; width:200px;"></div>
+            <div style="background: linear-gradient(to bottom, #BBE,#66D ); border-top-left-radius: 5px; border-top-right-radius: 5px; border:1px solid #449; margin:auto; width:745px; text-align:center; background-color:white"><font style="font-weight:bold; color:#449; margin:10px; line-height: 25px; font-size:1.5em">{{tmpDate|date('d-m-Y')}}</font></div></td></tr>
+            {%set saveDate=tmpDate%}
+                {%set first=true%}
+        {%endif%}
+        
+        {%if seance.genreSeance=="Enfant" %}
+           
+                    <div style="border:1px solid #449; border-top:none; margin:auto; width:725px; height:50px; position:relative; left:10px; background:linear-gradient(to bottom, #AAD, #EEF ); ">
+                        <div style="position:absolute; top:-1px; left:-1px; width:50px; height:15px;border:1px solid red; background-color:white; text-align:center"><b>{{dateAffiche}}</b></div>
+                        <div style="position:absolute; top:20px; left:10px; width:25px; height:25px;"><img src="{{images}}icone/{%if seance.typeSeance=="Gratuite"%}free{%elseif seance.typeSeance=="Gala"%}gala{%else%}payant{%endif%}.png"></div>
+                        <div style="position:absolute; top:2px; left:75px; width:550px; height:15px; overflow:hidden; font-size:0.8em;">Séance enfant de : "<i>{{seance.seanceParent.nomFr}}</i>"</div>
+                        <div style="position:absolute; top:20px; left:65px; width:200px; font-size:1.3em;  "><b>{{seance.lieux}}</b></div>
+                        <div style="position:absolute; top:20px; left:410px; width:180px; ">{%if seance.typeSeance=="Gratuite" or seance.typeSeance=="Gala" %}Nb places : {{seance.nbPlaceNormMax}} + {{seance.nbPlacePMRMax}} PMR</b>{%endif%}</div>
+                        <div style="position:absolute; top:10px; right:94px; height:32px; width:32px; ">{%if seance.typeSeance=="Gratuite" or seance.typeSeance=="Gala" %}<a href="{{urlAllReservation}}{{seance.id}}"><img src="{{images}}icone/see.png"/></a>{%endif%}</div>
+                        <div style="position:absolute; top:10px; right:52px; height:32px; width:32px; "><a href="{{urlModifSeance}}{{seance.id}}"><img src="{{images}}icone/edit.png"/></a></div>
+                        <div style="position:absolute; top:10px; right:10px; height:32px; width:32px; "><a id="delete-{{i}}" href="{{urlDeleteSeance}}/{{seance.id}}"><img src="{{images}}icone/delete.png"/></a></div>
+                        
+                    </div>
+                <!--
+                <td style="width:30px;border-top:1px solid grey"><img src="{{images}}icone/{%if seance.typeSeance=="Gratuite"%}free{%elseif seance.typeSeance=="Gala"%}gala{%else%}payant{%endif%}.png"></td>
+                <td style="border-top:1px solid black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{seance.lieux}}</td>
+                <td style="border-top:1px solid black">Place : {{seance.nbPlaceNormMax}} +  {{seance.nbPlacePMRMax}}</td>
+                <td style="border-top:1px solid black; width:400px">&nbsp;&nbsp;&nbsp;--- {{seance.seanceParent.getNomFr}}&nbsp;&nbsp;&nbsp;</td>
+                
+                !-->
+        {%elseif seance.genreSeance=="Parent"%}
+                {% if first!=true%}<div style="height:10px; width:200px;"></div>{%endif%}
+                    <div style="border:1px solid #449; {%if first==true%}border-top:none;{%endif%}margin:auto; width:745px; height:75px; position:relative; background:linear-gradient(to bottom, #DAA, #EEF ); ">
+                        <div style="position:absolute; top:-1px; left:-1px; width:50px; border:1px solid red; background-color:white; text-align:center"><b>{{dateAffiche}}</b></div>
+                        <div style="position:absolute; top:8px; left:65px; width:600px;  "><b>{{seance.nomFr}}</b></div>
+                        <div style="position:absolute; top:28px; left:65px; width:600px;  "><b>{{seance.nomEn}}</b></div>
+                        <div style="position:absolute; top:48px; left:65px; width:600px;  ">Lieux affiché : <b>{{seance.lieux}}</b></div>
+                        <div style="position:absolute; top:22px; right:52px; height:32px; width:32px; "><a href="{{urlModifSeance}}{{seance.id}}"><img src="{{images}}icone/edit.png"/></a></div>
+                        <div style="position:absolute; top:22px; right:10px; height:32px; width:32px; "><a id="delete-{{i}}" href="{{urlDeleteSeance}}/{{seance.id}}"><img src="{{images}}icone/delete.png"/></a></div>
+                        
+                    </div>
+                {%set first=false%}
+                <!--<td style="width:30px;border-top:1px solid grey"></td>
+                <td style="border-top:1px solid black;"><b><span style=" background-color: white; border:1px solid red">&nbsp;{{dateAffiche}}&nbsp;</span> : </b></td>
+                <td style="border-top:1px solid black"></td>
+                <td style="border-top:1px solid black; width:400px">&nbsp;&nbsp;<b>{{seance.nomFr}}</b><br />&nbsp;&nbsp;<b>{{seance.nomEn}}</b></td>
+                <td style="border-top:1px solid black"><a href="{{urlModifSeance}}{{seance.id}}"><img src="{{images}}admin/modifier.jpg" alt="modifier" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a id="delete-{{i}}" href="{{urlDeleteSeance}}/{{seance.id}}"><img src="{{images}}admin/supprimer.jpg" alt="supprimer" /></a></td>
+                !-->
+        {%elseif seance.genreSeance=="Alone"%}
+                {% if first!=true%}<div style="height:10px; width:200px;"></div>{%endif%}
+                    <div style="border:1px solid #449; {%if first==true%}border-top:none;{%endif%}margin:auto; width:745px; height:75px; position:relative; background:linear-gradient(to bottom, #ADA, #EEF ); ">
+                        <div style="position:absolute; top:-1px; left:-1px; width:50px; border:1px solid red; background-color:white; text-align:center"><b>{{dateAffiche}}</b></div>
+                        <div style="position:absolute; top:30px; left:10px; width:25px; height:25px;"><img src="{{images}}icone/{%if seance.typeSeance=="Gratuite"%}free{%elseif seance.typeSeance=="Gala"%}gala{%else%}payant{%endif%}.png"></div>
+                        <div style="position:absolute; top:8px; left:65px; width:600px;  "><b>{{seance.nomFr}}</b></div>
+                        <div style="position:absolute; top:28px; left:65px; width:600px;  "><b>{{seance.nomEn}}</b></div>
+                        <div style="position:absolute; top:31px; left:430px; width:180px; ">{%if seance.typeSeance=="Gratuite" or seance.typeSeance=="Gala" %}Nb places : {{seance.nbPlaceNormMax}} + {{seance.nbPlacePMRMax}} PMR</b>{%endif%}</div>
+                        <div style="position:absolute; top:48px; left:65px; width:600px;  ">Lieux affiché : <b>{{seance.lieux}}</b></div>
+                        <div style="position:absolute; top:22px; right:94px; height:32px; width:32px; ">{%if seance.typeSeance=="Gratuite" or seance.typeSeance=="Gala" %}<a href="{{urlAllReservation}}{{seance.id}}"><img src="{{images}}icone/see.png"/></a>{%endif%}</div>
+                        <div style="position:absolute; top:22px; right:52px; height:32px; width:32px; "><a href="{{urlModifSeance}}{{seance.id}}"><img src="{{images}}icone/edit.png"/></a></div>
+                        <div style="position:absolute; top:22px; right:10px; height:32px; width:32px; "><a id="delete-{{i}}" href="{{urlDeleteSeance}}/{{seance.id}}"><img src="{{images}}icone/delete.png"/></a></div>
+                        
+                    </div>
+                {%set first=false%}
+            <!--<tr STYLE="color:green">
+                <td style="width:30px;border-top:1px solid grey"><img src="{{images}}icone/{%if seance.typeSeance=="Gratuite"%}free{%elseif seance.typeSeance=="Gala"%}gala{%else%}payant{%endif%}.png"></td>
+                <td style="border-top:1px solid black"><b><span style=" background-color: white; border:1px solid red">&nbsp;{{dateAffiche}}&nbsp;</span> : </b></td>
+                <td style="border-top:1px solid black">Place : {{seance.nbPlaceNormMax}} +  {{seance.nbPlacePMRMax}}</td>
+                <td style="border-top:1px solid black; width:400px">&nbsp;&nbsp;{{seance.nomFr}}<br />&nbsp;&nbsp;{{seance.nomEn}}</td>
+                <td style="border-top:1px solid black"><a href="{{urlModifSeance}}{{seance.id}}"><img src="{{images}}admin/modifier.jpg" alt="modifier" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a id="delete-{{i}}" href="{{urlDeleteSeance}}/{{seance.id}}"><img src="{{images}}admin/supprimer.jpg" alt="supprimer" /></a></td>
+            </tr>!-->
+        {%else%}erreur  
+        {%endif%}
+            
+        {% set i=i+1 %}
+    {% endfor %}
+        
+    {% if i==0 %}
+        <div class="warning">----- Il n'y a aucune séance -----</div>
+    {% endif %}
+
+   <script type="text/javascript">
+        $(function() {
+            $('a[id^="delete-"]').click(function(){
+                return confirm("Êtes-vous sur de vouloir supprimer cette séance ?");
+            });
+        });
+    </script>
+{% endblock %}
+

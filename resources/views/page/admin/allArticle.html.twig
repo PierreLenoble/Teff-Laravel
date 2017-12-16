@@ -1,0 +1,64 @@
+{% extends "eopAdminBundle:Default:corps.html.twig" %}
+
+
+{% block javascript %}
+
+    {{ parent() }}
+    <script type="text/javascript">
+        erreur="{{error}}";
+    </script>
+    <script type="text/javascript" src="{{js}}gestionErreur.js"></script>
+    
+{% endblock %}
+    
+    
+    
+    
+{% block body %}
+
+<div class="titrePage">
+    
+        {% if page=="news_site" %}
+            Les articles "news du site"
+        {% elseif page=="press_2011"%}
+            Les articles de presse de l'édition 2011
+        {% elseif page=="news_2012" %}
+            Les actions en 2012
+        {% elseif page=="press_2013" %}
+            Les articles de presse de l'édition 2013
+        {% elseif page=="press_2015" %}
+            Les articles de presse de l'édition 2015
+        {% elseif page=="event_2015" %}
+            Les evenements 2015
+        {%endif%}</div>
+    <br />
+    <a class="buttonPetitBleu" href="{{urlNewArticlePart1}}">Ajouter un nouvel article</a>
+    <br /><br />
+    {% set i=0%}
+    {% for article in articles%}
+        <br />
+        <div class="cadreItem">
+            <div class="cadreItemTitre">Article n°{{article.ordre}}</div>
+            <div class="cadreItemBtnUp"><a class="buttonPetitBleu" href="{{ urlModifArticleOrdreUp }}{{ article.id }}">Up  </a></div>
+            <div class="cadreItemImg"><img src="{{ images }}{{ article.image.url }}" alt="{{ article.titreFr }}" /></div>
+            <div class="cadreItemBtnModif"><a class="buttonPetitBleu" href="{{ urlModifArticle }}{{ article.id }}">Modifier</a></div>
+            <div class="cadreItemBtnSup"><a id="delete-{{i}}" class="buttonPetitBleu" href="{{ urlDeleteArticle }}{{article.id}}">Supprimer</a></div>
+            <div class="cadreItemContenuTitreFr"><b>{{article.titreFr|striptags|raw }}</b></div>
+            <div class="cadreItemContenuTitreEn"><b>{{article.titreEn|striptags|raw }}</b></div>
+            <div class="cadreItemContenuFr">{{article.contenuFr|striptags|raw|truncate(350, true,"<span class=\"moreTxt\">[...]</span>")|raw }}</div>
+            <div class="cadreItemContenuEn">{{article.contenuEn|striptags|raw|truncate(350, true,"<span class=\"moreTxt\">[...]</span>")|raw }}</div>
+        </div>
+        {% set i=i+1 %}
+    {% endfor %}
+    {% if i==0 %}
+        <div class="warning">----- Il n'y a aucun article -----</div>
+    {% endif %}
+<script type="text/javascript">
+        $(function() {
+            $('a[id^="delete-"]').click(function(){
+                return confirm("Êtes-vous sur de vouloir supprimer cet article ?");
+            });
+        });
+    </script>
+{% endblock %}
+

@@ -1,0 +1,118 @@
+{% extends "eopAdminBundle:Default:corps.html.twig" %}
+{% block css%}
+{{parent()}}
+<style type="text/css">
+        .tabRowTitre{
+            width:750px; 
+            border:solid 1px black; 
+            background-image: url('{{images}}admin/barre1.jpg'); 
+            background-position: 0px -60px; 
+            background-repeat: repeat-x; 
+            border:1px solid white; 
+            height:30px; 
+            line-height:30px;
+        }
+
+        .tabRowDonnee{
+            width:750px; 
+            border:solid 1px black; 
+            background-image: url('{{images}}admin/barre1.jpg'); 
+            background-position: 0px 0px; 
+            background-repeat: repeat-x; 
+            border:1px solid white; 
+            border-top:0px;
+            height:30px; 
+            line-height:30px;
+        }
+
+        .tabRowDonnee:hover{
+            background-position: 0px -30px; 
+        }
+
+
+        .cellTabTitre{
+            height:30px; 
+            font-size: 1.3em; 
+            font-weight: bold; 
+            color:darkblue; 
+            float:left; 
+            overflow:hidden; 
+            text-align:center;
+        }
+        .cellTabDonnee{
+            height:30px; 
+            font-size: 1.0em;
+            color:darkblue; 
+            float:left; 
+            overflow:hidden; 
+            text-align:left;
+        }
+
+        .cellNom{
+            border-right:1px solid white; 
+            width:200px;
+        }
+
+        .cellMail{
+            border-right:1px solid white; 
+            width:225px;
+        }
+
+        .cellTel{
+            border-right:1px solid white; 
+            width:120px;
+        }
+
+        .cellPlace{
+            border-right:1px solid white; 
+            width:135px;
+        }
+
+        .cellConf{
+            width:65px;
+            
+            text-align:center;
+        }
+
+
+    </style>
+  {%endblock%}
+{% block body %}
+{%if reservations != null%}
+{%set reservation=reservations[0]%}
+{%if reservation.seanceGratuite.genreSeance == "Alone" %}
+    {%set nomSeance=reservation.seanceGratuite.nomFr%}
+{%else%}
+    {%set nomSeance=reservation.seanceGratuite.seanceParent.nomFr%}
+{%endif%}
+    <br/><br/>
+    <font style="display:block;font-size:2.0em; font-weight:bold; text-align: center">{{nomSeance}}</font>
+    <br/><br/>
+    <div class="tabRowTitre" >
+        <div class="cellTabTitre cellNom">Nom et prénom</div>
+        <div class="cellTabTitre cellMail">Adresse e-mail</div>
+        <div class="cellTabTitre cellTel">Téléphone</div>
+        <div class="cellTabTitre cellPlace">Nb place</div>
+        <div class="cellTabTitre cellConf">Conf</div>
+
+        <div style="clear:both"></div>
+    </div>
+    {% for reservation in reservations%}
+    <div class="tabRowDonnee">
+        <div class="cellTabDonnee cellNom">&nbsp;&nbsp;{{reservation.nom}} {{reservation.prenom}}</div>
+        <div class="cellTabDonnee cellMail">&nbsp;&nbsp;{{reservation.mail}}</div>
+        <div class="cellTabDonnee cellTel">&nbsp;&nbsp;{{reservation.numTel}}</div>
+        <div class="cellTabDonnee cellPlace">&nbsp;&nbsp;{{reservation.nbPlaceNorm}} norm + {{reservation.nbPlacePMR}} PMR</div>
+        <div class="cellTabDonnee cellConf">{%if reservation.confirm==0 or reservation.confirm==null%}<font style="font-size:1.5em; color:red">X</font>{%else%}<font style="font-size:1.5em; color:green">V</font>{%endif%}</div>
+
+        <div style="clear:both"></div>
+    </div>
+
+{%endfor%}
+
+    {%else%}
+    <H1>il n'y a pas encore de reservation pour cette séance</H1>
+    {%endif%}
+        <br>
+        <a href="{{pdfUrl}}{{idSeance}}">Télécharger le pdf</a>
+{% endblock %}

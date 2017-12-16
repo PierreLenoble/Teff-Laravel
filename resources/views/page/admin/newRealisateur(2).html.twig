@@ -1,0 +1,39 @@
+{% extends "eopAdminBundle:Default:corps.html.twig" %}
+
+{% block body %}
+{% set img=realisateur.image.url|split('/') %}
+<center><h1>{{realisateur.nom}}</h1></center>
+<h2>image : </h2><img style="margin-left: 10px" src="{{images}}{{img[0]}}/new.jpg" id="imageRealisateur" width="100px" height="100px"><br />
+<input type=file name="file_upload" id="file_upload">
+<a class="buttonPetitBleu" href="{{ allRealisateurUrl }}">retour aux réalisateurs</a>
+<!--
+<form method="post" enctype="multipart/form-data" action="{ uploadifyRealisateurUrl }">
+    <input type=file name="Filedata">
+    <input type=submit>
+</form>
+!-->
+<br /><hr>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+            $(function() {
+                
+                $('#file_upload').uploadify({
+                    'swf'      : '{{uploadify}}swf/uploadify.swf',
+                    'uploader' : '{{uploadifyRealisateurUrl}}',
+                    'buttonText' : 'Changer l\'image',
+                    'multi'    : false,
+                    'fileTypeDesc' : 'Images',
+                    'fileTypeExts' : '*.jpg',
+                    'onUploadComplete' : function(file) {
+                        var uniqueID = new Date();
+                        var UID = uniqueID.getTime();
+                        $('#imageRealisateur').attr("src", "{{images}}{{img[0]}}/{{img[1]|url_encode()}}?"+UID);
+                        
+                    } 
+                });
+            });
+    });
+        </script> 
+{% endblock %}
+

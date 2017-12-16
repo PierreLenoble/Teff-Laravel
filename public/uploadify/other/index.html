@@ -1,0 +1,34 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://localhost/Blog/web/bundles/eopblog/js/jquery-1.9.1.min.js"></script>
+        <script src="http://localhost/Blog/web/bundles/eopblog/uploadify/jquery.uploadify.js"></script>
+        <link rel="stylesheet" href="http://localhost/Blog/web/bundles/eopblog/uploadify/uploadify.css">    
+
+    </head>
+    <body>
+        <input type="file" name="file_upload" id="file_upload" />
+        <div id="progress"></div>
+        <script type="text/javascript">
+            $(function() {
+                $('#file_upload').uploadify({
+                    'swf'      : 'uploadify.swf',
+                    'uploader' : 'uploadify.php',
+                    'multi'    : true,
+                    'fileTypeDesc' : 'Images',
+                    'fileTypeExts' : '*.gif; *.jpg; *.png; *.avi',
+                    'onUploadComplete' : function(file) {
+                        
+                        alert('The file ' + file.name + ' finished processing.');
+                    } 
+                });
+            });
+        </script> 
+    </body>
+</html>

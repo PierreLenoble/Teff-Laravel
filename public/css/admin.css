@@ -1,0 +1,428 @@
+/* 
+    Document   : admin
+    Created on : 31-juil.-2013, 13:24:01
+    Author     : pierre
+    Description:
+        Purpose of the stylesheet follows.
+*/
+html{
+    height:100%;
+}
+root { 
+    display: block;
+}
+
+body
+{
+    font-family: sans-serif, Arial, Verdana, "Trebuchet MS";
+    font-size: 12px;
+    color: #333;
+    background-color: #268;
+    margin:0px;
+    height:100%
+}
+
+.clear{
+    clear: both;
+}
+
+.bottomSpacer{
+    height:20px;
+}
+/* page login */
+
+#page-login-center-table {
+    height: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+#page-login-center-td {
+    height: 100%;
+    padding: 0;
+    vertical-align: middle;
+}
+div#page-login-center-global {
+    width: 100%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+div.lineLogin1, div.lineLogin2, div.lineLogin3{
+    width:100%; 
+    height:1px; 
+}
+
+div.lineLogin1{
+    background-color: #368;
+}
+div.lineLogin2{
+    background-color: #7AB;
+}
+div.lineLogin3{
+    background-color: #9cd;
+}
+div.lineLogin4{
+    background-color: #bce;
+    width:100%; 
+}
+div.lineLoginWarning{
+    width:100%;  
+    background-color: lightpink;
+    text-align: center; 
+    color:darkred; 
+    line-height: 2em; 
+    font-weight: bold
+}
+
+td.titreLogin{
+    font-size:1.4em; 
+    font-weight: bold; 
+    text-align:center; 
+    line-height:2em;
+}
+
+td.intituleLogin{
+    font-size:1.2em;
+}
+
+td.sendLogin{
+    text-align:right;
+    line-height:3em;
+}
+
+div.wrapLogin{
+    height:35px;
+}
+
+
+
+/*   menu   */
+
+ul.menu {
+    width:170px;
+    list-style: none;
+    padding: 10px 0 10px 10px;
+    margin:0px;
+}
+
+ul.menu li {
+    background-color: #44F;
+    color:wheat;
+    text-align:center;
+    font-weight: bold;
+    display:list-item;
+    border:none;
+    line-height: 2em;
+}
+
+ul.menu li ul {
+    
+    margin:0px 0px 0px 0px;
+    padding:0px 0px 0px 0px;
+    list-style: none;
+}
+
+ul.menu li ul li {
+    font-weight: normal;
+    border:1px #AAF solid;
+    border-collapse: collapse;
+    line-height:1.8em;
+    text-align: left;
+}
+
+ul.menu li ul li a {
+    display: block ;
+    padding-left:10px;
+    background-color: #88F;
+    color:darkslategrey;
+    text-decoration: none;
+    font-size:1.1em;
+    text-spacing: space-start;
+}
+
+ul.menu li ul li a:hover {
+    display: block ;
+    background-color: #F88;
+    
+    color:darkslategrey;
+    text-decoration: none;
+    font-size:1.1em;
+    text-spacing: space-start;
+}
+
+
+/* les differents cadre de corps.html*/
+
+.layoutMenu{
+    width:190px;
+    height:100%;
+    background-color: #bce;
+    float:left;
+}
+
+.layoutBody{
+    float:left;
+    background-color: #bce;
+    width : 770px;
+    float:right;
+}
+
+.layoutHead{
+    width:960px;
+    background-color:#268;
+    font-size:3em;
+    font-weight: bold;
+    text-align: center;
+    line-height: 3em;
+    color:#CCF;
+}
+
+.layoutCadreGen {
+    background-color: #bce; 
+    width:960px; 
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+/* les cadreItem des allQQCH */
+
+
+.cadreItem{
+    position:relative; 
+    width:755px; 
+    height:200px; 
+    border: 1px solid #3e3e3e;
+    background-color: #DFD;
+}
+
+.cadreItemTitre{
+    position:relative; 
+    width:755px;
+    height:25px; 
+    border-width: 0px 0px 1px 0px; 
+    border-style: solid; 
+    border-color: #3e3e3e; 
+    font-size:1.2em;
+    line-height: 25px;
+    vertical-align: middle;
+    font-weight:bold; 
+    text-align: center; 
+    background-color: #F3D3D3
+}
+
+.cadreItemBtnUp {
+    position:absolute; 
+    top:0px; 
+    left:695px; 
+    width:25px;
+    height:25px; 
+    border-width: 0px 0px 1px 0px; 
+    border-style: solid; 
+    border-color: #3e3e3e; 
+    font-size:1.2em;
+    font-weight:bold; 
+    text-align: center; 
+    background-color: #F3D3D3;
+}
+
+.cadreItemImg {
+    position:absolute; 
+    top:30px; 
+    left:5px; 
+    width:100px; 
+    height:100px; 
+    background-color:#ccc; 
+    border:1px solid #ccc
+}
+
+.cadreItemImg img {
+    border:0px;
+    text-align:left;
+    height:100px;
+    width:100px;
+    margin:auto;
+}
+
+.cadreItemBtnModif {
+    position:absolute; 
+    top:145px; 
+    left:7px; 
+    width:100px; 
+    height:100px;
+}
+
+.cadreItemBtnSup {
+    position:absolute; 
+    top:175px; 
+    left:7px; 
+    width:100px; 
+    height:100px;
+}
+
+.cadreItemContenuTitreFr {
+    position:absolute; 
+    top:30px; 
+    left:130px; 
+    width:295px; 
+    height:175px; 
+    color:darkred;
+}
+
+.cadreItemContenuTitreEn {
+    position:absolute; 
+    top:30px; 
+    left:430px; 
+    width:295px; 
+    height:175px; 
+    color:darkviolet
+}
+
+.cadreItemContenuFr {
+    position:absolute; 
+    top:60px; 
+    left:130px; 
+    width:295px; 
+    height:140px; 
+    color:darkred;
+    overflow: hidden;
+}
+
+.cadreItemContenuEn {
+    position:absolute; 
+    top:60px; 
+    left:430px; 
+    width:295px; 
+    height:140px; 
+    color:darkviolet;
+    overflow: hidden;
+}
+
+.imgModif1{
+    margin-left: 10px;
+    width:200px; 
+    height:200px;
+}
+
+.imgModif2{
+    margin-left: 10px;
+    width:700px; 
+    height:700px;
+}
+
+.imgModif3{
+    margin-left: 10px;
+    width:100px; 
+    height:100px;
+}
+
+input, select {
+    width: 500px;
+}
+input.btnSend{
+    width:100%;
+}
+input.btnOther{
+    width:200px;
+}
+select.small{
+    width:80px;
+}
+
+.inputIntitule{
+    font-size: 1.4em;
+}
+.titrePage{
+    width:760px; 
+    background-color: #88f; 
+    padding: 5px 0px 5px 0px; 
+    margin:10px 0px 20px 0px; 
+    text-align:center; 
+    color:#222; 
+    font-weight: bold; 
+    font-size: 2em;
+    border-radius : 15px;
+}
+
+.buttonAction{
+    display:block;
+    text-align: center;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size:1em;
+    color: #00D;
+    text-decoration: none;
+    padding: 0px 0px;
+    border-radius: 4px 4px 4px 4px;
+    border: 1px solid #00D;
+    background-color: #99D;
+    
+    width:90px;
+    
+}
+.buttonAction:hover{
+    background-color: #00D;
+    color: #99D;
+    background: -moz-linear-gradient(center top ,#00D  0%, #99D) repeat scroll 0% 0% padding-box transparent;
+}
+
+.buttonPetitBleu{
+    text-align: right;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size:1em;
+    color: #00D;
+    text-decoration: none;
+    padding: 1px 14px;
+    border-radius: 4px 4px 4px 4px;
+    border: 1px solid #00D;
+    background-color: #99D;
+}
+.buttonPetitBleu:hover{
+    background-color: #00D;
+    color: #99D;
+    background: -moz-linear-gradient(center top ,#00D  0%, #99D) repeat scroll 0% 0% padding-box transparent;
+}
+
+.msgConfirm {
+    background-color: lightgreen; 
+    color: darkgreen; 
+    width:760px;  
+    border : 1px solid darkgreen;
+}
+
+.msgConfirm p {
+    border:10px solid lightgreen;
+    padding:0px;
+    margin:0px;
+}
+.msgErr {
+    background-color: lightpink; 
+    color: darkred; 
+    width:760px;  
+    border : 1px solid darkred;
+}
+
+.msgErr p {
+    border:10px solid lightpink;
+    padding:0px;
+    margin:0px;
+}
+
+.tdTextFr {
+    width:320px; 
+    
+    border-width:1px; 
+    border-style: solid; 
+    vertical-align: top; 
+    margin: 0ox;
+    padding: 0px;
+}
+
+.tdTextFr div {
+    margin: 0ox;
+    padding: 0px;
+    vertical-align: top; 
+    font-size:0.8em; 
+    color:darkblue; 
+    border-width: 5px;
+    border-style : solid;
+}

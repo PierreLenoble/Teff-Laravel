@@ -51,3 +51,17 @@ Route::get('/{langue}/2015/evenement/detail/{idEvenement}', 'Edition2015Controll
 Route::get('/{langue}/2015/partenaires',                    'Edition2015Controller@partenaires')        ->name('2015_partenaires')          ->where('langue',$whereLangue);
 Route::get('/{langue}/2015/lieux',                          'Edition2015Controller@lieux')              ->name('2015_lieux')                ->where('langue',$whereLangue);
 Route::get('/{langue}/2015/accessibilite',                  'Edition2015Controller@accessibilite')      ->name('2015_accessibilite')        ->where('langue',$whereLangue);
+
+// admin
+
+Route::get('admin',             'AdminController@login')        ->name('admin');
+Route::any('admin/login',       'AdminController@login')        ->name('admin_login');
+Route::get('admin/disconnect',  'AdminController@disconnect')   ->name('admin_disconnect');
+
+Route::group(['prefix' => 'admin', 'middleware' => 'login'], function(){
+    Route::get('/page',        'AdminController@page')                  ->name('admin_page');
+    Route::get('/realisateur', 'AdminController@allRealisateur')        ->name('admin_allRealisateur');
+    Route::any('/realisateur/create', 'AdminController@createRealisateur')        ->name('admin_createRealisateur');
+    Route::any('/realisateur/modif/{idRealisateur}', 'AdminController@modifRealisateur')        ->name('admin_modifRealisateur');
+    Route::any('/realisateur/delete/{idRealisateur}', 'AdminController@deleteRealisateur')        ->name('admin_deleteRealisateur');
+});

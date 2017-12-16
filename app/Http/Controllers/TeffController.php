@@ -135,11 +135,14 @@ class TeffController extends Controller {
         $this->setMenu($arrayMenu, $isArchive);
     }
 
-    private function setPath() {
+    protected function setPath() {
         $this->varPage['path']['css'] = url('/css') . '/';
         $this->varPage['path']['js'] = url('/js') . '/';
         $this->varPage['path']['image'] = url('/image') . '/';
         $this->varPage['path']['download'] = url('/download') . '/';
+        $this->varPage['path']['ckeditor'] = url('/ckeditor') . '/';
+        $this->varPage['path']['ckfinder'] = url('/ckfinder') . '/';
+        $this->varPage['path']['uploadify'] = url('/uploadify') . '/';
     }
 
     private function setMenuLangue() {
