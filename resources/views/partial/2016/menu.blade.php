@@ -1,8 +1,8 @@
 @foreach ( $menu as $menuItem)
-    <a id="menu-{{ $menuItem["name"] }}" href="{{ $menuItem["url"] }}" class="menuBtn shadow overGlow">{{ $menuItem["name"] }}</a>
-    @if ($menuItem["name"] == "Archives" and isset($menuArchive))
+    <a href="{{ $menuItem["url"] }}" class="menuBtn shadow overGlow">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;", $menuItem["name"]) !!}</a>
+    @if ($menuItem["name"] == $commonTrad->clePages()->where('nomClePage', 'menu_Archives')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage and isset($menuArchive))
         @foreach ( $menuArchive as $menuArchiveItem)
-    <a id="menu-{{ $menuArchiveItem["name"] }}" href="{{ $menuArchiveItem["url"] }}" class="menuArchiveBtn shadow overGlow">{{ $menuArchiveItem["name"] }}</a>
+    <a href="{{ $menuArchiveItem["url"] }}" class="menuArchiveBtn shadow overGlow">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;", $menuArchiveItem["name"]) !!}</a>
         @endforeach
     @endif
 @endforeach

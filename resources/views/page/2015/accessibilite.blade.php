@@ -56,6 +56,7 @@ $contents = [
     $pageTrad->clePages->where('nomClePage', 'serviceTxt')->first()->traductions->where('initialLangue',$langueActuelle)->first()->textPage . " : ",
     $pageTrad->clePages->where('nomClePage', 'attentionTxt')->first()->traductions->where('initialLangue',$langueActuelle)->first()->textPage . " : "
 ];
+
 $imgs = [
     "Picto01.png",
     "Picto02.png",

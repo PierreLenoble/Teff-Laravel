@@ -32,7 +32,6 @@
             </div>
             <div class="logo">
                  <img src="{{$path['image']}}/archives/logoTeff.png" class="imgLogo">
-                 <div class="edition3">3<div class="eme" style="">eme</div> EDITION</div>
             </div>
         </div>
     </div>

@@ -26,8 +26,8 @@
 @section('body')
     <div class="blockMain">
         <img src="{!! $path['image'] !!}err/warn.png" style="float:left; width:420px;">
-        <p style="font-size:5em; text-align: center"><b>Erreur</b></p>
-        <p style="font-size:3.5em; padding-top:60px;">Cette news n'existe pas / plus</p>
+        <p style="font-size:5em; text-align: center"><b>{!! $commonTrad->clePages()->where('nomClePage', 'erreur')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage !!}</b></p>
+        <p style="font-size:3.5em; padding-top:60px;">{!! $pageTrad->clePages()->where('nomClePage', 'errTxt')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage !!}</p>
         <div style="clear:left;"></div>
     </div>
 @stop

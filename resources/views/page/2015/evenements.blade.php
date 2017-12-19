@@ -55,7 +55,7 @@
                             <div style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box; box-sizing: border-box; border:1px solid black;width:195px; height:195px;">&nbsp;</div>
                         </div>
                         <p style="padding-top:15px; color:black; font-size: 0.9em;  ">{!!strip_tags($content)!!}</p>
-                        <a class="buttonRedStyle" style="text-align:center; position:absolute; bottom:0px; width:193px;" href="{{$tabUrlBoutton[$event->idArticle]}}">{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', "voir evenement") !!}</a>
+                        <a class="buttonRedStyle" style="text-align:center; position:absolute; bottom:0px; width:193px;" href="{{$tabUrlBoutton[$event->idArticle]}}">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'btnVoir')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage) !!}</a>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                         </div>
                         <div style="position:relative; float:left; display:table; width:200px; height:197px; margin-left:5px">
                             <p style="padding-top:15px; color:black; font-size: 0.9em;  ">{!!strip_tags($content)!!}</p>
-                            <a class="buttonRedStyle" style="text-align:center; position:absolute; width:208px; bottom:0px; left:0px;" href="{{$tabUrlBoutton[$event->idArticle]}}" style="">{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', "voir evenement") !!}</a>
+                            <a class="buttonRedStyle" style="text-align:center; position:absolute; width:208px; bottom:0px; left:0px;" href="{{$tabUrlBoutton[$event->idArticle]}}" style="">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'btnVoir')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage) !!}</a>
                         </div>
                          <div style="clear:left;"></div>   
                     </div>

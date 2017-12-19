@@ -17,12 +17,14 @@ class CommonController extends TeffController
     public function pageNews($langue, $page) {
         $this->init2016();
         
+        $langue = $this->varPage['langueActuelle'];
+        
         $this->varPage['pageTrad'] = PageManager::getPage('News');
         $this->varPage['commonTrad'] = PageManager::getPage('Common');
-        
+                
+        //print_r($this->varPage['commonTrad']->clePages()->where('nomClePage', '2016_soutient')->first()->traductions()->where('initialLangue',$langue)->first());
         //print_r($this->varPage['page']);
         //echo $this->varPage['page']->first()->clePages->first()->nomClePage;
-        $langue = $this->varPage['langueActuelle'];
         
         // determination du nombre de page
         $nbNews = ArticleManager::getNbArticle($langue, 'News');

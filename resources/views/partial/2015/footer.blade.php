@@ -1,4 +1,4 @@
 <div class="footer">
-    Pierre Lenoble
+    Pierre&nbsp;&nbsp;&nbsp;Lenoble
 </div>
 

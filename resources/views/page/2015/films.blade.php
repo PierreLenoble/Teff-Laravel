@@ -30,9 +30,9 @@ $i=0;
 @section('body')
      <table style="width:100%">
             <tr>
-                <td style="width:33%;" align="center"><span style="width:220px; font-family: bebas; border:1px solid black; font-size:0.8em; padding:0px 10px;" id="Btn-LMMM">{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', "Long et moyen metrage") !!}</span></span></td>
-                <td style="width:33%;" align="center"><span style="width:220px; font-family: bebas; border:1px solid black; font-size:0.8em; padding:0px 10px;" id="Btn-CM">{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', "Court-metrage") !!}</span></td>
-                <td style="width:33%;" align="center"><span style="width:220px; font-family: bebas; border:1px solid black; font-size:0.8em; padding:0px 10px; " id="Btn-Tous">{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', "Tous les films") !!}</span></td>
+                <td style="width:33%;" align="center"><span style="width:220px; font-family: bebas; border:1px solid black; font-size:0.8em; padding:0px 10px;" id="Btn-LMMM">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'LMM')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage) !!}</span></span></td>
+                <td style="width:33%;" align="center"><span style="width:220px; font-family: bebas; border:1px solid black; font-size:0.8em; padding:0px 10px;" id="Btn-CM">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'CM')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage) !!}</span></td>
+                <td style="width:33%;" align="center"><span style="width:220px; font-family: bebas; border:1px solid black; font-size:0.8em; padding:0px 10px; " id="Btn-Tous">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'toutFilm')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage) !!}</span></td>
             </tr>
         </table>
 <div class="conteneurAllFilm grid">
@@ -40,10 +40,10 @@ $i=0;
         @php
             $traduction = $film->traductions->where('initialLangue', $langueActuelle)->first() ;
             $content = html_entity_decode(strip_tags($traduction->resumeFilm));
-            if (str_word_count($content, 0) > 30) {
+            if (str_word_count($content, 0) > 25) {
                 $words = str_word_count($content, 2);
                 $pos = array_keys($words);
-                $content = substr($content, 0, $pos[30]) . '...';
+                $content = substr($content, 0, $pos[25]) . '...';
             }else{
                 $content=$content;
             }
@@ -113,7 +113,7 @@ $i=0;
                         <div style="margin-top:5px;color:darkred;font-size: 1em; font-family: bebas; padding-bottom: 3px; ">{!! str_replace(" ", "&nbsp; &nbsp;",$traduction->nomFilm) !!}</div>
                         <p style="font-family: bebas; color:black; font-size: 0.9em;  ">- {{$film->realisateur->nomRealisateur}} -</p>
                         <p style="padding-top:15px; color:black; font-size: 0.9em;  ">{{$content}}...</p>
-                        <a class="buttonRedStyle" style="text-align:center; position:absolute; bottom:0px; width:193px;" href="{{$tabUrlBoutton[$film->idFilm]}}">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;","voir fiche") !!}</a>
+                        <a class="buttonRedStyle" style="text-align:center; position:absolute; bottom:0px; width:193px;" href="{{$tabUrlBoutton[$film->idFilm]}}">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'btnVoir')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage) !!}</a>
                     </div>
                 </div>
             </div>
@@ -130,7 +130,7 @@ $i=0;
                             <div style="color:darkred;font-size: 1em; font-family: bebas; padding-bottom: 3px; ">{!! str_replace(" ", "&nbsp; &nbsp;",$traduction->nomFilm) !!}</div>
                             <p style="font-family: bebas; color:black; font-size: 0.9em;  ">- {{$film->realisateur->nomRealisateur}} -</p>
                             <p style="padding-top:15px; color:black; font-size: 0.9em;  ">{{$content}}...</p>
-                            <a class="buttonRedStyle" style="text-align:center; position:absolute; width:208px; bottom:0px; left:0px;" href="{{$tabUrlBoutton[$film->idFilm]}}" style="">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;","voir fiche") !!}</a>
+                            <a class="buttonRedStyle" style="text-align:center; position:absolute; width:208px; bottom:0px; left:0px;" href="{{$tabUrlBoutton[$film->idFilm]}}" style="">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'btnVoir')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage) !!}</a>
                         </div>
                          <div style="clear:left"></div>   
                     </div>

@@ -11,8 +11,7 @@ class Edition2016Controller extends TeffController
     public function homePage($langue) {
         $this->init2016();
         
-        $this->varPage['pageTrad'] = PageManager::getPage('');
-        $this->varPage['commonTrad'] = PageManager::getPage('Common');
+        $this->varPage['pageTrad'] = PageManager::getPage('Uccle');
         
         return view('page.2016.uccle')->with($this->varPage);
     }
@@ -20,8 +19,7 @@ class Edition2016Controller extends TeffController
     public function detailsFilm($langue, $idFilm) {
         $this->init2016();
         
-        $this->varPage['pageTrad'] = PageManager::getPage('2015_Films');
-        $this->varPage['commonTrad'] = PageManager::getPage('Common');
+        $this->varPage['pageTrad'] = PageManager::getPage('2015_Film');
         
         $film = \App\DAL\FilmManager::getFilm($this->varPage['langueActuelle'], $idFilm);
         

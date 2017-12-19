@@ -63,7 +63,7 @@
             {!! $evenementTraduction->contenuArticle !!}
         </div>
         <br><br>
-        <a href="{{$url_archive_2015_evenements}}" class="buttonRedStyle" style="width:300px;">&lt;&lt;&nbsp;&nbsp;&nbsp;{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', "Retour aux evenement 2015") !!}</a>
+        <a href="{{$url_archive_2015_evenements}}" class="buttonRedStyle" style="width:300px;">&lt;&lt;&nbsp;&nbsp;&nbsp;{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'btnRetour')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage) !!}</a>
             
     </div>
     <div style="clear:left"></div>

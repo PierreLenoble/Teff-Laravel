@@ -1,7 +1,15 @@
 @extends('partial.2015.layout')
 
 @php
-    $days = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+    $days = [
+    $commonTrad->clePages()->where('nomClePage', 'dimanche')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage, 
+    $commonTrad->clePages()->where('nomClePage', 'lundi')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage, 
+    $commonTrad->clePages()->where('nomClePage', 'mardi')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage, 
+    $commonTrad->clePages()->where('nomClePage', 'mercredi')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage, 
+    $commonTrad->clePages()->where('nomClePage', 'jeudi')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage, 
+    $commonTrad->clePages()->where('nomClePage', 'vendredi')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage, 
+    $commonTrad->clePages()->where('nomClePage', 'samedi')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage];
+    
     $nbBandeau = 0;
     foreach ($lieuxTab as $lieux) {
         foreach ($lieux as $lieu) {
@@ -15,7 +23,7 @@
     $startHour = 9;
     $nbHour = 13;
     $widthFleche = 40;
-    $widthJour = 83;
+    $widthJour = 103;
     $widthLieux = 80;
     $widthSeanceMin = 250;
     $couleurJour = ["#431C1C", "#441111", "#630002", "#7B0406", "#990005", "#E80007", "grey"];
@@ -62,10 +70,14 @@
             if ($j>23) {
                 $j=0;
             }
-
-            echo "<div style=\"left: " . ($i * $distanceBetweenHours) . "px; position:absolute; top:   0px; display:table; font-size: 2em; text-align: center; width:" . $widthHours . "px; color:white; font-weight:bold;\" class=\"hour\">" . ($j<10) ? "0".$j : $j . ":00</div>";
+            echo "<div style=\"left: " 
+            . ($i * $distanceBetweenHours) 
+            . "px; position:absolute; top:   0px; display:table; font-size: 2em; text-align: center; width:" . $widthHours 
+            . "px; color:white; font-weight:bold;\" class=\"hour\">"
+            . (($j<10) ? "0".$j : $j) . ":00</div> \r\n";
+            
             echo "<div style=\"z-index:10; left: " . (($i * $distanceBetweenHours) + ($widthHours / 2)) . "px; position:absolute; top: " . $heightHours . "px; display:table; height:" . $nbBandeau * $heightBandeau . "px; width:1px;    border-left:1px solid rgb(200,50,50);\">&nbsp;</div>";
-
+            $j++;
             }
 
 
@@ -76,18 +88,15 @@
             $i = 0;
             $i1 = 0;
             $saveDate = 0;
-                    $dateTmp = new \DateTime($seance->dateTimeSeance);
-            echo "search : " . $seance->lieuSeance->traductions->where('initialLangue', $langueActuelle)->first()->nomLieuSeance . "  -  " . $dateTmp->format('d-M-y H:i') ;
+            $dateTmp = new \DateTime($seance->dateTimeSeance);
+            
             foreach ($lieuxTab as $lieux) {
                 foreach ($lieux as $lieu) {
                     $i = $i + 1;
                     
                     if ($lieu == $seance->lieuSeance->traductions->where('initialLangue', $langueActuelle)->first()->nomLieuSeance and $dateTmp->format('dMy') == $dateTab[$i1]->format('dMy')) {
                         $line = $i;
-                        echo "\r\n ---->" . $lieu . " - " . $dateTab[$i1]->format('d-M-y H:i') . "<br/>\n\r" ;
-                    } else {
-                        echo       "\r\n" . $lieu . " - " . $dateTab[$i1]->format('d-M-y H:i') . "<br/>\n\r" ;
-                    }
+                    } 
                 }
                 $i1 = $i1 + 1;
             }
@@ -112,7 +121,7 @@
                     </div>
                     <div style="margin-left:4px;position:relative; float:left; display:table; width:{{$widthSeance - $heightBandeau}}px; height:{{$heightBandeau - 13}}px; ">
                         <div style="color:darkred;font-size: 0.8em; font-family: bebas; line-height:1.2em; width: {{$widthSeance - $heightBandeau}}px; height:{{$heightBandeau - 34}}px; overflow:hidden;">{{$dateTmp->format('H:i')}} - {{$seance->traductions->where('initialLangue', $langueActuelle)->first()->nomSeance}}</div>
-                        <a class="buttonRedStyle" style="text-align:center; position:absolute; width:{{$widthSeance - $heightBandeau -2}}px; bottom:-2px; left:0px;" href="{{$tabUrl[$seance->idSeance]}}" style="">detail seance</a>   
+                        <a class="buttonRedStyle" style="text-align:center; position:absolute; width:{{$widthSeance - $heightBandeau -2}}px; bottom:-2px; left:0px;" href="{{$tabUrl[$seance->idSeance]}}" style="">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'btnDetail')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage ) !!}</a>   
                     </div>
 
                      <div style="clear:left;"></div> 

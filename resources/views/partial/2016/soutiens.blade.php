@@ -1,6 +1,6 @@
 <div class="blockMain espaceBlock" id="footerSoutiens">
     <div class="titreSoutiensLayout">
-        {!! $traduction['soutiens'] !!}
+        {!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$commonTrad->clePages()->where('nomClePage', '2016_soutient')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage) . " : " !!}
     </div>
     <div class="divImgSoutiensLayout">
         <br>

@@ -26,6 +26,6 @@
 @section('body')
     <div class="blockMain">
         
-        <a href="<?php echo route('2015_homePage', ['langue' => $langueActuelle]); ?>">Archive 2015</a>
+        <a href="@php echo route('2015_homePage', ['langue' => $langueActuelle]); @endphp">{!! $pageTrad->clePages()->where('nomClePage', '2015')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage !!}</a>
     </div>
 @stop

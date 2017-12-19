@@ -13,6 +13,8 @@ class Edition2015Controller extends TeffController
     public function homePage($langue) {
         $this->init2015();
         
+        $this->varPage['pageTrad'] = PageManager::getPage('');
+        
         return view('page.2015.home')->with($this->varPage);
     }
     
@@ -20,7 +22,6 @@ class Edition2015Controller extends TeffController
         $this->init2015();
         
         $this->varPage['pageTrad'] = PageManager::getPage('2015_Tarif');
-        $this->varPage['commonTrad'] = PageManager::getPage('Common');
                 
         return view('page.2015.billeterie')->with($this->varPage);
     }
@@ -29,7 +30,6 @@ class Edition2015Controller extends TeffController
         $this->init2015();
         
         $this->varPage['pageTrad'] = PageManager::getPage('2015_Evenement');
-        $this->varPage['commonTrad'] = PageManager::getPage('Common');
                 
         // rapatriement des evenements 2015
         $this->varPage['listeEvenements'] = 
@@ -54,7 +54,6 @@ class Edition2015Controller extends TeffController
         $this->init2015();
         
         $this->varPage['pageTrad'] = PageManager::getPage('2015_Evenement');
-        $this->varPage['commonTrad'] = PageManager::getPage('Common');
         
         
         $evenement = ArticleManager::getArticle($this->varPage['langueActuelle'], 'Evenement 2015', $idEvenement);
@@ -74,8 +73,7 @@ class Edition2015Controller extends TeffController
     public function films($langue='') {
         $this->init2015();
         
-        $this->varPage['pageTrad'] = PageManager::getPage('2015_Films');
-        $this->varPage['commonTrad'] = PageManager::getPage('Common');
+        $this->varPage['pageTrad'] = PageManager::getPage('2015_Film');
                 
         $this->varPage['listeFilms'] = FilmManager::getFilmParAnnee($langue, 2015);
         
@@ -99,8 +97,7 @@ class Edition2015Controller extends TeffController
     public function detailsFilm($langue, $idFilm) {
         $this->init2015();
         
-        $this->varPage['pageTrad'] = PageManager::getPage('2015_Films');
-        $this->varPage['commonTrad'] = PageManager::getPage('Common');
+        $this->varPage['pageTrad'] = PageManager::getPage('2015_Film');
                 
         $film = \App\DAL\FilmManager::getFilm($this->varPage['langueActuelle'], $idFilm);
         
@@ -153,7 +150,6 @@ class Edition2015Controller extends TeffController
         $this->init2015();
         
         $this->varPage['pageTrad'] = PageManager::getPage('2015_Seance');
-        $this->varPage['commonTrad'] = PageManager::getPage('Common');
         
         $listeFilms = \App\DAL\FilmManager::getFilmParSeance($this->varPage['langueActuelle'], $idSeance);
         $seance = \App\DAL\SeanceManager::getSeance($this->varPage['langueActuelle'], $idSeance);
@@ -183,7 +179,6 @@ class Edition2015Controller extends TeffController
         $this->init2015();
         
         $this->varPage['pageTrad'] = PageManager::getPage('2015_Programme');
-        $this->varPage['commonTrad'] = PageManager::getPage('Common');
         
         $allSeances = \App\DAL\SeanceManager::getSeanceParAnnee($this->varPage['langueActuelle'], 2015);
         $seances=array();
@@ -251,7 +246,6 @@ class Edition2015Controller extends TeffController
         $this->init2015();
         
         $this->varPage['pageTrad'] = PageManager::getPage('2015_Partenaire');
-        $this->varPage['commonTrad'] = PageManager::getPage('Common');
         
         return view('page.2015.partenaire')->with($this->varPage);
     }
@@ -260,7 +254,6 @@ class Edition2015Controller extends TeffController
         $this->init2015();
         
         $this->varPage['pageTrad'] = PageManager::getPage('Accessibilite');
-        $this->varPage['commonTrad'] = PageManager::getPage('Common');
         
         return view('page.2015.accessibilite')->with($this->varPage);
     }
@@ -269,7 +262,6 @@ class Edition2015Controller extends TeffController
         $this->init2015();
         
         $this->varPage['pageTrad'] = PageManager::getPage('2015_Lieux');
-        $this->varPage['commonTrad'] = PageManager::getPage('Common');
         
         $this->varPage['lieuSeance'] = \App\DAL\LieuSeanceManager::getLieuSeance($langue, 2015);
         return view('page.2015.lieux')->with($this->varPage);

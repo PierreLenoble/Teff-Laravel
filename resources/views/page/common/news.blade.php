@@ -28,7 +28,7 @@
         <center><span style="font-size:2em;">{!!$pageTrad->clePages->where('nomClePage', 'titre')->first()->traductions->where('initialLangue',$langueActuelle)->first()->textPage!!}</span></center>
     </div>
     
-    @foreach ($listeArticles as $article)
+    @foreach ($listeArticles as $article) 
     @php
         $traduction = $article->traductions->where('initialLangue', $langueActuelle)->first() ;
         if (str_word_count($traduction->contenuArticle, 0) > 60) {

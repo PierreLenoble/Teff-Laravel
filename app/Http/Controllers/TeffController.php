@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\DAL;
+use App\DAL\PageManager;
 
 class TeffController extends Controller {
 
@@ -16,23 +17,18 @@ class TeffController extends Controller {
         $this->setLangueActuelle();
         $this->setMenuLangue();
         $this->setPath();
+        $this->varPage['commonTrad'] = PageManager::getPage('Common');
     }
 
     protected function init2016() {
         $this->init();
         $this->setMenu2016(false);
-        $this->setSoutiens();
     }
 
     protected function init2015() {
         $this->init();
         $this->setMenu2016(false);
         $this->setMenu2015(true);
-        $this->setSoutiens();
-    }
-    
-    protected function setSoutiens() {
-        $this->varPage['traduction']['soutiens'] = "avec les soutiens : ";
     }
 
     private function setMenu($arrayMenu, $isArchive) {
@@ -47,37 +43,39 @@ class TeffController extends Controller {
             }
             $this->varPage['menu'] = $arrayMenu;
         }
+        
+        
     }
 
     protected function setMenu2016($isArchive) {
         $arrayMenu = array();
         $menuPoint = array();
         
-        $menuPoint['name'] = "News";
+        $menuPoint['name'] = $this->varPage['commonTrad']->clePages()->where('nomClePage', 'menu_News')->first()->traductions()->where('initialLangue',$this->varPage['langueActuelle'])->first()->textPage;
         $menuPoint['url'] = route(
                 'common_news', 
                 ['langue' => $this->varPage['langueActuelle']]);
         array_push($arrayMenu, $menuPoint);
         
-        $menuPoint['name'] = "Uccle";
+        $menuPoint['name'] = $this->varPage['commonTrad']->clePages()->where('nomClePage', 'menu_Uccle')->first()->traductions()->where('initialLangue',$this->varPage['langueActuelle'])->first()->textPage;
         $menuPoint['url'] = route(
                 '2016_homePage', 
                 ['langue' => $this->varPage['langueActuelle']]);
         array_push($arrayMenu, $menuPoint);
         
-        $menuPoint['name'] = "Archives";
+        $menuPoint['name'] = $this->varPage['commonTrad']->clePages()->where('nomClePage', 'menu_Archives')->first()->traductions()->where('initialLangue',$this->varPage['langueActuelle'])->first()->textPage;
         $menuPoint['url'] = route(
                 'common_archives', 
                 ['langue' => $this->varPage['langueActuelle']]);
         array_push($arrayMenu, $menuPoint);
         
-        $menuPoint['name'] = "L'association";
+        $menuPoint['name'] = $this->varPage['commonTrad']->clePages()->where('nomClePage', 'menu_Association')->first()->traductions()->where('initialLangue',$this->varPage['langueActuelle'])->first()->textPage;;
         $menuPoint['url'] = route(
                 'common_association', 
                 ['langue' => $this->varPage['langueActuelle']]);
         array_push($arrayMenu, $menuPoint);
         
-        $menuPoint['name'] = "Contact";
+        $menuPoint['name'] = $this->varPage['commonTrad']->clePages()->where('nomClePage', 'menu_Contact')->first()->traductions()->where('initialLangue',$this->varPage['langueActuelle'])->first()->textPage;
         $menuPoint['url'] = route(
                 'common_contact', 
                 ['langue' => $this->varPage['langueActuelle']]);
@@ -90,43 +88,43 @@ class TeffController extends Controller {
         $arrayMenu = array();
         $menuPoint = array();
         
-        $menuPoint['name'] = "2015 - Films";
+        $menuPoint['name'] = "2015 - " . $this->varPage['commonTrad']->clePages()->where('nomClePage', 'menu_2015_Films')->first()->traductions()->where('initialLangue',$this->varPage['langueActuelle'])->first()->textPage;;
         $menuPoint['url'] = route(
                 '2015_films',
                 ['langue' => $this->varPage['langueActuelle']]);
         array_push($arrayMenu, $menuPoint);
         
-        $menuPoint['name'] = "2015 - Programme";
+        $menuPoint['name'] = "2015 - " . $this->varPage['commonTrad']->clePages()->where('nomClePage', 'menu_2015_Programme')->first()->traductions()->where('initialLangue',$this->varPage['langueActuelle'])->first()->textPage;;
         $menuPoint['url'] = route(
                 '2015_programme',
                 ['langue' => $this->varPage['langueActuelle']]);
         array_push($arrayMenu, $menuPoint);
         
-        $menuPoint['name'] = "2015 - Tarif & Achat";
+        $menuPoint['name'] = "2015 - " . $this->varPage['commonTrad']->clePages()->where('nomClePage', 'menu_2015_Tarif')->first()->traductions()->where('initialLangue',$this->varPage['langueActuelle'])->first()->textPage;;
         $menuPoint['url'] = route(
                 '2015_billeterie',
                 ['langue' => $this->varPage['langueActuelle']]);
         array_push($arrayMenu, $menuPoint);
         
-        $menuPoint['name'] = "2015 - Evenements";
+        $menuPoint['name'] = "2015 - " . $this->varPage['commonTrad']->clePages()->where('nomClePage', 'menu_2015_Evenements')->first()->traductions()->where('initialLangue',$this->varPage['langueActuelle'])->first()->textPage;;
         $menuPoint['url'] = route(
                 '2015_evenements',
                 ['langue' => $this->varPage['langueActuelle']]);
         array_push($arrayMenu, $menuPoint);
         
-        $menuPoint['name'] = "2015 - Lieux";
+        $menuPoint['name'] = "2015 - " . $this->varPage['commonTrad']->clePages()->where('nomClePage', 'menu_2015_Lieux')->first()->traductions()->where('initialLangue',$this->varPage['langueActuelle'])->first()->textPage;;
         $menuPoint['url'] = route(
                 '2015_lieux',
                 ['langue' => $this->varPage['langueActuelle']]);
         array_push($arrayMenu, $menuPoint);
         
-        $menuPoint['name'] = "2015 - Accessibilite";
+        $menuPoint['name'] = "2015 - " . $this->varPage['commonTrad']->clePages()->where('nomClePage', 'menu_2015_Accessibilite')->first()->traductions()->where('initialLangue',$this->varPage['langueActuelle'])->first()->textPage;;
         $menuPoint['url'] = route(
                 '2015_accessibilite',
                 ['langue' => $this->varPage['langueActuelle']]);
         array_push($arrayMenu, $menuPoint);
         
-        $menuPoint['name'] = "2015 - Partenaire";
+        $menuPoint['name'] = "2015 - " . $this->varPage['commonTrad']->clePages()->where('nomClePage', 'menu_2015_Partenaires')->first()->traductions()->where('initialLangue',$this->varPage['langueActuelle'])->first()->textPage;;
         $menuPoint['url'] = route(
                 '2015_partenaires',
                 ['langue' => $this->varPage['langueActuelle']]);

@@ -93,7 +93,7 @@ $i=0;
                         <div style="color:darkred;font-size: 1em; font-family: bebas ">{!! str_replace(" ", "&nbsp; &nbsp;",$traduction->nomFilm) !!}</div>
                         <p style="font-family: bebas; color:black; font-size: 0.9em;  ">- {{$film->realisateur->nomRealisateur}} -</p>
                         <p style="padding-top:15px; color:black; font-size: 0.9em;  ">{{$content}}...</p>
-                        <a class="buttonRedStyle" style="text-align:center; position:absolute; bottom:0px; width:193px;" href="{{$tabUrlBoutton[$film->idFilm]}}">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;","voir fiche") !!}</a>
+                        <a class="buttonRedStyle" style="text-align:center; position:absolute; bottom:0px; width:193px;" href="{{$tabUrlBoutton[$film->idFilm]}}">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'btnVoir')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage ) !!}</a>
                     </div>
                 </div>
             </div>

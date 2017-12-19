@@ -1,7 +1,7 @@
 <div class="blockMain espaceBlock" id="footerSoutiens">
     <div class="blockSoutiensLayout">
         <div class="titreSoutiensLayout">
-            En&nbsp; &nbsp;partenariat&nbsp; &nbsp;avec&nbsp; &nbsp;:&nbsp; &nbsp;
+            {!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$commonTrad->clePages()->where('nomClePage', '2015_Partenaire')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage) . " : " !!}
         </div>
         <div class="divImgSoutiensLayout">
             <div><img src="{{$path['image']}}soutiensMedia/cap48.png" alt ="Cap48"></div>
@@ -13,7 +13,7 @@
     </div>
     <div class="blockSoutiensLayout">
         <div class="titreSoutiensLayout">
-            Avec&nbsp; &nbsp;le&nbsp; &nbsp;sponsoring&nbsp; &nbsp;:&nbsp; &nbsp;
+            {!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$commonTrad->clePages()->where('nomClePage', '2015_Sponsort')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage) . " : " !!}
         </div>
         <div class="divImgSoutiensLayout">
             <div><img src="{{$path['image']}}soutiensMedia/euroMillion.png" alt ="EuroMillion"></div>
@@ -24,9 +24,10 @@
     <div style="float: none; clear: left"></div>
 
     <div class="titreSoutiensLayout" style="display: inline"><br><br>
-        Avec&nbsp; &nbsp;les&nbsp; &nbsp;soutiens&nbsp; &nbsp;:&nbsp; &nbsp;
+        {!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$commonTrad->clePages()->where('nomClePage', '2015_Soutient')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage) . " : " !!}
     </div>
-        La region Wallonne, la Fédération Wallonie-Bruxelles, la Commission Communautaire Française des provinces de Namur, Hainaut et Luxembourg et de la Loterie Nationnale.<br>                    
+    {{ $commonTrad->clePages()->where('nomClePage', '2015_SoutientDetail')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage}}<br/>
+        
     <div class="divImgSoutiensLayout">
         <div><img src="{{$path['image']}}soutiensMedia/AWIPH.png" alt="Awiph"></div>
         <div><img src="{{$path['image']}}soutiensMedia/phare.png" alt="Phare"></div>
@@ -43,7 +44,7 @@
     </div>
 
     <div class="titreSoutiensLayout">
-        Les&nbsp; &nbsp;medias&nbsp; &nbsp;:&nbsp; &nbsp;
+        {!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$commonTrad->clePages()->where('nomClePage', '2015_Media')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage) . " : " !!}
     </div>
     <div class="divImgSoutiensLayout">
         <div><img src="{{$path['image']}}soutiensMedia/canalC.png" alt ="Canal C"></div>
@@ -56,7 +57,7 @@
     </div>
 
     <div class="titreSoutiensLayout">
-        En&nbsp; &nbsp;collaboration&nbsp; &nbsp;avec&nbsp; &nbsp;:&nbsp; &nbsp;
+        {!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$commonTrad->clePages()->where('nomClePage', '2015_Collaboration')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage) . " : " !!}
     </div>
     <div class="divImgSoutiensLayout">
         <div><img src="{{$path['image']}}soutiensMedia/logo51.png" alt ="Fifty-one Club"></div>

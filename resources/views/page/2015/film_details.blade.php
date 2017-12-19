@@ -79,33 +79,33 @@
     </div>
     <div class="conteneurFilmDetail">
         <div class="row">
-            <span class="intitule">{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', 'Production : ') !!}</span>
+            <span class="intitule">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'production')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage . " : ") !!}</span>
             <div class="contenu">{{$film->boiteProduction}}</div>
         </div>
         <div class="row">
-            <span class="intitule">{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', 'Pays : ') !!}</span>
+            <span class="intitule">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'pays')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage . " : ") !!}</span>
             <div class="contenu">{{$paysStr}}</div>
         </div>
         <div class="row">
-            <span class="intitule">{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', 'Annee : ') !!}</span>
+            <span class="intitule">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'annee')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage . " : ") !!}</span>
             <div class="contenu">{{$film->anneeProduction}}</div>
         </div>
         <div class="row">
-            <span class="intitule">{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', 'Duree : ') !!}</span>
+            <span class="intitule">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'duree')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage . " : ") !!}</span>
             <div class="contenu">{{$film->dureeMinuteFilm}}'</div>
         </div>
         <div class="row">
-            <span class="intitule">{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', 'Genre : ') !!}</span>
+            <span class="intitule">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'genre')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage . " : ") !!}</span>
             <div class="contenu">{{$genresStr}}</div>
         </div>
         @if ($imgInterdit != "")
             <div class="row">
-                <span class="intitule">{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', 'Recommandation : ') !!}</span>
+                <span class="intitule">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'recommandation')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage . " : ") !!}</span>
                 <div class="contenu">{!!$imgInterdit!!}</div>
             </div>
         @endif
         <div class="row">
-            <span class="intitule">{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', 'Seance : ') !!}</span>
+            <span class="intitule">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'seance')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage . " : ") !!}</span>
             <div class="contenu">
                 @foreach ($seances as $seance)
                     @php
@@ -131,7 +131,7 @@
         
     </div>
     <div style="clear:left;"></div>
-    <div class="titreSynopsis">{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', 'Synopsis : ') !!}</div>
+    <div class="titreSynopsis">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'synopsis')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage . " : ") !!}</span></div>
     {!!$filmTraduction->resumeFilm!!}
 </div>
 
@@ -144,14 +144,14 @@
 @endif
 
 <div class="blockMain espaceBlock">
-    <div class="titreBlock">{!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', 'A propos du realisteur : '.$realisateur->nomRealisateur) !!}</div>
+    <div class="titreBlock">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'aPropos')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage . " : " . $realisateur->nomRealisateur) !!}</div>
     <img src="{{$path['image']}}{{$realisateur->urlImageRealisateur}}" class="imgRealisateur" alt="{{$realisateur->nomRealisateur}}">
     {!! $realisateurTraduction->presentationRealisateur !!}
     <div style="clear:left;"></div>
 </div>
 
 <div class="blockMain espaceBlock">
-    <a class="buttonRedStyle" style="text-align:center; " href="@php echo route('2015_films', ['langue' => $langueActuelle]); @endphp">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;","retour") !!}</a>
+    <a class="buttonRedStyle" style="text-align:center; " href="@php echo route('2015_films', ['langue' => $langueActuelle]); @endphp">{!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'btnRetour')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage ) !!}</a>
 </div>
 @stop
 

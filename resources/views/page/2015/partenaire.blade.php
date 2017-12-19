@@ -25,20 +25,19 @@
 
 @section('body')
 <div class="blockMain">
-    <p>Nous remercions tous nos partenaires et vous invitons à visiter leurs sites.</p><br /><br />
-    <p style="text-align: right">l'équipe EOP!</p>
+    {!! $pageTrad->clePages()->where('nomClePage', 'txt_1')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage  !!}
 </div>
 <div class="blockMain espaceBlock" id="Soutiens">
 
     <div class="titreSoutiens">
-        {!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', "Le sponsoring :") !!}
+        {!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'sponsort')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage . " : " ) !!}
     </div>
     <div class="divImgSoutiens">
         <div><a href="http://www.loterie-nationale.be/fr/nos-jeux/euro-millions" target="_blank"><img class="maxWidth" src="{{$path['image']}}/soutiensMedia/euroMillion.png" alt ="EuroMillion"></a></div>
     </div>
     
     <div class="titreSoutiens">
-        {!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', "Les ministeres, administrations et pouvoirs publics : ") !!}
+        {!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'ministere')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage . " : ")  !!}
     </div>
     <div class="divImgSoutiens">
         <div><a href="https://www.awiph.be" target="_blank"><img class="maxWidth" src="{{$path['image']}}/soutiensMedia/AWIPH.png" alt="Awiph"></a></div>
@@ -59,7 +58,7 @@
     </div>
 
     <div class="titreSoutiens">
-        {!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', "Les medias :") !!}
+        {!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'media')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage . " : ")  !!}
     </div>
     <div class="divImgSoutiens">
         <div><a href="http://www.rtbf.be/lapremiere/" target="_blank"><img class="maxWidth" src="{{$path['image']}}/soutiensMedia/laUNE.png" alt ="La Une"></a></div>
@@ -74,7 +73,7 @@
     </div>
 
       <div class="titreSoutiens">
-        {!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', "En collaboration avec :") !!}
+        {!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'collaboration')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage . " : ")  !!}
     </div>
     <div class="divImgSoutiens">
         <div><a href="http://www.51namur.be" target="_blank"><img class="maxWidth" src="{{$path['image']}}/soutiensMedia/logo51.png" alt ="Fifty-one Club"></a></div>
@@ -97,7 +96,7 @@
     
 
     <div class="titreSoutiens">
-        {!! str_replace(' ', '&nbsp;&nbsp;&nbsp;', "Les fournisseurs :") !!}
+        {!! str_replace(" ", "&nbsp;&nbsp;&nbsp;",$pageTrad->clePages()->where('nomClePage', 'fournisseur')->first()->traductions()->where('initialLangue',$langueActuelle)->first()->textPage . " : " ) !!}
     </div>
     <div class="divImgSoutiens">
         <div><a href="http://www.propaganda.be" target="_blank"><img class="maxWidth" src="{{$path['image']}}/soutiensMedia/propa.png" alt="Propa"></a></div>
