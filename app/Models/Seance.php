@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Seance extends Model
 {
-    //
+    public $timestamps = false;
+    protected $primaryKey = 'idSeance';
     protected $table = 'Seance';
     
     public function traductions()

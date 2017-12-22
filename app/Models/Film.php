@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Film extends Model
 {
-    //
+    public $timestamps = false;
+    protected $primaryKey = 'idFilm';
     protected $table = 'Film';
     
     public function traductions()

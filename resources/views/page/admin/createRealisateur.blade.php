@@ -11,27 +11,22 @@
 <div class="msgConfirm"><p>{!! $confirm !!}</p></div>
 <br />
 @endif
-
+<img src='{{$path['image']}}{{$imgRealisateur}}' name="imageRealisateur" id="imageRealisateur" style="visibility:hidden">
 <table>
     <tr>
-        <td><span class="inputInitule" style="font-size: 0.8em;">Image du réalisateur : </span></td>
-        <td><input id="ckfinder-input-1" type="text" name="ckfinder-input-1"  value="{{$imgRealisateur}}" readonly></td>
-        <td><button id="ckfinder-modal-1" class="button-a button-a-background">Browse Server</button></td>
+        <td style='width: 200px;'><span class="inputInitule" style="font-size: 0.8em;">Image du réalisateur : </span></td>
+        <td style='width: 400px;'><input id="ckfinder-input-1" type="text" name="ckfinder-input-1"  value="{{$imgRealisateur}}" readonly style='width: 400px;'></td>
+        <td style='width: 150px;'><button id="ckfinder-modal-1" class="button-a button-a-background" style='width: 145px;'>Browse Server</button></td>
     </tr>
     
     
-<form id="form" method="post" action="{{ $newRealisateur2Url }}" onsubmit="go()">
+<form id="form" method="post" action="{{ $newRealisateurUrl }}" onsubmit="go()">
     {{ csrf_field() }}
     
-
-
-
-
-        <tr>
-            <td><span class="inputInitule" style="font-size: 0.8em;">Nom du réalisateur : </span></td>
-            <td><input id="nomRealisateur" type="text" name="nomRealisateur" value="{{$nomRealisateur}}"></td>
-            
-        </tr>
+    <tr>
+        <td><span class="inputInitule" style="font-size: 0.8em;">Nom du réalisateur : </span></td>
+        <td colspan='2' style='width: 550px;'><input id="nomRealisateur" type="text" name="nomRealisateur" value="{{$nomRealisateur}}" style='width: 550px;'></td>
+    </tr>
     </table>
     
     <br /><br /><br /><br />
@@ -48,7 +43,7 @@
     {!!$presentationEn!!}
     </textarea>
     <br /><br />
-    <input type="hidden" name="imgRealisateur" id = "imgRealisateur">
+    <input type="hidden" name="urlImageRealisateur" id = "urlImageRealisateur">
     <center><input type=submit value="valider les textes et le nom"></center>       
                 
 </form><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -96,11 +91,15 @@
                                     var file = evt.data.files.first();
                                     var output = document.getElementById( elementId );
                                     output.value = file.getUrl();
+                                    $( "#imageRealisateur" ).attr("src",file.getUrl());
+                                    $( "#imageRealisateur" ).css("visibility","visible");
                             } );
 
                             finder.on( 'file:choose:resizedImage', function( evt ) {
                                     var output = document.getElementById( elementId );
                                     output.value = evt.data.resizedUrl;
+                                    $( "#imageRealisateur" ).attr("src",file.getUrl());
+                                    $( "#imageRealisateur" ).css("visibility","visible");
                             } );
                     }
             } );
@@ -108,9 +107,13 @@
     
     function go() {
         var fieldImg = document.getElementById( 'ckfinder-input-1' );
-        var fieldImgForm = document.getElementById( 'imgRealisateur' );
+        var fieldImgForm = document.getElementById( 'urlImageRealisateur' );
         fieldImgForm.value = fieldImg.value;
         return true;
+    }
+    
+    if ($( "#imageRealisateur" ).attr("src") != "{{$path['image']}}") {
+         $( "#imageRealisateur" ).css("visibility","visible");
     }
 </script>
 

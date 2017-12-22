@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class FilmParSeance extends Model
 {
-    //
+    public $timestamps = false;
     protected $table = 'FilmParSeance';
     
     public function seance()

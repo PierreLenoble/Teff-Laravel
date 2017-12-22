@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PageTextTraduction extends Model
 {
-    //
+    public $timestamps = false;
     protected $table = 'PageTextTraduction';
     
     public function langue()

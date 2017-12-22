@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class GenreFilmDuFilm extends Model
 {
-    //
+    public $timestamps = false;
     protected $table = 'GenreFilmDuFilm';
     
     public function genreFilm()

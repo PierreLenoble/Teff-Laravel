@@ -20,18 +20,14 @@
     </tr>
     
     
-<form id="form" method="post" action="{{ $modifRealisateur2Url }}" onsubmit="go()">
+<form id="form" method="post" action="{{ $modifRealisateurUrl }}" onsubmit="go()">
     {{ csrf_field() }}
     
+    <tr>
+        <td><span class="inputInitule" style="font-size: 0.8em;">Nom du réalisateur : </span></td>
+        <td colspan='2' style='width: 550px;'><input id="nomRealisateur" type="text" name="nomRealisateur" value="{{$nomRealisateur}}" style='width: 550px;'></td>
+    </tr>
 
-
-
-
-        <tr>
-            <td><span class="inputInitule" style="font-size: 0.8em;">Nom du réalisateur : </span></td>
-            <td><input id="nomRealisateur" type="text" name="nomRealisateur" value="{{$nomRealisateur}}"></td>
-            
-        </tr>
     </table>
     
     <br /><br /><br /><br />

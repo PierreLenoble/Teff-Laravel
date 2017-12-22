@@ -10,11 +10,11 @@
             <li>Général
                 <ul>
                     <li><a href="@php echo route('admin_allRealisateur'); @endphp">les réalisateurs</a></li>
-                    <li><a href="@php echo route('admin_disconnect'); @endphp">les news du site</a></li>
-                    <li><a href="@php echo route('admin_disconnect'); @endphp">les films</a></li>
-                    <li><a href="@php echo route('admin_disconnect'); @endphp">les evenements</a></li>
-                    <li><a href="@php echo route('admin_disconnect'); @endphp">les seance</a></li>
-                    <li><a href="@php echo route('admin_disconnect'); @endphp">les traductions</a></li>
+                    <li><a href="@php echo route('admin_allNews'); @endphp">les news du site</a></li>
+                    <li><a href="@php echo route('admin_allFilm'); @endphp">les films</a></li>
+                    <li><a href="@php echo route('admin_allEvenement2015'); @endphp">les evenements</a></li>
+                    <li><a href="@php echo route('admin_allSeance'); @endphp">les seance</a></li>
+                    <li><a href="@php echo route('admin_modifTraduction'); @endphp">les traductions</a></li>
                 </ul>
             </li>
         </ul>

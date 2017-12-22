@@ -59,9 +59,28 @@ Route::any('admin/login',       'AdminController@login')        ->name('admin_lo
 Route::get('admin/disconnect',  'AdminController@disconnect')   ->name('admin_disconnect');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'login'], function(){
-    Route::get('/page',        'AdminController@page')                  ->name('admin_page');
-    Route::get('/realisateur', 'AdminController@allRealisateur')        ->name('admin_allRealisateur');
-    Route::any('/realisateur/create', 'AdminController@createRealisateur')        ->name('admin_createRealisateur');
-    Route::any('/realisateur/modif/{idRealisateur}', 'AdminController@modifRealisateur')        ->name('admin_modifRealisateur');
-    Route::any('/realisateur/delete/{idRealisateur}', 'AdminController@deleteRealisateur')        ->name('admin_deleteRealisateur');
+    Route::get('/realisateur',                              'AdminController@allRealisateur')           ->name('admin_allRealisateur');
+    Route::get('/evenement2015',                            'AdminController@allEvenement2015')         ->name('admin_allEvenement2015');
+    Route::get('/news',                                     'AdminController@allNews')                  ->name('admin_allNews');
+    Route::get('/film',                                     'AdminController@allFilm')                  ->name('admin_allFilm');
+    Route::get('/seance',                                   'AdminController@allSeance')                ->name('admin_allSeance');
+    
+    Route::any('/realisateur/create',                       'AdminController@createRealisateur')        ->name('admin_createRealisateur');
+    Route::any('/evenement2015/create',                     'AdminController@createEvenement2015')      ->name('admin_createEvenement2015');
+    Route::any('/news/create',                              'AdminController@createNews')               ->name('admin_createNews');
+    Route::any('/film/create',                              'AdminController@createFilm')               ->name('admin_createFilm');
+    Route::any('/seance/create',                            'AdminController@createSeance')             ->name('admin_createSeance');
+    
+    Route::any('/realisateur/modif/{idRealisateur}',        'AdminController@modifRealisateur')         ->name('admin_modifRealisateur');
+    Route::any('/evenement2015/modif/{idEvenement2015}',    'AdminController@modifEvenement2015')       ->name('admin_modifEvenement2015');
+    Route::any('/news/modif/{idNews}',                      'AdminController@modifNews')                ->name('admin_modifNews');
+    Route::any('/film/modif/{idFilm}',                      'AdminController@modifFilm')                ->name('admin_modifFilm');
+    Route::any('/seance/modif/{idSeance}',                  'AdminController@modifSeance')              ->name('admin_modifSeance');
+    Route::any('/traduction/modif',                         'AdminController@modifTraduction')          ->name('admin_modifTraduction');
+    
+    Route::any('/realisateur/delete/{idRealisateur}',       'AdminController@deleteRealisateur')        ->name('admin_deleteRealisateur');
+    Route::any('/evenement2015/delete/{idEvenement2015}',   'AdminController@deleteEvenement2015')      ->name('admin_deleteEvenement2015');
+    Route::any('/news/delete/{idNews}',                     'AdminController@deleteNews')               ->name('admin_deleteNews');
+    Route::any('/film/delete/{idFilm}',                     'AdminController@deleteFilm')               ->name('admin_deleteFilm');
+    Route::any('/seance/delete/{idSeance}',                 'AdminController@deleteSeance')             ->name('admin_deleteSeance');
 });

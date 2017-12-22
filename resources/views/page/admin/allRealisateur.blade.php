@@ -13,7 +13,7 @@
     <br />
     @endif
     
-    <a class="buttonPetitBleu" href="{{ $urlNewRealisateur}}">Ajouter un nouveau réalisateur</a>
+    <a class="buttonPetitBleu" href="{{ $newRealisateurUrl}}">Ajouter un nouveau réalisateur</a>
     <br /><br />
 
     @foreach ($realisateurs as $realisateur)
@@ -66,7 +66,6 @@
             </td>
         </tr>
         @endif
-    </table>
     </table>
         
     <br>

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SeanceTraduction extends Model
 {
-    //
+    public $timestamps = false;
     protected $table = 'SeanceTraduction';
     
     public function langue()

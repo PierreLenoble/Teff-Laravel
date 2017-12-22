@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ArticleTraduction extends Model
 {
-    //
+    public $timestamps = false;
     protected $table = 'ArticleTraduction';
     
     public function langue()
